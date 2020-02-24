@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>-(UIStepper *)stepper{
+    if (_stepper == nil) {
+        _stepper = [[UIStepper alloc]init];
+        _stepper.minimumValue = 1;
+        _stepper.maximumValue = 10000;
+        _stepper.stepValue = 1;
+        _stepper.value = 1;
+        _stepper.continuous = YES;//是否持续触发ValueChanged
+        _stepper.autorepeat = YES;//按住不放会自动持续增减
+        [_stepper addTarget:self action:@selector(stepperEvent:) forControlEvents:UIControlEventValueChanged];
+        [self.view addSubview:_stepper];
+    }
+    return _stepper;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A78AC5DC-13E0-46E0-A232-79C6800235CC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Get_UIStepper</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

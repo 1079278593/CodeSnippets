@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocmvvmview</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#import "nameViewModel.h"
+
+@interface nameView()&lt;nameViewDelegate&gt;
+
+@property(strong, nonatomic)MainViewModel *mViewModel;
+@property(strong, nonatomic)nameViewModel *nameViewModel;
+
+@end
+
+@implementation CapitalView
+
+-(instancetype)initWithViewModel:(MainViewModel *)viewModel{
+    if(self == [super init]){
+        _mViewModel = viewModel;
+        _nameViewModel = [[CapitalViewModel alloc]init];
+        _nameViewModel.delegate = self;
+        [_nameViewModel requestCapitalInfo];
+        
+        [self initView];
+    }
+    return self;
+}
+
+-(void)initView{
+    CGFloat height = 0;
+    if (@available(iOS 11.0, *)) {
+        height = HomeIndicatorHeight;
+    } else {
+        height = 0;
+    }
+    
+    UILabel *titleLabel = [[UILabel alloc]initWithFontFamily:[UIFont fontWithName:FONT_SEMIBOLD size:STFont(30)] text:MSG_TAB_CAPITAL textAlignment:NSTextAlignmentLeft textColor:c10 backgroundColor:nil multiLine:NO];
+    CGSize titleSize = [titleLabel.text sizeWithMaxWidth:ScreenWidth font:STFont(30) fontName:FONT_SEMIBOLD];
+    titleLabel.frame = CGRectMake(STWidth(15), STHeight(54), titleSize.width, STHeight(42));
+    [self addSubview:titleLabel];
+}
+
+
+-(void)updateView{
+    
+}
+
+#pragma mark -
+-(void)onRequestBegin{
+    
+}
+
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    [self updateView];
+    
+}
+
+-(void)onRequestFail:(NSString *)msg{
+    
+}
+
+@end</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4956BF73-F9B8-46ED-AD92-B56DFFB5A1F5</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>MVVM的view</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>MVVM的view</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

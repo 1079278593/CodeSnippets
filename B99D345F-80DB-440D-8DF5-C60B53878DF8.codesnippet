@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>hpage</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//
+//  NamePage.h
+//  by
+//
+//  Created by by.huang on block.
+//  Copyright © 2018 by.huang. All rights reserved.
+//
+
+
+#import &lt;UIKit/UIKit.h&gt;
+#import "BaseViewController.h"
+
+@interface NamePage : BaseViewController
+
++(void)show:(BaseViewController *)controller;
+
+@end
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B99D345F-80DB-440D-8DF5-C60B53878DF8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>自动生成page.h</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>page.h</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

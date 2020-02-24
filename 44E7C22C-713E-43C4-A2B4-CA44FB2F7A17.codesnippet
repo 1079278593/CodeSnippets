@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mpage</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//
+//  NamePage.m
+//  manage
+//
+//  Created by by.huang on 2018/11/14.
+//  Copyright © 2018 by.huang. All rights reserved.
+//
+
+#import "NamePage.h"
+#import "NameView.h"
+
+@interface NamePage()&lt;NameViewDelegate&gt;
+
+@property(strong, nonatomic)NameView *nameView;
+@property(strong, nonatomic)NameViewModel *viewModel;
+
+@end
+
+@implementation NamePage
+
++(void)show:(BaseViewController *)controller{
+    NamePage *page = [[NamePage alloc]init];
+    [controller pushPage:page];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self showSTNavigationBar:@"" needback:YES];
+    [self initView];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+
+-(void)initView{
+    _viewModel = [[NameViewModel alloc]init];
+    _viewModel.delegate = self;
+    
+    _nameView =[[NameView alloc]initWithViewModel:_viewModel];
+    _nameView.frame = CGRectMake(0, StatuNavHeight, ScreenWidth, ContentHeight);
+    [self.view addSubview:_nameView];
+}
+
+-(void)onRequestBegin{
+    
+}
+
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    
+}
+
+-(void)onRequestFail:(NSString *)msg{
+    
+}
+
+
+@end
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>44E7C22C-713E-43C4-A2B4-CA44FB2F7A17</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>自动生成page.m</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>page.m</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

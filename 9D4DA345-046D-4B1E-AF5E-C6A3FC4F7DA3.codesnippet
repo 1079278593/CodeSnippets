@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>bytextfield</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>UITextField *Field = [[UITextField alloc]init];
+    _Field.placeholder = @"请输入";
+    _Field.font = [UIFont fontWithName:FONT_SEMIBOLD size:STFont(30)];
+    _Field.textColor = c10;
+    [_Field setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [_Field setValue:[UIFont systemFontOfSize:14] forKeyPath:@"_placeholderLabel.font"];
+    [self addSubview:_Field];
+    [_Field mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self);
+        make.top.equalTo(self);
+        make.right.equalTo(self);
+        make.height.equalTo(@40);
+    }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9D4DA345-046D-4B1E-AF5E-C6A3FC4F7DA3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>创建textfield</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

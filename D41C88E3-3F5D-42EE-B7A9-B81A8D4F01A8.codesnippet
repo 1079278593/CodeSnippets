@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>byobserver</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#import "STObserverManager.h"&lt;STObserverProtocol&gt;
+- (void)dealloc {
+    [[STObserverManager sharedSTObserverManager] registerSTObsever:NOTIFY_UPDATE_DEPOSIT delegate:self];
+     [[STObserverManager sharedSTObserverManager] removeSTObsever:NOTIFY_UPDATE_DEPOSIT];
+}
+-(void)onReciveResult:(NSString *)key msg:(id)msg{
+    if([key isEqualToString:NOTIFY_UPDATE_DEPOSIT]){
+        NSLog(@"123");
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D41C88E3-3F5D-42EE-B7A9-B81A8D4F01A8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>西雾统一通知</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>bynodata</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#import "STNoDataView.h"
+    @property(strong, nonatomic)STNoDataView *noDataView;
+    _noDataView = [[STNoDataView alloc]initWithTitle:MSG_NO_DATA image:IMAGE_NO_DATA];
+    _noDataView.backgroundColor = cbg;
+    _noDataView.frame = CGRectMake(0, _dateBlockView.bottom, ScreenWidth, ScreenHeight);
+    _noDataView.hidden = true;
+    [self addSubview:_noDataView];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>988C08FF-361E-4B97-8F12-7B49CCFF9A8C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>接口：无数据</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

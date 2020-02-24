@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - gesture
+-(void)addGesture{
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGestureAct:)];
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGestureAct:)];
+    UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(pinchGestureAct:)];
+    UIRotationGestureRecognizer *rotationGesture = [[UIRotationGestureRecognizer alloc]initWithTarget:self action:@selector(rotationGestureAct:)];
+    
+    [self addGestureRecognizer:tapGesture];
+    [self addGestureRecognizer:panGesture];
+    [self addGestureRecognizer:pinchGesture];
+    [self addGestureRecognizer:rotationGesture];
+    
+}
+-(void)panGestureAct:(UIPanGestureRecognizer *)panGesture{
+    
+    }
+
+-(void)pinchGestureAct:(UIPinchGestureRecognizer *)pinchGesture{
+    
+    
+}
+
+-(void)rotationGestureAct:(UIRotationGestureRecognizer *)rotationGesture{
+    
+        
+}
+
+-(void)tapGestureAct:(UITapGestureRecognizer *)tapGesture{
+    
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7D4FCFE1-F830-4CC4-9997-785EC8821B9A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Get_Gesture</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

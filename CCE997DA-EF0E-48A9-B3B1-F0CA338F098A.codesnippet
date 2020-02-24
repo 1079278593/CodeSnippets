@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>bybtn</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>_Button = [[UIButton alloc]initWithFont:STFont(16) text:@"" textColor:c10 backgroundColor:cclear corner:0 borderWidth:0 borderColor:nil];
+    [_Button setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
+//    _Button.imageEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 15);
+    _Button.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+    [_Button setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+    [_Button addTarget:self action:@selector(nameBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_Button];
+    [_Button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo();
+        make.top.equalTo();
+        make.width.equalTo(@120);
+        make.height.equalTo(@44);
+    }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CCE997DA-EF0E-48A9-B3B1-F0CA338F098A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>c01底色，10文字色</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>默认按钮</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

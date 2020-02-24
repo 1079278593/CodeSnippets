@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>-(UISlider *)slider{
+    
+    if (_slider == nil) {
+        
+        _slider = [[UISlider alloc]init];
+        _slider.backgroundColor = [UIColor clearColor];
+        _slider.value = 0.0;
+        _slider.minimumValue=0.0;
+        _slider.maximumValue=1.0;
+        
+        [_slider setMinimumTrackImage:[UIImage createImageWithColor:[UIColor clearColor]] forState:UIControlStateNormal];
+        [_slider setMaximumTrackImage:[UIImage createImageWithColor:[UIColor clearColor]] forState:UIControlStateNormal];
+        
+        //注意这里要加UIControlStateHightlighted的状态，否则当拖动滑块时滑块将变成原生的控件
+        [_slider setThumbImage:[UIImage imageNamed:@"Robot_set_selecte_arrow"] forState:UIControlStateHighlighted];
+        [_slider setThumbImage:[UIImage imageNamed:@"Robot_set_selecte_arrow"] forState:UIControlStateNormal];
+        
+        //滑块拖动时的事件
+        [_slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+        //滑动拖动后的事件
+        [_slider addTarget:self action:@selector(sliderDragUp:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self addSubview:_slider];
+    }
+    
+    return _slider;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A3D416FC-73B5-4E56-A4E3-4693396D16CA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Get_UISlider</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

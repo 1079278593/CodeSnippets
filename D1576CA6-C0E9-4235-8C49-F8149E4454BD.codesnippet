@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>hview</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//
+//  NameView.h
+//  manage
+//
+//  Created by by.huang on 2018/11/14.
+//  Copyright © 2018 by.huang. All rights reserved.
+//
+
+#import &lt;UIKit/UIKit.h&gt;
+#import "NameViewModel.h"
+
+
+@interface NameView : UIView
+
+-(instancetype)initWithViewModel:(NameViewModel *)viewModel;
+-(void)updateView;
+
+@end
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D1576CA6-C0E9-4235-8C49-F8149E4454BD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>自动生成view.h</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>view.h</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

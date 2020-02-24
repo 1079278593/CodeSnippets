@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#define KMainScreenHeight [UIScreen mainScreen].bounds.size.height
+#define KMainScreenWidth [UIScreen mainScreen].bounds.size.width
+#define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+typedef void (^ViewBlock)(BOOL flag);
+
+@interface AddTimeMaskView ()
+
+@property (nonatomic, copy) ViewBlock viewBlock;
+
+//imageView
+@property (strong ,nonatomic)UIImageView *imageView;
+
+//button
+@property (strong ,nonatomic)UIButton *button;
+
+//label
+@property (strong ,nonatomic)UILabel *label;
+
+@end
+
+@implementation AddTimeMaskView
+
+#pragma mark - external call
+
+#pragma mark - event
+-(void)buttonEvent:(UIButton *)button{
+    
+}
+
+#pragma mark - life cycle
+-(id)init{
+    
+    self = [super init];
+    if (self) {
+        
+        self.userInteractionEnabled = YES;
+        self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.8];
+        [self initView];
+        
+    }
+    
+    return self;
+    
+}
+#pragma mark - initView
+-(void)initView{
+    
+}
+
+#pragma mark button
+-(UIButton *)button{
+    
+    if (_button == nil) {
+        _button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_button setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+        [_button setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateHighlighted];
+        [_button setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateSelected];
+        [_button setTitle:@"" forState:UIControlStateNormal];
+        [_button addTarget:self action:@selector(buttonEvent:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:_button];
+        
+    }
+    return _button;
+}
+#pragma mark label
+-(UILabel *)label{
+    if (_label == nil) {
+        _label = [[UILabel alloc]init];
+        _label.font = [UIFont systemFontOfSize:15];
+        _label.textAlignment = NSTextAlignmentCenter;
+        _label.textColor = [UIColor whiteColor];
+        _label.numberOfLines = 0;
+        _label.lineBreakMode = NSLineBreakByCharWrapping;
+        [self addSubview:_label];
+    }
+    return _label;
+}
+#pragma mark imageView
+-(UIImageView *)imageView{
+    
+    if (_imageView == nil) {
+        _imageView = [[UIImageView alloc]initWithFrame:CGRectZero];
+        _imageView.contentMode = UIViewContentModeScaleAspectFit;
+        [self addSubview:_imageView];
+        
+    }
+    return _imageView;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>872BD69B-E623-483C-8F00-DCC3D9AFD2CC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Get_UIView_Class</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
