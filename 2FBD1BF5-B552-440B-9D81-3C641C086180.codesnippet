@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocbuttoninit</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>UIButton *Button = [UIButton buttonWithType:UIButtonTypeCustom];
+[Button setTitle:@"按钮" forState:UIControlStateNormal];
+[Button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+[Button addTarget:self action:@selector(loadBtnEvent:) forControlEvents:UIControlEventTouchUpInside];
+[self.view addSubview:Button];
+[Button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.equalTo(self);
+        make.width.height.equalTo(@50);
+    }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2FBD1BF5-B552-440B-9D81-3C641C086180</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>oc button init</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
