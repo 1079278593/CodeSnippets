@@ -3,18 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocShadow</string>
+	<string>ocshadow</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>view.layer.shadowOffset = CGSizeMake(0, 1);
-view.layer.shadowRadius = 4;
-view.layer.shadowOpacity = 0.2;
-view.layer.shadowColor = c10.CGColor;</string>
+	<string>View.layer.shadowOffset = CGSizeMake(0, 1);
+View.layer.shadowRadius = 4;
+View.layer.shadowOpacity = 0.1;
+View.layer.shadowColor = c10.CGColor;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>16DB5EC6-D7E1-42AE-B5D6-CFFFC5E435CC</string>
+	<string>CC254167-DA97-4D9F-84FD-DC347386C0A2</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
@@ -24,6 +24,6 @@ view.layer.shadowColor = c10.CGColor;</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
