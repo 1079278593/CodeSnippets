@@ -10,14 +10,10 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                        });
-            
-            
-        });</string>
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+    });
+});</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>5C960F20-708F-49D1-877D-F9DF65A7A7B6</string>
 	<key>IDECodeSnippetLanguage</key>
