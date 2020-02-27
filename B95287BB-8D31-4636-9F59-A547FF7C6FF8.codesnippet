@@ -3,27 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocshadow</string>
+	<string>ocindexpath</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>View.layer.shadowOffset = CGSizeMake(0, 1);
-View.layer.shadowRadius = 4;
-View.layer.shadowOpacity = 0.1;
-View.layer.shadowColor = c10.CGColor;</string>
+	<string>NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0]</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>CC254167-DA97-4D9F-84FD-DC347386C0A2</string>
+	<string>B95287BB-8D31-4636-9F59-A547FF7C6FF8</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>增加阴影</string>
+	<string>indexPath构建</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
