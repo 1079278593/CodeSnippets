@@ -10,12 +10,14 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>_textField = [[UITextField alloc]init];
-    _textField.placeholder = @"输入关键词";
-    _textField.layer.borderWidth = 1;
-    _textField.frame = CGRectMake(20, 65, KScreenWidth-40, 44);
-    [_textField addTarget:self action:@selector(textDidChange:) forControlEvents:UIControlEventEditingChanged];
-    [self.view addSubview:_textField];
-    - (void)textDidChange:(UITextField *)textField {
+_textField.font = [UIFont fontWithName:FONT_REGULAR size:STFont(16)];
+_textField.attributedPlaceholder = [[NSMutableAttributedString alloc] initWithString:@"输入关键词" attributes:@{NSForegroundColorAttributeName : c03, NSFontAttributeName : [UIFont fontWithName:FONT_REGULAR size:STFont(15)]}];
+_textField.layer.borderWidth = 1;
+_textField.frame = CGRectMake(20, 65, KScreenWidth-40, 44);
+[_textField addTarget:self action:@selector(textDidChange:) forControlEvents:UIControlEventEditingChanged];
+[self.view addSubview:_textField];
+
+- (void)textDidChange:(UITextField *)textField {
         
     }</string>
 	<key>IDECodeSnippetIdentifier</key>
