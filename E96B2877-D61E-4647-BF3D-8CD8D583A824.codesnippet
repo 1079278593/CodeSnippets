@@ -22,6 +22,8 @@
 
 @interface className()
 
+@property(nonatomic, strong)UIView *containerView;
+
 @end</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>E96B2877-D61E-4647-BF3D-8CD8D583A824</string>

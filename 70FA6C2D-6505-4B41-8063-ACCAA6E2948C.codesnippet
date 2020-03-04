@@ -3,33 +3,34 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>bypost</string>
+	<string>bynetrequest</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>if(!_delegate) return;
-    [_delegate onRequestBegin];
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+	<string>NSMutableDictionary *parameters = [[NSMutableDictionary alloc]init];
+    parameters[@"key1"] = @"";
+    parameters[@"key2"] = @"";
+    
     WS(weakSelf)
-    [STNetUtil post:&lt;#code#&gt; content:dic.mj_JSONString success:^(RespondModel *respondModel) {
+    [STNetUtil post:URL_LOGIN content:parameters.mj_JSONString success:^(RespondModel *respondModel) {
         if([respondModel.status isEqualToString:STATU_SUCCESS]){
-            id data = respondModel.data;
-            [weakSelf.delegate onRequestSuccess:respondModel data:data];
+            self.data = _data;
         }else{
-            [weakSelf.delegate onRequestFail:respondModel.msg];
+            weakSelf.failMsg = respondModel.msg;
         }
-        
     } failure:^(int errorCode) {
-        [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+        weakSelf.failMsg = [NSString stringWithFormat:MSG_ERROR,errorCode];
     }];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>C95B67E8-4AFD-42F7-AFA3-B18E9570DAB0</string>
+	<string>70FA6C2D-6505-4B41-8063-ACCAA6E2948C</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>post请求</string>
+	<string>西雾：网络请求</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

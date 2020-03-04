@@ -3,30 +3,34 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>bynodata</string>
+	<string>ocmjextension</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#import "STNoDataView.h"
-    @property(strong, nonatomic)STNoDataView *noDataView;
-    _noDataView = [[STNoDataView alloc]initWithTitle:MSG_NO_DATA image:IMAGE_NO_DATA];
-    _noDataView.backgroundColor = cbg;
-    _noDataView.frame = CGRectMake(0, _dateBlockView.bottom, ScreenWidth, ScreenHeight);
-    _noDataView.hidden = true;
-    [self addSubview:_noDataView];</string>
+	<string>+ (NSDictionary *)mj_objectClassInArray{
+    return @{@"attributeList" : @"ProductAttributeListModel",
+            @"jsonList" : @"ProductJsonListModel"
+    };//前边，是属性数组的名字，后边就是类名
+}
+
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+    return @{@"name_id": @"id"};
+}
+
+NSMutableArray *arr = [Model mj_objectArrayWithKeyValuesArray:@"dictionary的字符串解析"];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>988C08FF-361E-4B97-8F12-7B49CCFF9A8C</string>
+	<string>B5BB6B03-BE4C-4752-9CAD-92910D19965B</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>接口：无数据</string>
+	<string>MJExtension 数组解析替换</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

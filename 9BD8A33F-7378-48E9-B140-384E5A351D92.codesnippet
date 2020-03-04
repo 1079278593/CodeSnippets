@@ -10,6 +10,8 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>_textField = [[UITextField alloc]init];
+_textField.keyboardType = UIKeyboardTypeNumberPad;
+_textField.clearButtonMode = UITextFieldViewModeWhileEditing;
 _textField.font = [UIFont fontWithName:FONT_REGULAR size:STFont(16)];
 _textField.attributedPlaceholder = [[NSMutableAttributedString alloc] initWithString:@"输入关键词" attributes:@{NSForegroundColorAttributeName : c03, NSFontAttributeName : [UIFont fontWithName:FONT_REGULAR size:STFont(15)]}];
 _textField.layer.borderWidth = 1;
