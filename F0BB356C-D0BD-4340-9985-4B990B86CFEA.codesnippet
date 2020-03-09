@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>swrxbind</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+private let disposeBag = DisposeBag()
+NotificationCenter.default.rx.notification(UIApplication.willEnterForegroundNotification)
+.takeUntil(self.rx.deallocated) //页面销毁自动移除通知监听
+.subscribe(onNext: { [weak self] obj in
+    print("dsfasdf")
+}).disposed(by: disposeBag)
+
+LHWorkMananger.sharedInsatance.currentWork?.rx.observeWeakly(LHSprite.self, "currentEditingScene.currentEditingSprite").subscribe(onNext: { [weak self] (sprite) in
+    self?.handlerCurretnEditingSpriteChanged(sprite: sprite)
+}).disposed(by: sceneViewDisposeBag)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F0BB356C-D0BD-4340-9985-4B990B86CFEA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>RXSwift 绑定</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
