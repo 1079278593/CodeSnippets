@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocdownloadqueue</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>dispatch_group_t group = dispatch_group_create();
+dispatch_queue_t downloadQueue = dispatch_queue_create("download_queue",DISPATCH_QUEUE_SERIAL);// 串行队列
+dispatch_semaphore_t sem = dispatch_semaphore_create(0);
+    
+for (int i = 0; i&lt;3; i++) {
+    @weakify(self);
+    __block UIImageView *blockImgView = imgView;
+    dispatch_group_enter(group);// 进入组
+    dispatch_group_async(group, downloadQueue, ^{
+        @strongify(self);
+        SDWebImageManager *manager = [SDWebImageManager sharedManager];
+        [manager downloadImageWithURL:[NSURL URLWithString:@"url"] options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+            NSLog(@"下载完成%d",i);
+            dispatch_group_leave(group);
+            dispatch_semaphore_signal(sem);
+            }];
+            dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+        });
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A78EA8B8-2FC2-435E-A371-E0E34740FA0E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>异步串行下载</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ochittest</string>
+	<string>ochitandgesture</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -14,6 +14,14 @@
         return self.optButtonView;
     }
     return [super hitTest:point withEvent:event];
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(nonnull UITouch *)touch {
+    return YES;//返回yes不阻断手势,返回NO阻断手势,根据具体情况处理
+    //    if ([touch.view isDescendantOfView:self.collectionView]) {
+    //        return NO;
+    //    }
+    //    return YES;
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>1CD84B16-EA04-48CA-ABAE-47BC05C32BFC</string>
@@ -26,6 +34,6 @@
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>

@@ -9,11 +9,11 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>-  {
-    if (_ == nil) {
-        
+	<string>- &lt;#returnType#&gt; {
+    if (_&lt;#name#&gt; == nil) {
+        &lt;#code#&gt;
     }
-    return _;
+    return _&lt;#name#&gt;;
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>1CA41D2A-8CC4-460F-9A77-48E26FD4EC1A</string>

@@ -3,30 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>swsingleton</string>
+	<string>octapgesture</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>class &lt;#expression#&gt;: NSObject {
-    static public let sharedInstance = &lt;#expression#&gt;()
-    private override init() {
-        super.init()
-        
-    }
+	<string>[&lt;#name#&gt; addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGesture)]];
+//有些类需要开启userInteractionEnabled = YES
+- (void)tapGesture {
+    
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>81F28AB7-D538-4885-A16C-8F134E7C3213</string>
+	<string>679BF4C4-EF77-44AD-8796-B8DC43CED9DE</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>swift 单例</string>
+	<string>View增加手势</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

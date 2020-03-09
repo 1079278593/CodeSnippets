@@ -3,30 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>swsingleton</string>
+	<string>ocplacehold</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>class &lt;#expression#&gt;: NSObject {
-    static public let sharedInstance = &lt;#expression#&gt;()
-    private override init() {
-        super.init()
-        
-    }
-}</string>
+	<string>
+&lt;#returnType#&gt;
+&lt;#arguments#&gt;
+&lt;#blockName#&gt;
+&lt;#protocol#&gt; 
+&lt;#delegate#&gt;
+&lt;#expression#&gt;
+&lt;#name#&gt;
+&lt;#code#&gt;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>81F28AB7-D538-4885-A16C-8F134E7C3213</string>
+	<string>3E92B839-08E7-4D05-912D-427304F0F25F</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>swift 单例</string>
+	<string>AAAA：提示输入的占位符</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
