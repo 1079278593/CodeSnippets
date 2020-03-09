@@ -3,34 +3,29 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocmjextension</string>
+	<string>ochittest</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>+ (NSDictionary *)mj_objectClassInArray{
-    return @{@"attributeList" : NSStringFromClass([&lt;#expression#&gt; class]),
-            @"jsonList" : NSStringFromClass([&lt;#expression#&gt; class])
-    };//前边，是属性数组的名字，后边就是类名
-}
-
-+ (NSDictionary *)mj_replacedKeyFromPropertyName{
-    return @{@"name_id": @"id"};
-}
-
-NSMutableArray *arr = [Model mj_objectArrayWithKeyValuesArray:@"dictionary的字符串解析"];</string>
+	<string>- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    if (CGRectContainsPoint(self.optButtonView.frame, point)) {
+        return self.optButtonView;
+    }
+    return [super hitTest:point withEvent:event];
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B5BB6B03-BE4C-4752-9CAD-92910D19965B</string>
+	<string>1CD84B16-EA04-48CA-ABAE-47BC05C32BFC</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>MJExtension 数组解析替换</string>
+	<string>hitTest</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
