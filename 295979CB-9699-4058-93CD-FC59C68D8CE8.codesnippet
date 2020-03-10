@@ -9,8 +9,19 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#pragma mark - &lt; delegate &gt;
+	<string>#pragma mark - request
+-(void)headerRequest{
+    _viewModel.headerRefresh = true;
+    [_viewModel &lt;#expression#&gt;];
+}
 
+-(void)footerRequest{
+    _viewModel.headerRefresh = false;
+    [_viewModel &lt;#expression#&gt;];
+}
+
+#pragma mark - &lt; delegate &gt;
+&lt;UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout&gt;
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 2;
 }
@@ -24,12 +35,12 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    ProductOptionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([ProductOptionViewCell class]) forIndexPath:indexPath];
+    &lt;#name#&gt; *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([&lt;#name#&gt; class]) forIndexPath:indexPath];
     return cell;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    UICollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([UICollectionReusableView class]) forIndexPath:indexPath];
+    &lt;#name#&gt; *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([&lt;#name#&gt; class]) forIndexPath:indexPath];
     return header;
 }
 
@@ -54,10 +65,18 @@
         _collectionView.dataSource = self;
         _collectionView.showsVerticalScrollIndicator = false;
         _collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
-        [_collectionView registerClass:[CustomCell class] forCellWithReuseIdentifier:NSStringFromClass([CustomCell class])];
-        [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([UICollectionReusableView class])];
+        [_collectionView registerClass:[&lt;#name#&gt; class] forCellWithReuseIdentifier:NSStringFromClass([&lt;#name#&gt; class])];
+        [_collectionView registerClass:[&lt;#name#&gt; class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([&lt;#name#&gt; class])];
         
         [self addSubview:_collectionView];
+        
+        MJRefreshStateHeader *header = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRequest)];
+        header.lastUpdatedTimeLabel.hidden = YES;
+        _collectionView.mj_header = header;
+                
+        MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRequest)];
+        _collectionView.mj_footer = footer;
+        
     }
     return _collectionView;
 }</string>

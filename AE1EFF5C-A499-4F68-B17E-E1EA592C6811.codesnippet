@@ -10,10 +10,10 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>- (void)bindRACModel {
-    self.viewModel = [[XViewModel alloc]init];
+    self.viewModel = [[&lt;#name#&gt; alloc]init];
     
     @weakify(self);
-    [[RACObserve(self.viewModel, rac_data) skip:1] subscribeNext:^(id  _Nullable x) {
+    [[RACObserve(self.viewModel, &lt;#arguments#&gt;) skip:1] subscribeNext:^(id  _Nullable x) {
         @strongify(self);
 
     }];

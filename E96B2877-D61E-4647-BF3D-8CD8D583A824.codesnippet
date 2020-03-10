@@ -9,7 +9,15 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (instancetype)init {
+	<string>@interface &lt;#name#&gt;()
+
+@property(nonatomic, strong)UIView *containerView;
+
+@end
+
+@implementation &lt;#name#&gt;
+
+- (instancetype)init {
     if(self == [super init]){
         [self initView];
     }
@@ -18,13 +26,7 @@
 
 - (void)initView {
     
-}
-
-@interface className()
-
-@property(nonatomic, strong)UIView *containerView;
-
-@end</string>
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>E96B2877-D61E-4647-BF3D-8CD8D583A824</string>
 	<key>IDECodeSnippetLanguage</key>
