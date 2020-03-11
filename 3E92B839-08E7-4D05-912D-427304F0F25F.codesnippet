@@ -9,7 +9,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>
+	<string>&lt;# 
+#&gt;
 &lt;#returnType#&gt;
 &lt;#arguments#&gt;
 &lt;#blockName#&gt;

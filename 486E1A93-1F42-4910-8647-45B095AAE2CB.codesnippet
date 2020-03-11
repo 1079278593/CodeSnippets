@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocalertsheet</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/*
+ UIAlertController可以初始化两种样式：UIAlertControllerStyleActionSheet(表单)、UIAlertControllerStyleAlert(提示框)
+ 
+ 其中：UIAlertController *alertController = [[UIAlertController alloc]init];是快速表单初始化方法。
+ 以及按钮样式3种：UIAlertActionStyleDestructive、
+ */
+
+UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"&lt;#title#&gt;" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+
+}];
+
+UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    
+}];
+
+[alertController addAction:okAction];
+[alertController addAction:cancleAction];
+[self.viewController presentViewController:alertController animated:true completion:nil];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>486E1A93-1F42-4910-8647-45B095AAE2CB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>提示框、表单</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
