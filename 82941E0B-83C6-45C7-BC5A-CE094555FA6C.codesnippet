@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>_sort</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//冒泡排序：右边确定(将最大/最小的数沉底)
+- (NSArray *)bubbleSort:(NSArray *)array {
+    NSMutableArray *sortResult = [NSMutableArray arrayWithArray:array];
+    for (int i = 0; i&lt;sortResult.count-1; i++) {
+        for (int j = 0; j&lt;sortResult.count-1-i; j++) {
+            NSInteger left = [sortResult[j] integerValue];
+            NSInteger right = [sortResult[j+1] integerValue];
+            if (left&lt;right) {
+                [sortResult exchangeObjectAtIndex:j withObjectAtIndex:j+1];
+            }
+        }
+    }
+    return sortResult;
+}
+
+//插入排序：左边确定(左侧若干个确定，从右侧拿一个插入左侧合适位置)
+- (NSArray *)insertionSort:(NSArray *)array {
+    NSMutableArray *sortResult = [NSMutableArray arrayWithArray:array];
+    for (NSInteger i = 1; i &lt; sortResult.count; i ++) {
+        NSInteger temp = [sortResult[i] integerValue];
+        for (NSInteger j = i - 1; j &gt;= 0 &amp;&amp; temp &lt; [sortResult[j] integerValue]; j --) {
+            sortResult[j + 1] = sortResult[j];
+            sortResult[j] = [NSNumber numberWithInteger:temp];
+        }
+    }
+    return sortResult;
+}
+
+//选择排序：左边确定(选择一个‘最值’的放在最左边，剩余部分‘最值’已确定的后面，不断循环)
+- (NSArray *)selectionSort:(NSArray *)array {
+    if (!array || array.count == 1) { return array; }
+    NSMutableArray *sortResult = [NSMutableArray arrayWithArray:array];
+    NSInteger flag;
+    NSInteger execCount = 0;//交换次数
+    NSInteger forCount = 0;//for循环总共执行了多少次
+    for (NSInteger i = 0; i &lt; sortResult.count; i++) {
+        flag = i;
+        forCount++;
+        for (NSInteger j = i; j &lt; sortResult.count - 1; j++) {
+            if (sortResult[j + 1] &gt; sortResult[flag]) {
+                flag = j + 1;
+            }
+            forCount++;
+        }
+        if (i != flag) {
+            [sortResult exchangeObjectAtIndex:i withObjectAtIndex:flag];
+            execCount++;
+        }
+    }
+//    NSLog(@"交换共执行了%ld次", execCount);
+//    NSLog(@"for循环共执行了%ld次", forCount);
+    return sortResult;
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>82941E0B-83C6-45C7-BC5A-CE094555FA6C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>多种常规排序算法</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

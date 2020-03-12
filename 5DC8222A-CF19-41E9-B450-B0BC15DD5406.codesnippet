@@ -3,40 +3,26 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocinit</string>
+	<string>ocmasonry</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@interface &lt;#name#&gt;()
-
-@property(nonatomic, strong)UIView *containerView;
-
-@end
-
-@implementation &lt;#name#&gt;
-
-- (instancetype)init {
-    if(self == [super init]){
-        [self initView];
-    }
-    return self;
-}
-
-- (void)initView {
-    
-}
-
-@end</string>
+	<string>mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self);
+        make.top.equalTo(self);
+        make.width.equalTo(self);
+        make.height.equalTo(@50);
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>E96B2877-D61E-4647-BF3D-8CD8D583A824</string>
+	<string>5DC8222A-CF19-41E9-B450-B0BC15DD5406</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>ocinit</string>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>ocinit</string>
+	<string>快速Masonry布局</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
