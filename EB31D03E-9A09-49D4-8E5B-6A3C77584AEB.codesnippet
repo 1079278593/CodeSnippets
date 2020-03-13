@@ -9,14 +9,15 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>UILabel *nameLabel = [[UILabel alloc]initWithFontFamily:[UIFont fontWithName:FONT_SEMIBOLD size:STFont(15)] text:@"" textAlignment:NSTextAlignmentLeft textColor:c10 backgroundColor:nil multiLine:NO];
-[self addSubview:nameLabel];
-[nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.centerY.equalTo(self);
-    make.left.equalTo(self);
-    make.right.equalTo(self);
-    make.height.equalTo(@LineHeight);
-}];</string>
+	<string>- &lt;#label#&gt; {
+    if (_&lt;#label#&gt; == nil) {
+        &lt;#label#&gt; = [[UILabel alloc]init];
+        &lt;#label#&gt;.textAlignment = NSTextAlignmentLeft;
+        &lt;#label#&gt;.font = [UIFont fontWithName:FONT_SEMIBOLD size:STFont(10)];
+        &lt;#label#&gt;.textColor = c10;
+    }
+    return _&lt;#label#&gt;;
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>EB31D03E-9A09-49D4-8E5B-6A3C77584AEB</string>
 	<key>IDECodeSnippetLanguage</key>

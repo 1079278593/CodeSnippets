@@ -9,7 +9,7 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@interface &lt;#name#&gt;()
+	<string>@interface &lt;#name#&gt; ()
 
 @property(nonatomic, strong)UIView *containerView;
 
