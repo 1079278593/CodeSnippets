@@ -3,29 +3,34 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocmasonry</string>
+	<string>ocdelegate</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.left.equalTo(&lt;#view#&gt;);
-    make.top.equalTo(&lt;#view#&gt;);
-    make.width.equalTo(&lt;#view#&gt;);
-    make.height.equalTo(@(&lt;#height#&gt;));
-    }</string>
+	<string>@protocol &lt;#delegateName#&gt;&lt;NSObject&gt;
+
+- (void)&lt;#method#&gt;:(&lt;#data#&gt; *)&lt;#data#&gt;;
+
+@end
+
+@property(nonatomic, weak)id&lt;GoodsAddressListDelegate&gt; delegate;
+if ([self.delegate respondsToSelector:@selector(&lt;#method#&gt;:)]) {
+    [self.delegate &lt;#method#&gt;:&lt;#data#&gt;];
+    }
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>5DC8222A-CF19-41E9-B450-B0BC15DD5406</string>
+	<string>E9295EBC-E0C0-4BBD-9BF1-1A3F593CB20C</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>快速Masonry布局</string>
+	<string>代理委托</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

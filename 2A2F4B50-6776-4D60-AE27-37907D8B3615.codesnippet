@@ -3,29 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocmasonry</string>
+	<string>ocRGBA</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.left.equalTo(&lt;#view#&gt;);
-    make.top.equalTo(&lt;#view#&gt;);
-    make.width.equalTo(&lt;#view#&gt;);
-    make.height.equalTo(@(&lt;#height#&gt;));
-    }</string>
+	<string>#define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>5DC8222A-CF19-41E9-B450-B0BC15DD5406</string>
+	<string>2A2F4B50-6776-4D60-AE27-37907D8B3615</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>快速Masonry布局</string>
+	<string>颜色宏定义</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

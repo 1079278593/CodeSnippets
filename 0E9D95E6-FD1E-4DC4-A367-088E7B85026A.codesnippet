@@ -10,7 +10,6 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>&lt;#button#&gt; {
-    
     if (_&lt;#button#&gt; == nil) {
         _&lt;#button#&gt; = [UIButton buttonWithType:UIButtonTypeCustom];
         [_&lt;#button#&gt; setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
