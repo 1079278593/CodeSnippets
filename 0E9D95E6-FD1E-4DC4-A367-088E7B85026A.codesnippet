@@ -16,7 +16,7 @@
         [_&lt;#button#&gt; setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
         [_&lt;#button#&gt; setTitle:@"" forState:UIControlStateNormal];
         _&lt;#button#&gt;.frame = CGRectMake(0, KMainScreenHeight-200, KMainScreenWidth, 200);
-        [_&lt;#button#&gt; addTarget:self action:@selector(buttonEvent:) forControlEvents:UIControlEventTouchUpInside];
+        [_&lt;#button#&gt; addTarget:self action:@selector(&lt;#button#&gt;Event:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_&lt;#button#&gt;];
         
     }

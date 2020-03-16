@@ -3,34 +3,27 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocdelegate</string>
+	<string>oclayerborder</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@protocol &lt;#delegateName#&gt;&lt;NSObject&gt;
-
-- (void)&lt;#method#&gt;:(&lt;#data#&gt; *)&lt;#data#&gt;;
-
-@end
-
-@property(nonatomic, weak)id&lt;GoodsAddressListDelegate&gt; delegate;
-if ([self.delegate respondsToSelector:@selector(&lt;#method#&gt;:)]) {
-    [self.delegate &lt;#method#&gt;:&lt;#data#&gt;];
-    }
-</string>
+	<string>&lt;#view#&gt;.layer.cornerRadius = 4;
+&lt;#view#&gt;.layer.masksToBounds = true;
+&lt;#view#&gt;.layer.borderColor = c10.CGColor;
+&lt;#view#&gt;.layer.borderWidth = 1;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>E9295EBC-E0C0-4BBD-9BF1-1A3F593CB20C</string>
+	<string>A00D6E94-DD0E-4BF5-8CC0-D27FE7F07D28</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>代理委托</string>
+	<string>UIView的圆角、边缘</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
