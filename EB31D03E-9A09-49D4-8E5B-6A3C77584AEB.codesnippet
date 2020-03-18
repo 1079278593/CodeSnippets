@@ -11,10 +11,10 @@
 	<key>IDECodeSnippetContents</key>
 	<string>- &lt;#label#&gt; {
     if (_&lt;#label#&gt; == nil) {
-        &lt;#label#&gt; = [[UILabel alloc]init];
-        &lt;#label#&gt;.textAlignment = NSTextAlignmentLeft;
-        &lt;#label#&gt;.font = [UIFont fontWithName:FONT_SEMIBOLD size:STFont(10)];
-        &lt;#label#&gt;.textColor = c10;
+        _&lt;#label#&gt; = [[UILabel alloc]init];
+        _&lt;#label#&gt;.textAlignment = NSTextAlignmentLeft;
+        _&lt;#label#&gt;.font = [UIFont fontWithName:FONT_SEMIBOLD size:STFont(10)];
+        _&lt;#label#&gt;.textColor = c10;
     }
     return _&lt;#label#&gt;;
 }</string>

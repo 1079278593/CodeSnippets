@@ -15,7 +15,8 @@
         [_&lt;#button#&gt; setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
         [_&lt;#button#&gt; setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
         [_&lt;#button#&gt; setTitle:@"" forState:UIControlStateNormal];
-        _&lt;#button#&gt;.frame = CGRectMake(0, KMainScreenHeight-200, KMainScreenWidth, 200);
+        _&lt;#button#&gt;.titleLabel.font = [UIFont fontWithName:FONT_REGULAR size:STFont(14)];
+        [_&lt;#button#&gt; setTitleColor:c10 forState:UIControlStateNormal];
         [_&lt;#button#&gt; addTarget:self action:@selector(&lt;#button#&gt;Event:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_&lt;#button#&gt;];
         

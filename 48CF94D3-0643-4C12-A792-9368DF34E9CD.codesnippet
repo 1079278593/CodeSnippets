@@ -3,31 +3,42 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocmjextension</string>
+	<string>occellinit</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>+ (NSDictionary *)mj_objectClassInArray{
-    return @{@"list1" : NSStringFromClass([&lt;#expression#&gt; class]),
-            @"list2" : NSStringFromClass([&lt;#expression#&gt; class])
-    };//前边，是属性数组的名字，后边就是类名
+	<string>@interface &lt;#cellName#&gt; ()
+
+
+
+@end
+
+@implementation &lt;#cellName#&gt;
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self initView];
+    }
+    return self;
 }
 
-+ (NSDictionary *)mj_replacedKeyFromPropertyName{
-    return @{@"&lt;#name_id#&gt;": @"id"};
+- (void)initView {
+    
 }
 
-NSMutableArray *arr = [Model mj_objectArrayWithKeyValuesArray:@"dictionary的字符串解析"];</string>
+@end</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B5BB6B03-BE4C-4752-9CAD-92910D19965B</string>
+	<string>48CF94D3-0643-4C12-A792-9368DF34E9CD</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>MJExtension 数组解析替换</string>
+	<string>cell init</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

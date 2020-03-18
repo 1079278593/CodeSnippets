@@ -9,14 +9,14 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>UIImageView *ImageView = [[UIImageView alloc]init];
-ImageView.image = [UIImage imageNamed:@""];
-ImageView.contentMode = UIViewContentModeScaleAspectFit;
-[self addSubview:ImageView];
-[ImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.left.bottom.equalTo(self);
-    make.width.height.equalTo(@50);
-}];</string>
+	<string>- (UIImageView *)&lt;#imageView#&gt; {
+    if (_&lt;#imageView#&gt; == nil) {
+        _&lt;#imageView#&gt; = [[UIImageView alloc]init];
+        _&lt;#imageView#&gt;.image = [UIImage imageNamed:@""];
+        _&lt;#imageView#&gt;.contentMode = UIViewContentModeScaleAspectFit;
+    }
+    return _&lt;#imageView#&gt;;
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>46954BC0-3C28-4561-B017-84DC3CBA9BC9</string>
 	<key>IDECodeSnippetLanguage</key>

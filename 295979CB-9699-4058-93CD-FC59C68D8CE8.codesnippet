@@ -9,7 +9,10 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#pragma mark - request
+	<string>&lt;UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout&gt;
+@property(nonatomic, strong)UICollectionView *collectionView;
+
+#pragma mark - request
 -(void)headerRequest{
     _viewModel.headerRefresh = true;
     [_viewModel &lt;#expression#&gt;];
@@ -21,7 +24,6 @@
 }
 
 #pragma mark - &lt; delegate &gt;
-&lt;UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout&gt;
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 2;
 }
@@ -50,8 +52,6 @@
 
 #pragma mark - &lt; init &gt;
 
-@property(nonatomic, strong)UICollectionView *collectionView;
-
 - (UICollectionView *)collectionView {
     if (_collectionView == nil) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
@@ -63,7 +63,9 @@
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
+        _collectionView.backgroundColor = [UIColor clearColor];
         _collectionView.showsVerticalScrollIndicator = false;
+        _collectionView.alwaysBounceVertical = true;//数据少时也能滚动
         _collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
         [_collectionView registerClass:[&lt;#name#&gt; class] forCellWithReuseIdentifier:NSStringFromClass([&lt;#name#&gt; class])];
         [_collectionView registerClass:[&lt;#name#&gt; class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([&lt;#name#&gt; class])];

@@ -11,21 +11,41 @@
 	<key>IDECodeSnippetContents</key>
 	<string>#import "STNetUtil.h"
 
-NSMutableDictionary *parameters = [[NSMutableDictionary alloc]init];
-parameters[@"key1"] = @"";
-parameters[@"key2"] = @"";
+- (void)requestOrdersList {
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc]init];
+    self.requestPage = self.headerRefresh ? 1 : self.requestPage;
+    parameters[@"key"] = @(2);
+    parameters[@"page"] = @(self.requestPage);
+    parameters[@"size"] = @(XW_LARGE_PAGESIZE);
     
-WS(weakSelf)
-[STNetUtil get:URL_LOGIN parameters:parameters success:^(RespondModel *respondModel) {
-[STNetUtil post:URL_LOGIN content:parameters.mj_JSONString success:^(RespondModel *respondModel) {
-    if([respondModel.status isEqualToString:STATU_SUCCESS]){
-        self.data = _data;
-    }else{
-        weakSelf.rac_failMsg = respondModel.msg;
+    WS(weakSelf)
+    [STNetUtil post:&lt;#URLSTRING#&gt; content:parameters.mj_JSONString success:^(RespondModel *respondModel) {
+        if([respondModel.status isEqualToString:STATU_SUCCESS]){
+            [weakSelf appendDatas:respondModel];
+            weakSelf.requestPage ++;
+        }else{
+            weakSelf.rac_failMsg = respondModel.msg;
+        }
+    } failure:^(int errorCode) {
+        weakSelf.rac_failMsg = [NSString stringWithFormat:MSG_ERROR,errorCode];
+    }];
+}
+
+- (void)appendDatas:(RespondModel *)respondModel {
+    id data = respondModel.data;
+    NSMutableArray *records = [&lt;#MODEL#&gt; mj_objectArrayWithKeyValuesArray:[data objectForKey:@"records"]];
+    if (self.headerRefresh) {
+        self.datas = records;
+    }else {
+        if (IS_NS_COLLECTION_EMPTY(records)) {
+            self.rac_noMoreData = true;
+        }else {
+            NSMutableArray *array = [NSMutableArray arrayWithArray:self.datas];
+            [array addObjectsFromArray:records];
+            self.datas = array;
+        }
     }
-} failure:^(int errorCode) {
-    weakSelf.rac_failMsg = [NSString stringWithFormat:MSG_ERROR,errorCode];
-}];</string>
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>70FA6C2D-6505-4B41-8063-ACCAA6E2948C</string>
 	<key>IDECodeSnippetLanguage</key>

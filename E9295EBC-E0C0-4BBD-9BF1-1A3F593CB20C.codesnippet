@@ -9,13 +9,13 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@protocol &lt;#delegateName#&gt;&lt;NSObject&gt;
+	<string>@protocol &lt;#delegateName#&gt;Delegate &lt;NSObject&gt;
 
 - (void)&lt;#method#&gt;:(&lt;#data#&gt; *)&lt;#data#&gt;;
 
 @end
 
-@property(nonatomic, weak)id&lt;GoodsAddressListDelegate&gt; delegate;
+@property(nonatomic, weak)id&lt;&lt;#delegateName#&gt;Delegate&gt; delegate;
 if ([self.delegate respondsToSelector:@selector(&lt;#method#&gt;:)]) {
     [self.delegate &lt;#method#&gt;:&lt;#data#&gt;];
     }
