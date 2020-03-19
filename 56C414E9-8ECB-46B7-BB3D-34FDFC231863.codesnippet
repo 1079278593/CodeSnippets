@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocSDWebImageCache</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>-(NSString *)getSDWebImgeaCacheSize {
+    NSString * path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject;
+    NSFileManager * manager = [NSFileManager defaultManager];
+    CGFloat size = 0;
+    //首先判断是否存在缓存文件
+    if ([manager fileExistsAtPath:path]) {
+        NSArray * childFile = [manager subpathsAtPath:path];
+        for (NSString * fileName in childFile) {
+            //缓存文件绝对路径
+            NSString * absolutPath = [path stringByAppendingPathComponent:fileName];
+            size = size + [manager attributesOfItemAtPath:absolutPath error:nil].fileSize;
+        }
+        //计算sdwebimage的缓存和系统缓存总和
+        size = size + [[SDWebImageManager sharedManager].imageCache getSize];
+    }
+    return [NSString stringWithFormat:@"%.2fM",size / 1024 / 1024];
+}
+
+-(void)cleanSDWebImgeaCache {
+    //获取缓存路径
+    NSString * path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject;
+    NSFileManager * manager = [NSFileManager defaultManager];
+    //判断是否存在缓存文件
+    if ([manager fileExistsAtPath:path]) {
+        NSArray * childFile = [manager subpathsAtPath:path];
+        //逐个删除缓存文件
+        for (NSString *fileName in childFile) {
+            NSString * absolutPat = [path stringByAppendingPathComponent:fileName];
+            [manager removeItemAtPath:absolutPat error:nil];
+        }
+        //删除sdwebimage的缓存
+        [[SDWebImageManager sharedManager].imageCache clearMemory];
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>56C414E9-8ECB-46B7-BB3D-34FDFC231863</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>SDWebImage的缓存：显示、删除</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

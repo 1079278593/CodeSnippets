@@ -3,28 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocshadow</string>
+	<string>octelphonecall</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>&lt;#view#&gt;.backgroundColor = [UIColor white];
-&lt;#view#&gt;.layer.shadowOffset = CGSizeMake(0, 1);
-&lt;#view#&gt;.layer.shadowRadius = 4;
-&lt;#view#&gt;.layer.shadowOpacity = 0.1;
-&lt;#view#&gt;.layer.shadowColor = c10.CGColor;</string>
+	<string>NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"&lt;#phone number#&gt;"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>CC254167-DA97-4D9F-84FD-DC347386C0A2</string>
+	<string>9B1411D8-9EDC-4820-BF78-2C3ABB0C3C67</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>增加阴影</string>
+	<string>拨打电话弹框</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
