@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocscrollviewoffset</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>CGFloat willOffsetDistance = self.collectionView.contentOffset.y - self.noNeedChangeDistance;
+    if (willOffsetDistance &lt; 0) {
+        willOffsetDistance = MAX(0, willOffsetDistance);
+    }else {
+        willOffsetDistance = MIN(willOffsetDistance, self.needChangeDistance);
+    }
+    
+    CGRect newFrame = self.bgView.frame;
+    newFrame.origin.y = (0 - willOffsetDistance);
+    self.bgView.frame = newFrame;</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5A182ECF-E2AF-458E-A672-22BB36BAEDE8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>一个view跟随继承与ScrollView的子类滑动偏移</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

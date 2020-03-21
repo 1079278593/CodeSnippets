@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>octabbar</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+/*修改高度会导致第一次pop某个controller时:
+ 1. tabBar会等到这个controller完全出现才消失，第二次进入则不会。
+ 2. selectedIndex变化后，会重复1的问题。
+ 3. 如果没有必要，尽量不改高度，用下面的方法自定义tabBar的view。
+     */
+    CGRect frame = self.tabBar.frame;
+    frame.size.height = &lt;#TabbarHeight#&gt;;
+    frame.origin.y = self.view.frame.size.height - frame.size.height;
+    self.tabBar.frame = frame;
+    //如果不是自定义view，将下面两句注释看看效果
+    self.tabBar.backgroundColor = UIColor.whiteColor;
+    self.tabBar.barStyle = UIBarStyleBlack;
+
+    static dispatch_once_t onceToken;
+        dispatch_once(&amp;onceToken, ^{
+            [self initView];
+    });
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>55BD8AA0-CB89-4A54-B3B6-A27742B3AF64</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>自定义tabbar</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
