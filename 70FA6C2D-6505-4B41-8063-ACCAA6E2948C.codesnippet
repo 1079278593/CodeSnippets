@@ -11,7 +11,7 @@
 	<key>IDECodeSnippetContents</key>
 	<string>#import "STNetUtil.h"
 
-- (void)requestOrdersList {
+- (void)&lt;#method#&gt; {
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc]init];
     self.requestPage = self.headerRefresh ? 1 : self.requestPage;
     parameters[@"key"] = @(2);

@@ -3,28 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocshadow</string>
+	<string>ocURLChinese</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>&lt;#view#&gt;.backgroundColor = [UIColor whiteColor];
-&lt;#view#&gt;.layer.shadowOffset = CGSizeMake(0, 1);
-&lt;#view#&gt;.layer.shadowRadius = 4;
-&lt;#view#&gt;.layer.shadowOpacity = 0.1;
-&lt;#view#&gt;.layer.shadowColor = c10.CGColor;</string>
+	<string>NSString *&lt;#newPath#&gt; = [&lt;#path#&gt; stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>CC254167-DA97-4D9F-84FD-DC347386C0A2</string>
+	<string>8ABC1348-67E7-4838-8B11-AD7814548347</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>增加阴影</string>
+	<string>链接包含中文字符时的处理</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

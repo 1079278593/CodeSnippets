@@ -13,7 +13,7 @@
     if (_&lt;#label#&gt; == nil) {
         _&lt;#label#&gt; = [[UILabel alloc]init];
         _&lt;#label#&gt;.textAlignment = NSTextAlignmentLeft;
-        _&lt;#label#&gt;.font = [UIFont fontWithName:FONT_SEMIBOLD size:STFont(10)];
+        _&lt;#label#&gt;.font = [UIFont fontWithName:FONT_SEMIBOLD size:STFont(&lt;#fontSize#&gt;)];
         _&lt;#label#&gt;.textColor = c10;
     }
     return _&lt;#label#&gt;;

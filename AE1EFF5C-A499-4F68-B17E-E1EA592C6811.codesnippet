@@ -17,6 +17,19 @@
         @strongify(self);
 
     }];
+    
+    [[RACObserve(self.viewModel, datas) skip:1] subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        [self.collectionView reloadData];
+        [self.collectionView.mj_header endRefreshing];
+        [self.collectionView.mj_footer endRefreshing];
+    }];
+    
+    [[RACObserve(self.viewModel, noMoreData) skip:1] subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        [self.collectionView.mj_header endRefreshing];
+        [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+    }];
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>AE1EFF5C-A499-4F68-B17E-E1EA592C6811</string>

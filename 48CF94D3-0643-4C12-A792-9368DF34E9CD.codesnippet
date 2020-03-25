@@ -26,6 +26,10 @@
     return self;
 }
 
+- (void)refreshCell:(&lt;#model#&gt; *)model {
+    
+}
+
 - (void)initView {
     
 }
