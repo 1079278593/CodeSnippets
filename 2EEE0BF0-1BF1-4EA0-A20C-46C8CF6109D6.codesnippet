@@ -3,32 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocsingleton</string>
+	<string>ocSandBox</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>
-static &lt;#class#&gt; *manager = nil;
-+ (instancetype)shareInstance{
-    static dispatch_once_t onceToken;
-    dispatch_once(&amp;onceToken, ^{
-        manager = [[&lt;#class#&gt; alloc]init];
-    });
-    return manager;
-}</string>
+	<string>/**
+ Documents：应用中用户数据可以放在这里，iTunes备份和恢复的时候会包括此目录
+ tmp：存放临时文件，iTunes不会备份和恢复此目录，此目录下文件可能会在应用退出后删除
+ Library/Caches：存放缓存文件，iTunes不会备份此目录，此目录下文件不会在应用退出删除
+ */</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>5149F220-192B-4EAB-904D-7E0D45FB5E3A</string>
+	<string>2EEE0BF0-1BF1-4EA0-A20C-46C8CF6109D6</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>单例</string>
+	<string>沙盒目录说明</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

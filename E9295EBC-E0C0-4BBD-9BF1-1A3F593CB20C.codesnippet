@@ -16,8 +16,8 @@
 @end
 
 @property(nonatomic, weak)id&lt;&lt;#delegateName#&gt;Delegate&gt; delegate;
-if ([self.delegate respondsToSelector:@selector(&lt;#method#&gt;:)]) {
-    [self.delegate &lt;#method#&gt;:&lt;#data#&gt;];
+if ([self.delegate respondsToSelector:@selector(&lt;#method#&gt;)]) {
+    [self.delegate &lt;#method#&gt;];
     }
 </string>
 	<key>IDECodeSnippetIdentifier</key>
