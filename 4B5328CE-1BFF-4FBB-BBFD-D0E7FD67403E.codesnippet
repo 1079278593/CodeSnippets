@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocCellSelfSizing</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/**
+ 自适应高度会出现布局约束冲突：提示如下
+( ...
+ ...
+ "&lt;MASLayoutConstraint:0x6180000b2780 UIImageView:0x7fef1df9e910.height == 308.966&gt;",
+ "&lt;NSAutoresizingMaskLayoutConstraint:0x618000285eb0 UIView:0x7fef1df9a2f0.height == 496.667&gt;"
+ )
+ 
+ Will attempt to recover by breaking constraint
+ &lt;MASLayoutConstraint:0x6180000b2780 UIImageView:0x7fef1df9e910.height == 308.966&gt;
+ 
+ 解决方法：找到最后那行&lt;MASLayoutConstraint:0x6180000b2780 UIImageView:0x7fef1df9e910.height == 308.966&gt;，在代码处增加优先级
+ 如下(在所有调用的f地方都要给出优先级)
+ [_imageView mas_updateConstraints:^(MASConstraintMaker *make) {
+     make.height.equalTo(@STHeight(280)).priority(900);
+ }];
+ 
+ 而且：如果estimatedItemSize的值过小，也有可能依然打印警告
+ */
+
+- (UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes {
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    CGSize size = [self.contentView systemLayoutSizeFittingSize: layoutAttributes.size];
+    CGRect cellFrame = layoutAttributes.frame;
+    cellFrame.size.height= size.height;
+    layoutAttributes.frame= cellFrame;
+    return layoutAttributes;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4B5328CE-1BFF-4FBB-BBFD-D0E7FD67403E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UICollectionViewCell自适应高度</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

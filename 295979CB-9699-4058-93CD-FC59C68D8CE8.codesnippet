@@ -9,7 +9,7 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>&lt;UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout&gt;
+	<string>&lt;UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout&gt;
 @property(nonatomic, strong)UICollectionView *collectionView;
 
 #pragma mark - request
