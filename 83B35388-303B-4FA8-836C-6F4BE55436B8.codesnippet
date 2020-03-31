@@ -3,29 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocsingleton</string>
+	<string>ocversion</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>
-static &lt;#class#&gt; *manager = nil;
-+ (instancetype)shareInstance {
-    static dispatch_once_t onceToken;
-    dispatch_once(&amp;onceToken, ^{
-        manager = [[&lt;#class#&gt; alloc]init];
-    });
-    return manager;
-}</string>
+	<string>NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
+    NSString *currentVersion = [infoDict objectForKey:@"CFBundleShortVersionString"];//版本号
+    NSString *currentBuild = [infoDict objectForKey:@"CFBundleVersion"];//build号</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>5149F220-192B-4EAB-904D-7E0D45FB5E3A</string>
+	<string>83B35388-303B-4FA8-836C-6F4BE55436B8</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>单例</string>
+	<string>版本号</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
