@@ -9,12 +9,12 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>UIButton *Button = [UIButton buttonWithType:UIButtonTypeCustom];
-[Button setTitle:@"按钮" forState:UIControlStateNormal];
-[Button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-[Button addTarget:self action:@selector(loadBtnEvent:) forControlEvents:UIControlEventTouchUpInside];
-[self.view addSubview:Button];
-[Button mas_makeConstraints:^(MASConstraintMaker *make) {
+	<string>UIButton *&lt;#Button#&gt; = [UIButton buttonWithType:UIButtonTypeCustom];
+[&lt;#Button#&gt; setTitle:@"按钮" forState:UIControlStateNormal];
+[&lt;#Button#&gt; setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+[&lt;#Button#&gt; addTarget:self action:@selector(&lt;#Button#&gt;Event:) forControlEvents:UIControlEventTouchUpInside];
+[self.view addSubview:&lt;#Button#&gt;];
+[&lt;#Button#&gt; mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.bottom.equalTo(self);
         make.width.height.equalTo(@50);
     }];</string>
