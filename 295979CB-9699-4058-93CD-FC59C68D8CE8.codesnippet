@@ -66,7 +66,7 @@
         _collectionView.backgroundColor = [UIColor clearColor];
         _collectionView.showsVerticalScrollIndicator = false;
         _collectionView.alwaysBounceVertical = true;//数据少时也能滚动
-        _collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
+//        _collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
         [_collectionView registerClass:[&lt;#name#&gt; class] forCellWithReuseIdentifier:NSStringFromClass([&lt;#name#&gt; class])];
         [_collectionView registerClass:[&lt;#name#&gt; class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([&lt;#name#&gt; class])];
         

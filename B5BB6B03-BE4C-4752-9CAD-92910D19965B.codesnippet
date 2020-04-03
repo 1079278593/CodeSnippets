@@ -16,8 +16,8 @@
 }
 
 + (NSDictionary *)mj_replacedKeyFromPropertyName{
-    return @{@"&lt;#name_id#&gt;": @"id"};
-}
+    return @{@"&lt;#属性名称#&gt;": @"&lt;#id等系统保留字段#&gt;"};
+}//前面是属性名称，后面是后台字段（比如：id、operator）
 
 NSMutableArray *arr = [Model mj_objectArrayWithKeyValuesArray:@"dictionary的字符串解析"];</string>
 	<key>IDECodeSnippetIdentifier</key>
