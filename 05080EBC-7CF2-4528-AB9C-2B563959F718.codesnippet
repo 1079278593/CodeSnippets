@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocdraw</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/**
+绘制方式：drawInContext、renderInContext、drawViewHierarchyInRect、CGContextDrawImage()
+ -drawInContext 或是-drawLayer:inContext 运行在CPU，结果传给GPU
+*/
+
+//1.根据image绘制
+                //                UIImage *image = nil;
+//                UIImage *image = [[WorkManager sharedWorkManager].exportingWork workSnapShootAtTime:progressTime];
+//                if (self.delegate) {
+//                    [self.delegate writeImage:&amp;image withTime:progressTime];
+//                }
+//                [image drawInRect:CGRectMake(0, 0, _viewSize.width, _viewSize.height)]; //如果image为nil？
+                //2.从presentationLayer绘制
+                [self.recorderView.layer.presentationLayer renderInContext:self.bitmapContext];
+                //3.从view绘制
+//                [((SceneView *)self.recorderView) previewWork:progressTime];
+//                [self.recorderView drawViewHierarchyInRect:CGRectMake(0, 0, _viewSize.width, _viewSize.height) afterScreenUpdates:NO];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>05080EBC-7CF2-4528-AB9C-2B563959F718</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>多种绘制方式</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
