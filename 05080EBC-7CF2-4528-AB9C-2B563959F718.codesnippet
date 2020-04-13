@@ -11,7 +11,13 @@
 	<key>IDECodeSnippetContents</key>
 	<string>/**
 绘制方式：drawInContext、renderInContext、drawViewHierarchyInRect、CGContextDrawImage()
+ 
+ https://blog.csdn.net/yangyangzhang1990/article/details/52452707
  -drawInContext 或是-drawLayer:inContext 运行在CPU，结果传给GPU
+ 其实 CGContextRef 的创建过程 就是CPU的工作过程 
+ CPU 将view变成了bitmap 完成自己工作，剩下就是GPU的工作了。
+ GPU处理的单位是Texture 。基本上我们控制GPU都是通过OpenGL来完成的，但是从bitmap到Texture之间需要一座桥梁，Core Animation正好充当了这个角色
+ OpenGL ES 做GPU渲染，CoreGraphics做CPU渲染。
 */
 
 //1.根据image绘制
