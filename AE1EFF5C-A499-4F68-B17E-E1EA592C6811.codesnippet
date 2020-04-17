@@ -23,12 +23,18 @@
         [self.collectionView reloadData];
         [self.collectionView.mj_header endRefreshing];
         [self.collectionView.mj_footer endRefreshing];
+//        self.noDataView.hidden = !(self.viewModel.datas.count == 0);
     }];
     
     [[RACObserve(self.viewModel, noMoreData) skip:1] subscribeNext:^(id  _Nullable x) {
         @strongify(self);
-        [self.collectionView.mj_header endRefreshing];
         [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+    }];
+    
+    [[RACObserve(self.viewModel, failMsg) skip:1] subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        [self.collectionView.mj_header endRefreshing];
+        [self.collectionView.mj_footer endRefreshing];
     }];
 }</string>
 	<key>IDECodeSnippetIdentifier</key>

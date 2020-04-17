@@ -37,13 +37,14 @@
     if (self.headerRefresh) {
         self.datas = records;
     }else {
-        if (IS_NS_COLLECTION_EMPTY(records)) {
-            self.rac_noMoreData = true;
-        }else {
+        if (!IS_NS_COLLECTION_EMPTY(records)) {
             NSMutableArray *array = [NSMutableArray arrayWithArray:self.datas];
             [array addObjectsFromArray:records];
             self.datas = array;
         }
+    }
+    if ([[data objectForKey:@"pages"] isEqual:[data objectForKey:@"current"]] || [[data objectForKey:@"pages"] intValue] == 0) {
+        self.noMoreData = true;
     }
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
