@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>swblock</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//无参无返回值
+typealias funcBlock = () -&gt; () //或者 () -&gt; Void
+//返回值是String
+typealias funcBlockA = (Int,Int) -&gt; String
+//返回值是一个函数指针，入参为String
+typealias funcBlockB = (Int,Int) -&gt; (String)-&gt;()
+//返回值是一个函数指针，入参为String 返回值也是String
+typealias funcBlockC = (Int,Int) -&gt; (String)-&gt;String</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D4CDD925-9B46-4C64-AD09-D95657E02C64</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>swift block</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

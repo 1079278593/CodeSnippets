@@ -38,7 +38,9 @@
 快速打开某一个文件
 
 删除一行、复制一行快捷键创建
-https://www.jianshu.com/p/cc6e13365b7e</string>
+http://www.cppcns.com/ruanjian/ios/225257.html
+Duplicate Current Line 值为： selectLine:, copy:, moveLeft:, moveToEndOfLine:, insertNewline:, paste:, deleteBackward:
+Insert Line Under 值为： moveToEndOfLine:, insertNewline:</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>DE673142-75E1-4132-A3FC-64B96701511E</string>
 	<key>IDECodeSnippetLanguage</key>
