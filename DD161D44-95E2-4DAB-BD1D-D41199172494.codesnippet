@@ -42,6 +42,6 @@ swift 中一个类可以嵌套定义另外类，新增加的类只能被当前�
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>
