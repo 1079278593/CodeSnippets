@@ -37,6 +37,8 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+//    NSString *identifier = [NSString stringWithFormat:@"id_%ld",(long)indexPath.row];
+//    [self.collectionView registerClass:[LottieAnimationsCell class] forCellWithReuseIdentifier:identifier];
     &lt;#name#&gt; *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([&lt;#name#&gt; class]) forIndexPath:indexPath];
     return cell;
 }

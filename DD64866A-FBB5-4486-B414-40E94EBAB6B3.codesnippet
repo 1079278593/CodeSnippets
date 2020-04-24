@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>swlabel</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>&lt;#label#&gt;.textColor = UIColor.white
+&lt;#label#&gt;.textAlignment = .left
+&lt;#label#&gt;.numberOfLines = 0
+&lt;#label#&gt;.lineBreakMode = .byCharWrapping
+&lt;#label#&gt;.font = UIFont.systemFont(ofSize: 18)
+self.addSubview(&lt;#label#&gt;)
+&lt;#label#&gt;.snp.makeConstraints { (make) in
+    make.left.equalTo(self).offset(5)
+    make.right.equalTo(self).offset(-5)
+    make.centerY.equalTo(self)
+    make.height.equalTo(110)
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DD64866A-FBB5-4486-B414-40E94EBAB6B3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>My Code Snippet</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
