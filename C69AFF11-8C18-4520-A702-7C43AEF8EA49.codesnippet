@@ -3,28 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>swdelegate</string>
+	<string>swmark</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@objc protocol &lt;#Name#&gt;Delegate {
-    func &lt;#method#&gt;(&lt;#varName#&gt;: &lt;#type#&gt;)
-}
-
-weak var delegate: &lt;#Name#&gt;Delegate?</string>
+	<string>// MARK: - &lt; &lt;#expression#&gt; &gt;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>59BC9C69-053E-4B34-A1BC-1E515310BA16</string>
+	<string>C69AFF11-8C18-4520-A702-7C43AEF8EA49</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>swift delegate</string>
+	<string>swift mark</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

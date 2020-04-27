@@ -3,35 +3,35 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>swlabel</string>
+	<string>swbutton</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>&lt;#label#&gt;.textColor = UIColor.white
-&lt;#label#&gt;.textAlignment = .left
-&lt;#label#&gt;.numberOfLines = 0
-&lt;#label#&gt;.lineBreakMode = .byCharWrapping
-&lt;#label#&gt;.font = UIFont.systemFont(ofSize: 18)
-self.addSubview(&lt;#label#&gt;)
-&lt;#label#&gt;.snp.makeConstraints { (make) in
-    make.left.equalTo(self).offset(5)
-    make.right.equalTo(self).offset(-5)
-    make.centerY.equalTo(self)
-    make.height.equalTo(110)
+	<string>&lt;#button#&gt;.layer.cornerRadius = 8
+&lt;#button#&gt;.layer.masksToBounds = true
+&lt;#button#&gt;.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+&lt;#button#&gt;.setTitleColor(UIColor.white, for: .normal)
+&lt;#button#&gt;.setBackgroundImage(UIImage(named: "&lt;#name#&gt;"), for: .normal)
+self.addSubview(&lt;#button#&gt;)
+&lt;#button#&gt;.snp.makeConstraints { (make) in
+    make.right.equalTo(self)
+    make.top.equalTo(self)
+    make.width.equalTo(120)
+    make.height.equalTo(45)
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>DD64866A-FBB5-4486-B414-40E94EBAB6B3</string>
+	<string>79A80719-AA7D-4492-AAF6-3F827D2D2361</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>swift label</string>
+	<string>swift button</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
