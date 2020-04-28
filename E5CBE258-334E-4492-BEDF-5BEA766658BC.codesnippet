@@ -9,12 +9,12 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>label = [[UILabel alloc]init];
-label.textAlignment = NSTextAlignmentLeft;
-label.font = [UIFont fontWithName:FONT_REGULAR size:STFont(16)];
-label.textColor = c10;
-[self addSubview:label];
-[label mas_makeConstraints:^(MASConstraintMaker *make) {
+	<string>&lt;#label#&gt; = [[UILabel alloc]init];
+&lt;#label#&gt;.textAlignment = NSTextAlignmentLeft;
+&lt;#label#&gt;.font = [UIFont fontWithName:FONT_REGULAR size:STFont(16)];
+&lt;#label#&gt;.textColor = c10;
+[self addSubview:&lt;#label#&gt;];
+[&lt;#label#&gt; mas_makeConstraints:^(MASConstraintMaker *make) {
     make.left.equalTo(self).offset(15);
     make.right.equalTo(self).offset(-15);
     make.top.equalTo(self);
