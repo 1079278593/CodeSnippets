@@ -3,13 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocURLChinese</string>
+	<string>ocChineseURL</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>NSString *&lt;#newPath#&gt; = [&lt;#path#&gt; stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];</string>
+	<string>//增加编码
+NSString *&lt;#newPath#&gt; = [&lt;#path#&gt; stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+//删除编码
+[&lt;#path#&gt; stringByRemovingPercentEncoding]</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>8ABC1348-67E7-4838-8B11-AD7814548347</string>
 	<key>IDECodeSnippetLanguage</key>
