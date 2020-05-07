@@ -9,12 +9,15 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>private func getRootStep() -&gt; [TrainingRootStep]? {
-        if let path = Bundle.main.path(forResource: "TrainingStep", ofType: "plist"),
-            let dict = NSDictionary(contentsOfFile: path) {
-            let dictData = try? JSONSerialization.data(withJSONObject: dict, options: [])
-            let dictStr = String(data: dictData!, encoding: .utf8)
-            return [TrainingRootStep].deserialize(from: dictStr, designatedPath: "allStep") as? [TrainingRootStep]
+	<string>private func getCatalogueOptions() -&gt;[TrainingStepOptions]? {
+    if let path = Bundle.main.path(forResource: "Lexicon", ofType: "plist"),
+        let arr = NSArray(contentsOfFile: path) {
+            return [TrainingStepOptions].deserialize(from: arr) as? [TrainingStepOptions]
+            
+            //2. 多了一层
+//            let dictData = try? JSONSerialization.data(withJSONObject: arr, options: [])
+//            let dictStr = String(data: dictData!, encoding: .utf8)
+//            return [TrainingStepOptions].deserialize(from: dictStr) as? [TrainingStepOptions]
         }
         return nil
     }</string>
