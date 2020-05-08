@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>swtextfield</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>textfield.layer.borderWidth = 0.5
+textfield.placeholder = ""
+textfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 5))
+textfield.leftViewMode = .always
+textfield.clearButtonMode = .whileEditing
+textfield.font = UIFont.systemFont(ofSize: 15)
+textfield.addTarget(self, action: #selector(textfieldEditingChanged(textfield:)), for: .editingChanged)
+self.addSubview(textfield)
+textfield.snp.makeConstraints { (make) in
+    make.left.equalTo(checkStatusLabel)
+    make.top.equalTo(checkCell.snp.bottom).offset(20)
+    make.right.equalTo(checkStatusLabel).offset(-50)
+    make.height.equalTo(45)
+}
+
+@objc func textfieldEditingChanged(textfield: UITextField) {
+    
+    if textfield.markedTextRange == nil {//过滤拼音的变化
+        
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>68F16C66-CCE4-4C6B-B6B2-F77F27566703</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>swift textfield</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
