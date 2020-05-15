@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>octableview</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>-(void)initTableView{
+    _tableView = [[UITableView alloc]initWithFrame:CGRectZero];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.sectionHeaderHeight = STHeight(85);//这种方式+group,会导致header从1开始加载
+    _tableView.rowHeight = STHeight(175);
+    _tableView.backgroundColor = cbg2;
+    [_tableView useDefaultProperty];
+    [_tableView registerClass:[&lt;#cell#&gt; class] forCellReuseIdentifier:NSStringFromClass([&lt;#cell#&gt; class])];
+    [_tableView registerClass:[&lt;#headerView#&gt; class] forHeaderFooterViewReuseIdentifier:NSStringFromClass([&lt;#headerView#&gt; class])];
+    
+    [self addSubview:_tableView];
+}
+
+//-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+//    return &lt;#data#&gt;.count;
+//}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return &lt;#data#&gt;.count;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    &lt;#headerView#&gt; *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([&lt;#headerView#&gt; class])];
+    return view;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    &lt;#cell#&gt; *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([&lt;#cell#&gt; class])];
+    return cell;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8B994DCA-568C-4BCA-AD9F-B5C5EAD0F951</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>table init</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
