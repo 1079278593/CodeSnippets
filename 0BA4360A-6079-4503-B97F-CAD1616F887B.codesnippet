@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocruntimelist</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// 打印成员变量列表
+- (void)printIvarList {
+    unsigned int count;
+    
+    Ivar *ivarList = class_copyIvarList([self class], &amp;count);
+    for (unsigned int i = 0; i &lt; count; i++) {
+        Ivar myIvar = ivarList[i];
+        const char *ivarName = ivar_getName(myIvar);
+        NSLog(@"ivar(%d) : %@", i, [NSString stringWithUTF8String:ivarName]);
+    }
+    
+    free(ivarList);
+}
+
+// 打印属性列表
+- (void)printPropertyList {
+    unsigned int count;
+    
+    objc_property_t *propertyList = class_copyPropertyList([self class], &amp;count);
+    for (unsigned int i = 0; i &lt; count; i++) {
+        const char *propertyName = property_getName(propertyList[i]);
+        NSLog(@"propertyName(%d) : %@", i, [NSString stringWithUTF8String:propertyName]);
+    }
+    
+    free(propertyList);
+}
+
+// 打印方法列表
+- (void)printMethodList {
+    unsigned int count;
+    
+    Method *methodList = class_copyMethodList([self class], &amp;count);
+    for (unsigned int i = 0; i &lt; count; i++) {
+        Method method = methodList[i];
+        NSLog(@"method(%d) : %@", i, NSStringFromSelector(method_getName(method)));
+    }
+    
+    free(methodList);
+}
+
+// 打印协议列表
+- (void)printProtocolList {
+    unsigned int count;
+    
+    __unsafe_unretained Protocol **protocolList = class_copyProtocolList([self class], &amp;count);
+    for (unsigned int i = 0; i &lt; count; i++) {
+        Protocol *myProtocal = protocolList[i];
+        const char *protocolName = protocol_getName(myProtocal);
+        NSLog(@"protocol(%d) : %@", i, [NSString stringWithUTF8String:protocolName]);
+    }
+    
+    free(protocolList);
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0BA4360A-6079-4503-B97F-CAD1616F887B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Runtime获取：变量、属性、方法、协议</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
