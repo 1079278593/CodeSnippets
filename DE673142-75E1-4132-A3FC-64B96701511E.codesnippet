@@ -39,6 +39,12 @@
 
 删除一行、复制一行快捷键创建
 http://www.cppcns.com/ruanjian/ios/225257.html
+修改快捷键的配置文件权限，打开终端输入如下两条命令:
+sudo chmod 666 /Applications/Xcode.app/Contents/Frameworks/IDEKit.framework/Resources/IDETextKeyBindingSet.plist
+sudo chmod 777 /Applications/Xcode.app/Contents/Frameworks/IDEKit.framework/Resources/
+
+打开 plist 文件
+open /Applications/Xcode.app/Contents/Frameworks/IDEKit.framework/Resources/IDETextKeyBindingSet.plist                                                
 Duplicate Current Line 值为： selectLine:, copy:, moveLeft:, moveToEndOfLine:, insertNewline:, paste:, deleteBackward:
 Insert Line Under 值为： moveToEndOfLine:, insertNewline:</string>
 	<key>IDECodeSnippetIdentifier</key>

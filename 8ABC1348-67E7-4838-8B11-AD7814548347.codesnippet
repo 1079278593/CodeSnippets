@@ -12,7 +12,16 @@
 	<string>//增加编码
 NSString *&lt;#newPath#&gt; = [&lt;#path#&gt; stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
 //删除编码
-[&lt;#path#&gt; stringByRemovingPercentEncoding]</string>
+[&lt;#path#&gt; stringByRemovingPercentEncoding]
+
+//下面未验证：
+有时候我们加载的url中出现了中文，需要我们手动转码，但是同时又要保证URL中的特殊字符保持不变，那么我们可以使用下面的方法（方法）
+- (NSURL *)url{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored"-Wdeprecated-declarations"
+    return [NSURL URLWithString:(NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)self, (CFStringRef)@"!$&amp;'()*+,-./:;=?@_~%#[]", NULL,kCFStringEncodingUTF8))];
+#pragma clang diagnostic pop
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>8ABC1348-67E7-4838-8B11-AD7814548347</string>
 	<key>IDECodeSnippetLanguage</key>
