@@ -46,7 +46,8 @@ sudo chmod 777 /Applications/Xcode.app/Contents/Frameworks/IDEKit.framework/Reso
 打开 plist 文件
 open /Applications/Xcode.app/Contents/Frameworks/IDEKit.framework/Resources/IDETextKeyBindingSet.plist                                                
 Duplicate Current Line 值为： selectLine:, copy:, moveLeft:, moveToEndOfLine:, insertNewline:, paste:, deleteBackward:
-Insert Line Under 值为： moveToEndOfLine:, insertNewline:</string>
+Insert Line Under 值为： moveToEndOfLine:, insertNewline:
+然后：重启xcode。在preferences 里找到 Key Bindings</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>DE673142-75E1-4132-A3FC-64B96701511E</string>
 	<key>IDECodeSnippetLanguage</key>
