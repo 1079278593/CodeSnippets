@@ -36,6 +36,10 @@
         [self.collectionView.mj_header endRefreshing];
         [self.collectionView.mj_footer endRefreshing];
     }];
+    
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:@"" object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        
+    }];
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>AE1EFF5C-A499-4F68-B17E-E1EA592C6811</string>

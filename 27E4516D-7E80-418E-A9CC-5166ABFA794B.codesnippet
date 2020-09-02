@@ -3,36 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocsingleton</string>
+	<string>ocstringcolor</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>
-static &lt;#class#&gt; *manager = nil;
-+ (instancetype)shareInstance {
-    static dispatch_once_t onceToken;
-    dispatch_once(&amp;onceToken, ^{
-        manager = [[&lt;#class#&gt; alloc]init];
-    });
-    return manager;
-}
+	<string>NSString *heightlightString = @"叫我第一名";
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:heightlightString];
+    [str addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(2, 3)];
 
-- (instancetype)init {
-    if(self == [super init]){
-        
-    }
-    return self;
-}</string>
+    label.attributedText = str;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>5149F220-192B-4EAB-904D-7E0D45FB5E3A</string>
+	<string>27E4516D-7E80-418E-A9CC-5166ABFA794B</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>单例</string>
+	<string>字符串显示不同的颜色</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

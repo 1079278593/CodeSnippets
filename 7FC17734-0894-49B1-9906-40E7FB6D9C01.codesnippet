@@ -3,39 +3,35 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocsingleton</string>
+	<string>octimer</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>
-static &lt;#class#&gt; *manager = nil;
-+ (instancetype)shareInstance {
-    static dispatch_once_t onceToken;
-    dispatch_once(&amp;onceToken, ^{
-        manager = [[&lt;#class#&gt; alloc]init];
-    });
-    return manager;
+	<string>@property(nonatomic, strong)NSTimer *timer;
+@property(nonatomic, assign)NSInteger countDown;
+- (void)startTimer {
+    self.countDown = 60;
+    [self.timer invalidate];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFire) userInfo:nil repeats:YES];
+    [self.timer fire];
 }
 
-- (instancetype)init {
-    if(self == [super init]){
-        
-    }
-    return self;
+- (void)timerFire {
+    
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>5149F220-192B-4EAB-904D-7E0D45FB5E3A</string>
+	<string>7FC17734-0894-49B1-9906-40E7FB6D9C01</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>单例</string>
+	<string>创建timer</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

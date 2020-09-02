@@ -37,6 +37,12 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    /**
+     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
+     if (cell == nil) {
+         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cellID"];
+     }
+     */
     &lt;#cell#&gt; *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([&lt;#cell#&gt; class])];
     return cell;
 }</string>

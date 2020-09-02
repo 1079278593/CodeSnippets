@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>ClassImplementation</string>
@@ -15,6 +17,8 @@
         _textView.delegate = self;
         _textView.textColor = [UIColor cyanColor];
 //        _textView.font = [UIFont systemFontOfSize:30];
+//        _textView.textContainer.lineFragmentPadding = 0;//去除左右边距
+//        _textView.textContainerInset = UIEdgeInsetsZero;//去除上下边距
         [self.view addSubview:_textView];
     }
     return _textView;
@@ -23,6 +27,8 @@
 	<string>3481C57E-3B0B-4744-83AD-3F67D4D766B0</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
 	<string>Get_UITextView</string>
 	<key>IDECodeSnippetUserSnippet</key>

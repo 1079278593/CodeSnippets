@@ -3,36 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocsingleton</string>
+	<string>ocdispatchmain</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>
-static &lt;#class#&gt; *manager = nil;
-+ (instancetype)shareInstance {
-    static dispatch_once_t onceToken;
-    dispatch_once(&amp;onceToken, ^{
-        manager = [[&lt;#class#&gt; alloc]init];
-    });
-    return manager;
-}
-
-- (instancetype)init {
-    if(self == [super init]){
+	<string>dispatch_async(dispatch_get_main_queue(), ^{
         
-    }
-    return self;
-}</string>
+});</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>5149F220-192B-4EAB-904D-7E0D45FB5E3A</string>
+	<string>8C7D7DE3-F179-4201-BBA0-23B594147259</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>单例</string>
+	<string>主线程</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
