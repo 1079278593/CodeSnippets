@@ -11,7 +11,7 @@
 	<key>IDECodeSnippetContents</key>
 	<string>&lt;#label#&gt; = [[UILabel alloc]init];
 &lt;#label#&gt;.textAlignment = NSTextAlignmentLeft;
-&lt;#label#&gt;.font = [UIFont fontWithName:FONT_REGULAR size:STFont(16)];
+&lt;#label#&gt;.font = [UIFont systemFontOfSize:&lt;#(CGFloat)#&gt;]
 &lt;#label#&gt;.textColor = c10;
 [self addSubview:&lt;#label#&gt;];
 [&lt;#label#&gt; mas_makeConstraints:^(MASConstraintMaker *make) {

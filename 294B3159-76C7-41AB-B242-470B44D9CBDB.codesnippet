@@ -10,11 +10,11 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>UIView *lineView = [[UIView alloc]init];
-    lineView.backgroundColor = cline;
+    lineView.backgroundColor = [UIColor colorWithHexString:@"#DADADA"];
     [self.contentView addSubview:lineView];
     [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(STWidth(15));
-        make.right.equalTo(self.contentView).offset(STWidth(-15));
+        make.left.equalTo(self.contentView).offset(15);
+        make.right.equalTo(self.contentView).offset(-15);
         make.bottom.equalTo(self.contentView).offset(-1);
         make.height.equalTo(@LineHeight);
     }];</string>

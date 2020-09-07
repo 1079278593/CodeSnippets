@@ -3,46 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>occellinit</string>
+	<string>ocstatusbarhidden</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@interface &lt;#cellName#&gt; ()
-
-
-
-@end
-
-@implementation &lt;#cellName#&gt;
-
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self initView];
-    }
-    return self;
-}
-- (void)refreshCellWithModel:(&lt;#model#&gt; *)model;
-- (void)refreshCellWithModel:(&lt;#model#&gt; *)model {
-    
-}
-
-- (void)initView {
-    
-}
-
-@end</string>
+	<string>- (BOOL)prefersStatusBarHidden {
+    return YES;
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>48CF94D3-0643-4C12-A792-9368DF34E9CD</string>
+	<string>0C6A80E9-BBF7-44F2-84E3-5506F2C7004B</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>cell init</string>
+	<string>隐藏statusBar</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

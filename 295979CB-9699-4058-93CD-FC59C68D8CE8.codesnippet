@@ -36,6 +36,10 @@
     return CGSizeMake(70, 30);
 }
 
+//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+//    //不同的section不同行间距
+//}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 //    NSString *identifier = [NSString stringWithFormat:@"id_%ld",(long)indexPath.row];
 //    [self.collectionView registerClass:[LottieAnimationsCell class] forCellWithReuseIdentifier:identifier];
@@ -44,6 +48,7 @@
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+//    UICollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
     &lt;#name#&gt; *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([&lt;#name#&gt; class]) forIndexPath:indexPath];
     return header;
 }
@@ -83,7 +88,23 @@
         
     }
     return _collectionView;
-}</string>
+}
+
+/**自动布局：
+ 1. UICollectionViewFlowLayout *layout; 
+ layout.estimatedItemSize = CGSizeMake(100, 30);
+ 
+ 2. 在cell内实现下面这个方法：
+ override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -&gt; UICollectionViewLayoutAttributes {
+         setNeedsLayout()
+         layoutIfNeeded()
+         let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
+         var newFrame = layoutAttributes.frame
+         newFrame.size.height = (textView.text?.isSpaceOrEmpty ?? true) ? 0 : ceil(size.height)
+         layoutAttributes.frame = newFrame
+         return layoutAttributes
+ }
+ */</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>295979CB-9699-4058-93CD-FC59C68D8CE8</string>
 	<key>IDECodeSnippetLanguage</key>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocmixbtn</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>self.&lt;#button#&gt; = [UIButton buttonWithType:UIButtonTypeCustom];
+    _&lt;#button#&gt;.titleLabel.font = [UIFont systemFontOfSize:12];
+    _&lt;#button#&gt;.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    [_&lt;#button#&gt; setTitle:@"在玩" forState:UIControlStateNormal];
+    [_&lt;#button#&gt; setTitleColor:[UIColor colorWithHexString:@"#7F7F7F"] forState:UIControlStateNormal];
+    [_&lt;#button#&gt; setImage:[UIImage imageNamed:@"playStatus_stranger"] forState:UIControlStateNormal];
+    [_&lt;#button#&gt; setImage:[UIImage imageNamed:@"playStatus_friend"] forState:UIControlStateSelected];
+    [_&lt;#button#&gt; imageLayout:ImageLayoutLeft centerPadding:4.5];
+    [self.contentView addSubview:_&lt;#button#&gt;];
+    [_&lt;#button#&gt; mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.nextImgView.mas_left).offset(-10);
+        make.top.equalTo(self.contentView).offset(20);
+        make.width.equalTo(@65);
+        make.height.equalTo(@12);
+    }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>04B732D2-6A57-450F-81C1-503D59B06537</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>图文按钮</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
