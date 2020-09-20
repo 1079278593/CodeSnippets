@@ -49,7 +49,7 @@ _containerView = [[UIView alloc]init];
 }];
     
 [_containerView mas_updateConstraints:^(MASConstraintMaker *make) {
-    make.bottom.equalTo(endView);
+    make.bottom.equalTo(endView);//没有offset(10)可能有问题
 }];</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>AB797A30-75DA-4D39-AE17-DE8C548CFC36</string>

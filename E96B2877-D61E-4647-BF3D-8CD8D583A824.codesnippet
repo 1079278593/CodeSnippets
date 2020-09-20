@@ -23,7 +23,9 @@
     }
     return self;
 }
+#pragma mark - &lt; public &gt;
 
+#pragma mark - &lt; init view &gt;
 - (void)initView {
     
 }

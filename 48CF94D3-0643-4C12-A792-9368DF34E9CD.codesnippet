@@ -29,7 +29,12 @@
 - (void)refreshCellWithModel:(&lt;#model#&gt; *)model {
     
 }
-
+/**
+ - (void)setSelected:(BOOL)selected {
+     [super setSelected:selected];
+     self.contentView.backgroundColor = selected ? [UIColor colorWithHexString:@"#2563A7"] : [UIColor clearColor];
+ }
+ */
 - (void)initView {
     
 }

@@ -3,29 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocbreakline</string>
+	<string>ocfixme</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>UIView *lineView = [[UIView alloc]init];
-    lineView.backgroundColor = [UIColor colorWithHexString:@"#DADADA"];
-    [self.contentView addSubview:lineView];
-    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(15);
-        make.right.equalTo(self.contentView).offset(-15);
-        make.bottom.equalTo(self.contentView).offset(-1);
-        make.height.equalTo(@0.34);
-    }];</string>
+	<string>//FIXME:::
+
+//TODO:</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>294B3159-76C7-41AB-B242-470B44D9CBDB</string>
+	<string>F6917334-0E9D-4F13-B970-1C98CC30B3B9</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>OC分割线</string>
+	<string>待完善提示</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

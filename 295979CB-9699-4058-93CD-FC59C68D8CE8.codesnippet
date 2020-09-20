@@ -104,6 +104,15 @@
          layoutAttributes.frame = newFrame
          return layoutAttributes
  }
+ - (UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes {
+     [self setNeedsLayout];
+     [self layoutIfNeeded];
+     CGSize size = [self.contentView systemLayoutSizeFittingSize:layoutAttributes.size];
+     CGRect newFrame = layoutAttributes.frame;
+     newFrame.size.height = _textLabel.height;
+     layoutAttributes.frame = newFrame;
+     return layoutAttributes;
+ }
  */</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>295979CB-9699-4058-93CD-FC59C68D8CE8</string>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocrequest</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:0];
+parameters[@"&lt;#para#&gt;"] = &lt;#para#&gt;;
+NSString *url = [&lt;#BaseUrl#&gt; stringByAppendingString:@"&lt;#url#&gt;"];
+
+    WS(weakSelf)
+[YLQHttpClient &lt;#getWithURL#&gt;:url params:parameters success:^(id _Nonnull responsObj) {
+        if ([responsObj[@"success"] boolValue]) {
+            id response = responsObj[@"response"];
+            TaskListModel *taskListModel = [TaskListModel mj_objectWithKeyValues:response];
+            weakSelf.datas = taskListModel;
+        }else{
+            weakSelf.failMsg = responsObj[@"message"];
+        }
+    } failure:^(NSError * _Nonnull error) {
+        weakSelf.failMsg = [NSString stringWithFormat:@"网络异常：description：%@",error.description];
+    }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>44AEC1C5-6682-4FD4-80BE-D3BDAD01DA54</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>引力区request</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
