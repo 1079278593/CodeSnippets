@@ -3,40 +3,31 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>octimer</string>
+	<string>ocbundle</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property(nonatomic, strong)NSTimer *timer;
-@property(nonatomic, assign)NSInteger countDown;
-- (void)startTimer {
-    self.countDown = 60;
-    [self.timer invalidate];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFire) userInfo:nil repeats:YES];
-    [self.timer fire];
-}
+	<string>NSString *path = [[NSBundle mainBundle]pathForResource:@"GIF" ofType:@"bundle"];
+NSBundle *bundle = [[NSBundle alloc]initWithPath:path];
+NSArray *gifs = [bundle pathsForResourcesOfType:@"" inDirectory:@""];
+[gifs[0] lastPathComponent];
+[path pathExtension];       //获取后缀
+[path lastPathComponent];   //获取文件名
 
-- (void)timerFire {
-    
-}
-
-//默认加入到当前runloop default mode
-[NSTimer scheduledTimerWithTimeInterval:2 repeats:NO block:^(NSTimer * _Nonnull timer) {
-    
-}];</string>
+self.datas = [GameGifEmojiModel mj_objectArrayWithFile:path];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>7FC17734-0894-49B1-9906-40E7FB6D9C01</string>
+	<string>74E60F6D-18BC-47E9-AC6A-0DD22A7F164F</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>创建timer</string>
+	<string>bundle资源</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

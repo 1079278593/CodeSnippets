@@ -10,7 +10,7 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>&lt;#button#&gt; = [UIButton buttonWithType:UIButtonTypeCustom];
-&lt;#button#&gt;.enabled = false;
+&lt;#button#&gt;.userInteractionEnabled = false;
 &lt;#button#&gt;.titleLabel.font = [UIFont systemFontOfSize:10];
 &lt;#button#&gt;.titleLabel.numberOfLines = 0;
 &lt;#button#&gt;.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;

@@ -9,13 +9,13 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>+ (NSDictionary *)mj_objectClassInArray{
+	<string>+ (NSDictionary *)mj_objectClassInArray {
     return @{@"list1" : NSStringFromClass([&lt;#expression#&gt; class]),
             @"list2" : NSStringFromClass([&lt;#expression#&gt; class])
     };//前边，是属性数组的名字，后边就是类名
 }
 
-+ (NSDictionary *)mj_replacedKeyFromPropertyName{
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
     return @{@"&lt;#属性名称#&gt;": @"&lt;#id等系统保留字段#&gt;"};
 }//前面是属性名称，后面是后台字段（比如：id、operator）
 
