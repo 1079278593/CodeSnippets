@@ -23,7 +23,12 @@
     }
     return self;
 }
+
 #pragma mark - &lt; public &gt;
+- (void)refreshWith&lt;#model#&gt;:(&lt;#model#&gt; *)model;
+- (void)refreshWith&lt;#model#&gt;:(&lt;#model#&gt; *)model {
+    
+}
 
 #pragma mark - &lt; init view &gt;
 - (void)initView {

@@ -3,28 +3,31 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocbundle</string>
+	<string>ocstack</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>NSString *path = [[NSBundle mainBundle]pathForResource:@"GIF" ofType:@"bundle"];
-NSBundle *bundle = [[NSBundle alloc]initWithPath:path];
-NSArray *gifs = [bundle pathsForResourcesOfType:@"" inDirectory:@""];
-[gifs[0] lastPathComponent];
-[path pathExtension];       //获取后缀
-[path lastPathComponent];   //获取文件名
-
-self.datas = [GameGifEmojiModel mj_objectArrayWithFile:path];</string>
+	<string>- (UIStackView *)&lt;#name#&gt;Stack {
+    if (_&lt;#stack#&gt; == nil) {
+        _&lt;#stack#&gt; = [[UIStackView alloc]init];
+        _&lt;#stack#&gt;.axis = UILayoutConstraintAxisHorizontal;
+        _&lt;#stack#&gt;.distribution = UIStackViewDistributionFillEqually;
+        _&lt;#stack#&gt;.alignment = UIStackViewAlignmentFill;
+        _&lt;#stack#&gt;.spacing = 1; //两个view之间的间距
+        [self addSubview:_&lt;#stack#&gt;];
+    }
+    return _&lt;#stack#&gt;;
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>74E60F6D-18BC-47E9-AC6A-0DD22A7F164F</string>
+	<string>A319ECE6-37D5-410A-9D9F-92AC5FB272C3</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>bundle资源</string>
+	<string>stack布局</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocAnnotation</string>
+	<string>ocrightannotation</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//!&lt;</string>
+	<string>//!&lt; </string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>B6092FD1-8501-41DC-9DA8-C3B3217A2780</string>
 	<key>IDECodeSnippetLanguage</key>
