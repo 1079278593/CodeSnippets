@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>swtime</string>
+	<string>swoctime</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -11,7 +11,11 @@
 	<key>IDECodeSnippetContents</key>
 	<string>let startTime = CACurrentMediaTime()
 let inferenceTime = (CACurrentMediaTime() - startTime) * 1000
-print("duration: \(inferenceTime)");</string>
+print("duration: \(inferenceTime)");
+
+CFTimeInterval startTime = CACurrentMediaTime();
+CFTimeInterval inferenceTime = (CACurrentMediaTime() - startTime) * 1000;
+NSLog(@"duration: %d",inferenceTime);</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>3EA69DD4-B690-45D1-A4A9-A3C8FD15C461</string>
 	<key>IDECodeSnippetLanguage</key>

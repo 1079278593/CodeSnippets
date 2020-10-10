@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocPhotoPicker</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#import "TZImagePickerController.h"
+&lt;TZImagePickerControllerDelegate&gt;
+#pragma mark - &lt; Photo picker &gt;
+- (void)openPhotoPicker:(NSInteger)photoCount {
+    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:1 columnNumber:4 delegate:self pushPhotoPickerVc:YES];
+    //可以有5种个性化展示：
+    imagePickerVc.allowPickingVideo = NO;//先禁掉视频。
+    imagePickerVc.maxImagesCount = photoCount;
+    
+    // 4. 照片排列按修改时间升序
+    imagePickerVc.sortAscendingByModificationDate = NO;
+
+    // 5. Single selection mode, valid when maxImagesCount = 1
+    // 5. 单选模式,maxImagesCount为1时才生效
+    imagePickerVc.showSelectBtn = YES;
+    imagePickerVc.allowCrop = YES;//showSelectBtn为NO时生效
+    
+    //视频回调:发现图片也会走这
+    [imagePickerVc setDidFinishPickingVideoHandle:^(UIImage *coverImage, PHAsset *asset) {
+        
+    }];
+    
+    imagePickerVc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:imagePickerVc animated:YES completion:nil];
+    
+}
+
+#pragma mark &lt; TZImagePickerControllerDelegate &gt;
+- (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray&lt;UIImage *&gt; *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray&lt;NSDictionary *&gt; *)infos {
+
+    for (int i = 0; i &lt; photos.count; i ++ ) {
+        
+    }
+    //或者
+    if (photos.count &gt;= 1) {
+        [self avatarModify:photos[0]];
+    }
+}
+
+// 决定相册显示与否
+- (BOOL)isAlbumCanSelect:(NSString *)albumName result:(PHFetchResult *)result {
+    /*
+    if ([albumName isEqualToString:@"个人收藏"]) {
+        return NO;
+    }
+    if ([albumName isEqualToString:@"视频"]) {
+        return NO;
+    }*/
+    return YES;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A92DCDE3-7DB9-4073-84E1-F30481C26861</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>相册</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
