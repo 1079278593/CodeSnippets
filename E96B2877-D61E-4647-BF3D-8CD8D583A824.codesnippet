@@ -32,7 +32,10 @@
 
 #pragma mark - &lt; init view &gt;
 - (void)initView {
-    
+    _containerView = [[UIView alloc]init];
+    _containerView.layer.cornerRadius = 5;
+    _containerView.backgroundColor = [UIColor whiteColor];
+    [self addSubview:_containerView];
 }
 
 @end</string>

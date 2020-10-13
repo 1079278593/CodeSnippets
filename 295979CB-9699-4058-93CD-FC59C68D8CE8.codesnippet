@@ -61,8 +61,9 @@
 
 - (UICollectionView *)collectionView {
     if (_collectionView == nil) {
-//        CGFloat insetWidth = 15;
-//        CGFloat spacing = 8;
+//        CGFloat edgeSpacing = 20;
+//        CGFloat interitemSpacing = 15;
+//        CGFloat lineSpacing = 8;
 //        CGFloat itemWidth = (KScreenWidth - insetWidth * 2 - spacing)/2.0;
 //        CGFloat itemHeight = itemWidth/(162/120.0);
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
