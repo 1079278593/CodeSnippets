@@ -3,29 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocdictfromstring</string>
+	<string>occonveniences</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//转换的结果不一定是字典，也有可能是数组
-- (NSMutableDictionary *)dictionaryFormString:(NSString *)string {
-    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
-    NSMutableDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-    return dict;
-}</string>
+	<string>/* Conveniences property */</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>31262D57-E284-4D3D-994E-590EBA0FDB60</string>
+	<string>389C9BD7-6990-413D-A80D-CE800F078405</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>string转dict</string>
+	<string>注释</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
