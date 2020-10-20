@@ -36,7 +36,7 @@ _scrollView = [[UIScrollView alloc]init];
 _scrollView.backgroundColor = cbg;
 [self addSubview:_scrollView];
 [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.left.top.width.equalTo(self);
+    make.left.top.width.equalTo(self.view);
     make.bottom.equalTo(_someView.mas_top);
     }];
     
@@ -48,6 +48,14 @@ _containerView = [[UIView alloc]init];
     make.edges.equalTo(_scrollView);
 }];
     
+UIView *endView = [[UIView alloc]init];
+[_containerView addSubview:endView];
+[endView mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.left.right.equalTo(_containerView);
+    make.top.equalTo(&lt;#view#&gt;);
+    make.height.equalTo(@(&lt;#height#&gt;));
+}];
+
 [_containerView mas_updateConstraints:^(MASConstraintMaker *make) {
     make.bottom.equalTo(endView);//没有offset(10)可能有问题
 }];</string>
