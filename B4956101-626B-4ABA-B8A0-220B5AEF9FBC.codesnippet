@@ -43,7 +43,14 @@
 //‘换行键’触发：将键盘收起
 [[self.textfield rac_signalForControlEvents:UIControlEventEditingDidEndOnExit] subscribeNext:^(__kindof UIControl * _Nullable x) {
     
-}];</string>
+}];
+
+//注意：rac_addObserverForName同样需要移除监听。RAC通知监听会返回一个RACDisposable清洁工的对象，在dealloc中销毁信号，信号销毁时，RAC在销毁的block中移除了监听
+@property (nonatomic, strong) RACDisposable *keyboardDisposable;
+self.keyboardDisposable = [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIKeyboardWillShowNotification object:nil] subscribeNext:^(id x) {
+    
+ }];
+[_keyboardDisposable dispose];//退出时调用</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>B4956101-626B-4ABA-B8A0-220B5AEF9FBC</string>
 	<key>IDECodeSnippetLanguage</key>
