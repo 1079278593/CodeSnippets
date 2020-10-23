@@ -10,6 +10,8 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:0];
+self.requestPage = self.headerRefresh ? 1 : self.requestPage;
+parameters[@"currentPage"] = @(self.requestPage);
 parameters[@"&lt;#para#&gt;"] = &lt;#para#&gt;;
 NSString *url = [&lt;#BaseUrl#&gt; stringByAppendingString:@"&lt;#url#&gt;"];
 
@@ -19,12 +21,28 @@ NSString *url = [&lt;#BaseUrl#&gt; stringByAppendingString:@"&lt;#url#&gt;"];
             id response = responsObj[@"response"];
             TaskListModel *taskListModel = [TaskListModel mj_objectWithKeyValues:response];
             weakSelf.datas = taskListModel;
+            weakSelf.requestPage ++;
         }else{
             weakSelf.failMsg = responsObj[@"message"];
         }
     } failure:^(NSError * _Nonnull error) {
         weakSelf.failMsg = [NSString stringWithFormat:@"网络异常：description：%@",error.description];
-    }];</string>
+    }];
+
+- (void)componentDatas:(id)response {
+    NSMutableArray *newDatas = [AddressModel mj_objectArrayWithKeyValuesArray:response[@"dataList"]];
+    if (self.headerRefresh) {
+        self.datas = newDatas;
+    }else {
+        if (newDatas.count &gt; 0) {
+            NSMutableArray *array = [NSMutableArray arrayWithArray:self.datas];
+            [array addObjectsFromArray:newDatas];
+            self.datas = array;
+        }else {
+            self.noMoreData = true;
+        }
+    }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>44AEC1C5-6682-4FD4-80BE-D3BDAD01DA54</string>
 	<key>IDECodeSnippetLanguage</key>
