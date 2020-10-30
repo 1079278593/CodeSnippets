@@ -9,7 +9,7 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (UIStackView *)&lt;#name#&gt;Stack {
+	<string>- (UIStackView *)&lt;#stack#&gt; {
     if (_&lt;#stack#&gt; == nil) {
         _&lt;#stack#&gt; = [[UIStackView alloc]init];
         _&lt;#stack#&gt;.axis = UILayoutConstraintAxisHorizontal;
@@ -19,7 +19,14 @@
         [self addSubview:_&lt;#stack#&gt;];
     }
     return _&lt;#stack#&gt;;
-}</string>
+}
+
+[self.&lt;#stack#&gt; addArrangedSubview:array[i]];
+[self.&lt;#stack#&gt; mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.left.right.equalTo(_containerView);
+    make.top.equalTo(self.lineOneStack.mas_bottom).offset(30/667.0*KScreenHeight);
+    make.height.equalTo(self.lineOneStack);
+}];</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>A319ECE6-37D5-410A-9D9F-92AC5FB272C3</string>
 	<key>IDECodeSnippetLanguage</key>
