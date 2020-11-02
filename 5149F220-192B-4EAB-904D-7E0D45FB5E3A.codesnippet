@@ -19,6 +19,20 @@ static &lt;#class#&gt; *manager = nil;
     return manager;
 }
 
++ (id)allocWithZone:(struct _NSZone *)zone
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&amp;onceToken, ^{
+        manager = [super allocWithZone:zone];
+    });
+    return manager;
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    return manager;
+}
+
 - (instancetype)init {
     if(self == [super init]){
         

@@ -17,12 +17,18 @@
  */
 
 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"&lt;#title#&gt;" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
 
+UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+    //UITextField *textField = alertController.textFields.firstObject;
+    
 }];
 
-UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-    
+
+
+//定义第一个输入框；
+[alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+    textField.placeholder = @"&lt;#string#&gt;";
 }];
 
 [alertController addAction:okAction];

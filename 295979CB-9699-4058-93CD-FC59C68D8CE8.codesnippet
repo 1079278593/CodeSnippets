@@ -12,7 +12,7 @@
 	<string>&lt;UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout&gt;
 @property(nonatomic, strong)UICollectionView *collectionView;
 
-#pragma mark - request
+#pragma mark - &lt; request &gt;
 -(void)headerRequest{
     _viewModel.headerRefresh = true;
     [_viewModel &lt;#expression#&gt;];
@@ -23,7 +23,7 @@
     [_viewModel &lt;#expression#&gt;];
 }
 
-#pragma mark - &lt; delegate &gt;
+#pragma mark &lt; delegate &gt;
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 2;
 }
