@@ -97,7 +97,7 @@
 
 /**自动布局：
  1. UICollectionViewFlowLayout *layout; 
- layout.estimatedItemSize = CGSizeMake(100, 30);
+ layout.estimatedItemSize = CGSizeMake(100, 30);//heigth不能设置太高，否则手指下滑时，界面会回弹
  
  2. 在cell内实现下面这个方法：
  override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -&gt; UICollectionViewLayoutAttributes {
@@ -113,6 +113,7 @@
      [self setNeedsLayout];
      [self layoutIfNeeded];
      CGSize size = [self.contentView systemLayoutSizeFittingSize:layoutAttributes.size];
+ CGSize size = [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
      CGRect newFrame = layoutAttributes.frame;
      newFrame.size.height = _textLabel.height;
      layoutAttributes.frame = newFrame;

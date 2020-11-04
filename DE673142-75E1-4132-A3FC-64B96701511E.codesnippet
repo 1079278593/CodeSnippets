@@ -9,7 +9,10 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>快捷键: option + command + ] , option + command + [
+	<string>14个XCode常用快捷键
+http://www.cocoachina.com/articles/10752
+
+快捷键: option + command + ] , option + command + [
 上移一行 and 下移一行
 
 快捷键：command + shift + J
