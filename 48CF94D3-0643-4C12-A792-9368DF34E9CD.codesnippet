@@ -26,6 +26,7 @@
     return self;
 }
 - (void)refreshCellWithModel:(&lt;#model#&gt; *)model;
+#pragma mark - &lt; public &gt;
 - (void)refreshCellWithModel:(&lt;#model#&gt; *)model {
     
 }
@@ -35,6 +36,8 @@
      self.contentView.backgroundColor = selected ? [UIColor colorWithHexString:@"#2563A7"] : [UIColor clearColor];
  }
  */
+
+#pragma mark - &lt; init view &gt;
 - (void)initView {
     
 }

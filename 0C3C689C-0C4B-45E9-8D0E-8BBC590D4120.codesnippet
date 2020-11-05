@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocswitch</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/**
+     tintColor:
+     开关处于关闭状态时边框的颜色(注意这边是边框的颜色)
+     onTintColor:
+     开关处于开启状态时的颜色
+     thumbTintColor:
+     开关的状态钮颜色
+     onImage:
+     开关处于开启状态时的图片(iOS7及之后设置无效)
+     offImage:
+     开关处于关闭状态时的图片(iOS7及之后设置无效)
+     backgroundColor:整个开关背景色,设置后可以明显看到一个矩形背景
+     
+     1.1 CGAffineTransformMakeScale(CGFloat sx, CGFloat sy)
+     这个方法可以方便的对view的长和宽进行缩放，不改变view的中心点。注意！中心点不变指的是物理位置不变，不是坐标，因为坐标系此时已经发生改变
+
+    iOS系统内置了UISwithch控件的size,所以通过代码调整UISwithch的大小无效.
+    默认大小 51.0f 31.0f 
+ 
+     1.2 CGAffineTransformScale(CGAffineTransform t,CGFloat sx, CGFloat sy)
+     这个方法同样是view的长和宽进行缩放，效果类似CGAffineTransformMakeScale(CGFloat sx, CGFloat sy)不同的是这个方法可以叠加其他CGAffineTransform效果（比如旋转)
+     */
+    _switchView = [[UISwitch alloc]init];
+    _switchView.on = YES;
+    [_switchView setOnTintColor:[UIColor colorWithHexString:&lt;#(NSString *)#&gt;]];
+//    [_switchView setThumbTintColor:[UIColor whiteColor]];
+//    _switchView.layer.cornerRadius = 15.5f;
+//    _switchView.layer.masksToBounds = YES;
+    [_switchView addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0C3C689C-0C4B-45E9-8D0E-8BBC590D4120</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Switch</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
