@@ -9,7 +9,7 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>backgroundColor = [[UIColor redColor]colorWithAlphaComponent:0.3];</string>
+	<string>&lt;#view#&gt;.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.3];</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>FDFD0F6D-89F0-4B84-B9C4-326C2ED96683</string>
 	<key>IDECodeSnippetLanguage</key>
@@ -17,7 +17,7 @@
 	<key>IDECodeSnippetSummary</key>
 	<string>oc设置背景色</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>oc_debug_setBgColor</string>
+	<string>开始创建颜色</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
