@@ -9,7 +9,35 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0]</string>
+	<string>@interface &lt;#class#&gt; ()
+
+@property(nonatomic, strong)UIView *containerView;
+
+@end
+
+@implementation &lt;#class#&gt;
+
+- (instancetype)init {
+    if(self == [super init]){
+        [self initView];
+    }
+    return self;
+}
+
+
+- (void)refreshWithModel:(&lt;#model#&gt; *)model;
+#pragma mark - &lt; public &gt;
+- (void)refreshWithModel:(&lt;#model#&gt; *)model {
+    
+}
+
+#pragma mark - &lt; init view &gt;
+- (void)initView {
+    _containerView = [[UIView alloc]init];
+    _containerView.layer.cornerRadius = 5;
+    _containerView.backgroundColor = [UIColor whiteColor];
+    [self addSubview:_containerView];
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>E96B2877-D61E-4647-BF3D-8CD8D583A824</string>
 	<key>IDECodeSnippetLanguage</key>
