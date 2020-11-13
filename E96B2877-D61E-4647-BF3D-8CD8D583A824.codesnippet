@@ -37,7 +37,9 @@
     _containerView.layer.cornerRadius = 5;
     _containerView.backgroundColor = [UIColor whiteColor];
     [self addSubview:_containerView];
-}</string>
+}
+
+@end</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>E96B2877-D61E-4647-BF3D-8CD8D583A824</string>
 	<key>IDECodeSnippetLanguage</key>
