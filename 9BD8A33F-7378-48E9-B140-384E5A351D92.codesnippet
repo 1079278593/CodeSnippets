@@ -22,7 +22,11 @@ _textField.frame = CGRectMake(20, 65, KScreenWidth-40, 44);
 [self.view addSubview:_textField];
 
 - (void)textDidChange:(UITextField *)textField {
-        
+    UITextRange *selectedRange = [textField markedTextRange];
+    NSString *newText = [textField textInRange:selectedRange];    //获取高亮部分
+    if (newText.length &gt; 0) {//过滤拼音的变化
+        return;
+    }
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>9BD8A33F-7378-48E9-B140-384E5A351D92</string>
