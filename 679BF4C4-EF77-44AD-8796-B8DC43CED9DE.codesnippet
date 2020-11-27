@@ -13,7 +13,19 @@
 //有些类需要开启userInteractionEnabled = YES
 - (void)tapGesture {
     
-}</string>
+}
+
+ UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressGesture:)];
+ longPress.minimumPressDuration = 1;
+ [self.view addGestureRecognizer:longPress];
+
+ - (void)longPressGesture:(UILongPressGestureRecognizer *)guesture {
+     if (guesture.state != UIGestureRecognizerStateBegan){
+         return;
+     }
+     
+     NSLog(@"longPressGesture");
+ }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>679BF4C4-EF77-44AD-8796-B8DC43CED9DE</string>
 	<key>IDECodeSnippetLanguage</key>
