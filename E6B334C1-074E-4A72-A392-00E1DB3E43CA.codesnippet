@@ -3,31 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocsaveimage</string>
+	<string>ocbuttonImageStretch</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#import &lt;Photos/Photos.h&gt;
-
-- (void)saveToAlbum:(NSString *)videoPath {
-    PHPhotoLibrary *photoLibrary = [PHPhotoLibrary sharedPhotoLibrary];
-    [photoLibrary performChanges:^{
-        [PHAssetChangeRequest creationRequestForAssetFromVideoAtFileURL:[NSURL fileURLWithPath:videoPath]];
-    } completionHandler:^(BOOL success, NSError * _Nullable error) {
-        NSString *msg = success ? @"已经保存到相册" : @"未能保存视频到相册";
-        NSLog(@"%@",msg);
-    }];
-}</string>
+	<string>UIEdgeInsets insets = UIEdgeInsetsMake(0, 20, 0, 13);//按照UIButton的宽高，而不是图片像素。
+    UIImage *coinBgImage = [[UIImage imageNamed:@"gameHome_coinBtnBg"] resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>D9D6A937-ECC7-4C68-8D1D-A882DE7550AF</string>
+	<string>E6B334C1-074E-4A72-A392-00E1DB3E43CA</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>保存到相册</string>
+	<string>button的图片两边拉伸</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

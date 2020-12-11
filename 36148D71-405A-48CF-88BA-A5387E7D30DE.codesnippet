@@ -9,7 +9,7 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (void)&lt;#nameBtnEvent#&gt;:(UIButton *)button {
+	<string>- (void)&lt;#buttonEvent#&gt;:(UIButton *)button {
     
 }</string>
 	<key>IDECodeSnippetIdentifier</key>

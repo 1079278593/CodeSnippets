@@ -3,31 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocsaveimage</string>
+	<string>ocdictToJson</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#import &lt;Photos/Photos.h&gt;
-
-- (void)saveToAlbum:(NSString *)videoPath {
-    PHPhotoLibrary *photoLibrary = [PHPhotoLibrary sharedPhotoLibrary];
-    [photoLibrary performChanges:^{
-        [PHAssetChangeRequest creationRequestForAssetFromVideoAtFileURL:[NSURL fileURLWithPath:videoPath]];
-    } completionHandler:^(BOOL success, NSError * _Nullable error) {
-        NSString *msg = success ? @"已经保存到相册" : @"未能保存视频到相册";
-        NSLog(@"%@",msg);
-    }];
-}</string>
+	<string>NSData *data = [NSJSONSerialization dataWithJSONObject:messageDict options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *msgJsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>D9D6A937-ECC7-4C68-8D1D-A882DE7550AF</string>
+	<string>6CE60361-F0A4-423A-A100-75C7A59EB7BD</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>保存到相册</string>
+	<string>NSDictionary转json</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

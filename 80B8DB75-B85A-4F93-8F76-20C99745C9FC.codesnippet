@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocrgbToBGR</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//#import &lt;Accelerate/Accelerate.h&gt;
+//https://www.cnblogs.com/CoderPlace/archive/2012/07/31/2617219.html
+//https://www.it1352.com/298978.html
+    vImageConvert_RGB888toARGB8888(&lt;#const vImage_Buffer *#&gt;, &lt;#const vImage_Buffer *#&gt;, &lt;#Pixel_8#&gt;, &lt;#const vImage_Buffer *#&gt;, &lt;#bool#&gt;, &lt;#vImage_Flags#&gt;)
+    vImageConvert_RGB888toBGRA8888(&lt;#const vImage_Buffer *#&gt;, &lt;#const vImage_Buffer *#&gt;, 0, &lt;#const vImage_Buffer *#&gt;, NO, kvImageNoFlags)
+
+vImage_Buffer srcYp = {pict,height,width,8};</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>80B8DB75-B85A-4F93-8F76-20C99745C9FC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>类似RGB转BGR等的方法</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

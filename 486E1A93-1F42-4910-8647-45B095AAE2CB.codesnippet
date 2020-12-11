@@ -33,7 +33,8 @@ UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlert
 
 [alertController addAction:okAction];
 [alertController addAction:cancleAction];
-[self.viewController presentViewController:alertController animated:true completion:nil];</string>
+[self.viewController presentViewController:alertController animated:true completion:nil];
+//UIViewController *controller = [[UIApplication sharedApplication] keyWindow].rootViewController;</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>486E1A93-1F42-4910-8647-45B095AAE2CB</string>
 	<key>IDECodeSnippetLanguage</key>
