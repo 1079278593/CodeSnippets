@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//克隆git库中的代码，后面的https地址换成自己的git库地址就好，注意：不要使用ssh
+git clone https://gitee.com/yulongcode/TestGit.git
+
+//查看本地git库的文件修改状态
+git status
+
+//将本地修改的代码提交到暂存区   ./  也可以换成具体的文件名
+git add ./
+
+//给将要提交的代码写注释
+git commit -m '代码提交注释'
+
+//拉取远端代码
+git pull
+
+//推送代码
+git push
+
+//查看git的log
+git log
+
+//查看文件冲突
+git diff</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D0EE789C-9C49-4E35-999A-612F6AA5B42A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AAA git常用命令</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
