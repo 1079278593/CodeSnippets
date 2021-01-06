@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>oclottieview</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>self.lottieView.frame = self.view.frame;
+[self.view addSubview:self.lottieView];
+[self.lottieView play];
+    
+WS(weakSelf)
+self.lottieView.completionBlock = ^(BOOL animationFinished) {
+    [weakSelf.lottieView removeFromSuperview];
+    };
+
+@property(nonatomic, strong)LOTAnimationView *lottieView;
+- (LOTAnimationView *)lottieView {
+    if (_lottieView == nil) {
+        NSString *url = [[ NSBundle mainBundle] pathForResource:@"game_wordsCorrect_seat" ofType :@"json"];
+        _lottieView = [[LOTAnimationView alloc] initWithContentsOfURL:[NSURL fileURLWithPath:url]];
+    }
+    return _lottieView;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D9245E96-89D6-4DC5-8BCF-6E56632859DB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>lottieView播放</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
