@@ -25,6 +25,20 @@
      }
      
      NSLog(@"longPressGesture");
+ }
+ ///允许两个手势一起运行
+ - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+     return YES;
+ }
+
+ //下面这个两个方法也是用来控制手势的互斥执行的
+ //这个方法返回YES，第一个手势和第二个互斥时，第一个会失效
+ - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+     return YES;
+ }
+ //这个方法返回YES，第一个和第二个互斥时，第二个会失效。顺序为添加的顺序
+ - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+     return YES;
  }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>679BF4C4-EF77-44AD-8796-B8DC43CED9DE</string>
