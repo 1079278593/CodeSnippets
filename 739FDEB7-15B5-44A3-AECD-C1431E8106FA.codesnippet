@@ -16,7 +16,11 @@ layoutSubviews：系统重写布局
 setNeedsUpdateConstraints：告知需要更新约束，但是不会立刻开始
 updateConstraintsIfNeeded：告知立刻更新约束
 updateConstraints：系统更新约束
-*/</string>
+*/
+
+
+[self.collectionView setNeedsLayout];
+[self.collectionView layoutIfNeeded];</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>739FDEB7-15B5-44A3-AECD-C1431E8106FA</string>
 	<key>IDECodeSnippetLanguage</key>
@@ -24,7 +28,7 @@ updateConstraints：系统更新约束
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>关于autolayout的几个更新方法的区别</string>
+	<string>关于autolayout的几个更新方法的区别：强制刷新</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
