@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocsaveimage</string>
+	<string>ocsaveMedia</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -11,14 +11,34 @@
 	<key>IDECodeSnippetContents</key>
 	<string>#import &lt;Photos/Photos.h&gt;
 
-- (void)saveToAlbum:(NSString *)videoPath {
-    PHPhotoLibrary *photoLibrary = [PHPhotoLibrary sharedPhotoLibrary];
-    [photoLibrary performChanges:^{
-        [PHAssetChangeRequest creationRequestForAssetFromVideoAtFileURL:[NSURL fileURLWithPath:videoPath]];
-    } completionHandler:^(BOOL success, NSError * _Nullable error) {
-        NSString *msg = success ? @"已经保存到相册" : @"未能保存视频到相册";
-        NSLog(@"%@",msg);
-    }];
+- (void)saveToAlbumWithPath:(NSString *)path {
+    if (path.length == 0) {
+        [EasyProgress showSuccess:@"路径为空"];
+        return;
+    }
+    if ([path isKindOfClass:[NSString class]]) {
+        PHPhotoLibrary *photoLibrary = [PHPhotoLibrary sharedPhotoLibrary];
+        [photoLibrary performChanges:^{
+            [PHAssetChangeRequest creationRequestForAssetFromVideoAtFileURL:[NSURL URLWithString:path]];
+        } completionHandler:^(BOOL success, NSError * _Nullable error) {
+            NSString *msg = success ? @"已经保存到相册" : @"未能保存到相册";
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [EasyProgress showSuccess:msg];
+            });
+        }];
+    }else {
+        PHPhotoLibrary *photoLibrary = [PHPhotoLibrary sharedPhotoLibrary];
+        [photoLibrary performChanges:^{
+//            dispatch_async(dispatch_get_main_queue(), ^{
+                [PHAssetChangeRequest creationRequestForAssetFromImage:path];
+//            });
+        } completionHandler:^(BOOL success, NSError * _Nullable error) {
+            NSString *msg = success ? @"已经保存到相册" : @"未能保存到相册";
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [EasyProgress showSuccess:msg];
+            });
+        }];
+    }
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>D9D6A937-ECC7-4C68-8D1D-A882DE7550AF</string>
@@ -27,7 +47,7 @@
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>保存到相册</string>
+	<string>保存到相册:图片或者视频</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
