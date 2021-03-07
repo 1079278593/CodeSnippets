@@ -3,26 +3,40 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>swevent</string>
+	<string>swtimer</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@objc func &lt;#button#&gt;Event(button: UIButton) {
-    
+	<string>extension &lt;#class#&gt; {
+    var timer:Timer?
+    var countDown = 0
+    private func startTimer() {
+        countDown = 4;
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timeFire), userInfo: nil, repeats: true)
+        timer?.fire()
+    }
+    @objc private func timeFire() {
+        if (countDown &lt;= 0) {
+            timer?.invalidate()
+            timer = nil
+            return
+        }
+        countDown -= 1
+    }
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>FD7D41F8-68CF-492A-8B1E-D6C55AC1C172</string>
+	<string>FEABBCA4-D494-4D93-8D6E-EF9D93461322</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>swift button event</string>
+	<string>计时器</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
