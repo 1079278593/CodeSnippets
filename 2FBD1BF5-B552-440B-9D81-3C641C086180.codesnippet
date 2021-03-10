@@ -17,7 +17,11 @@
 [&lt;#Button#&gt; mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.bottom.equalTo(self);
         make.width.height.equalTo(@50);
-    }];</string>
+    }];
+
+- (void)&lt;#buttonEvent#&gt;:(UIButton *)button {
+    
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>2FBD1BF5-B552-440B-9D81-3C641C086180</string>
 	<key>IDECodeSnippetLanguage</key>
