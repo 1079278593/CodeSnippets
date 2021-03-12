@@ -25,13 +25,18 @@
     }
     return self;
 }
+
+//- (void)layoutSubviews {
+//    [super layoutSubviews];
+//}
+
 - (void)refreshCellWithModel:(&lt;#model#&gt; *)model;
 #pragma mark - &lt; public &gt;
 - (void)refreshCellWithModel:(&lt;#model#&gt; *)model {
     
 }
 /**
- 代码选中
+ 代码调用：选中
  NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
  [self.collectionView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
  

@@ -3,14 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocstatusbarhidden</string>
+	<string>ocstatusbar</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (BOOL)prefersStatusBarHidden {
+	<string>//https://www.jianshu.com/p/889cff2b3a52
+
+- (BOOL)prefersStatusBarHidden {
     return YES;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>0C6A80E9-BBF7-44F2-84E3-5506F2C7004B</string>
@@ -19,7 +25,7 @@
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>隐藏statusBar</string>
+	<string>statusBar：隐藏、颜色</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
