@@ -40,6 +40,8 @@
  NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
  [self.collectionView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
  
+ //cell点击会掉用两次
+ //reload单个cell,先调setSelected()，再调refreshCellWithModel()
  - (void)setSelected:(BOOL)selected {
      [super setSelected:selected];
      self.contentView.backgroundColor = selected ? [UIColor colorWithHexString:@"#2563A7"] : [UIColor clearColor];
