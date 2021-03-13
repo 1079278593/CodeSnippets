@@ -29,7 +29,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    return self.datas.count;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -44,6 +44,7 @@
 //    NSString *identifier = [NSString stringWithFormat:@"id_%ld",(long)indexPath.row];
 //    [self.collectionView registerClass:[LottieAnimationsCell class] forCellWithReuseIdentifier:identifier];
     &lt;#name#&gt; *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([&lt;#name#&gt; class]) forIndexPath:indexPath];
+    [cell refreshCellWithModel:self.datas[indexPath.row]];
     return cell;
 }
 
