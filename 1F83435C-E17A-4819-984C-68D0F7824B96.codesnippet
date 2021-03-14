@@ -3,29 +3,27 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocstatusbar</string>
+	<string>ocgradient</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//https://www.jianshu.com/p/889cff2b3a52
-
-- (BOOL)prefersStatusBarHidden {
-    return YES;
-}
-
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}</string>
+	<string>CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.colors = @[(__bridge id)[[UIColor blackColor] colorWithAlphaComponent:0.05].CGColor,(__bridge id)[[UIColor blackColor] colorWithAlphaComponent:0.2].CGColor];
+//    gradientLayer.locations = @[@0.0, @0.1];
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(0, 1.0);
+    gradientLayer.frame = CGRectMake(0, 0, self.width, _blackView.height);
+    [self.blackView.layer addSublayer:gradientLayer];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>0C6A80E9-BBF7-44F2-84E3-5506F2C7004B</string>
+	<string>1F83435C-E17A-4819-984C-68D0F7824B96</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>statusBar：隐藏、颜色</string>
+	<string>渐变</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

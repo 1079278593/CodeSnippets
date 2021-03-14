@@ -29,11 +29,11 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    return self.datas.count;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(70, 30);
+    return CGSizeMake(70, 30);//注意这里的宽度，不要超屏
 }
 
 //- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
@@ -44,6 +44,7 @@
 //    NSString *identifier = [NSString stringWithFormat:@"id_%ld",(long)indexPath.row];
 //    [self.collectionView registerClass:[LottieAnimationsCell class] forCellWithReuseIdentifier:identifier];
     &lt;#name#&gt; *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([&lt;#name#&gt; class]) forIndexPath:indexPath];
+    [cell refreshCellWithModel:self.datas[indexPath.row]];
     return cell;
 }
 
@@ -71,6 +72,7 @@
         layout.minimumInteritemSpacing = 10;
         layout.sectionInset = UIEdgeInsetsMake(0, 0, 20, 0);
         layout.headerReferenceSize = CGSizeMake(0, 1);
+//        layout.estimatedItemSize = CGSizeMake(300, 20);//注意宽度，不要超过CollectionView本身的size，不然会打印一堆日志
         
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.delegate = self;
@@ -112,10 +114,12 @@
  - (UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes {
      [self setNeedsLayout];
      [self layoutIfNeeded];
+ //下面两句没什么用，可以用‘string’获取size
      CGSize size = [self.contentView systemLayoutSizeFittingSize:layoutAttributes.size];
  CGSize size = [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-     CGRect newFrame = layoutAttributes.frame;
-     newFrame.size.height = _textLabel.height;
+ CGFloat height = [self.model.content sizeWithMaxWidth:self.textLabel.width font:self.textLabel.font].height + 20;
+ CGRect newFrame = layoutAttributes.frame;
+     newFrame.size.height = _textLabel.height; //如果设置width超过cell,会异常。(实际是在代理那设置了宽高。不好用，结构简单的话还是用代理回调设置)
      layoutAttributes.frame = newFrame;
      return layoutAttributes;
  }

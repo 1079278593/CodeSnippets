@@ -3,32 +3,29 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocstatusbar</string>
+	<string>ocenum</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//https://www.jianshu.com/p/889cff2b3a52
-
-- (BOOL)prefersStatusBarHidden {
-    return YES;
-}
-
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}</string>
+	<string>///&lt;#describe#&gt;
+typedef NS_ENUM(NSUInteger, &lt;#enumName#&gt;) {
+    &lt;#enumName#&gt; = 0,               //!&lt; &lt;#describe#&gt;
+    &lt;#enumName#&gt;,                   //!&lt; &lt;#describe#&gt;
+    &lt;#enumName#&gt;,                   //!&lt; &lt;#describe#&gt;
+};</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>0C6A80E9-BBF7-44F2-84E3-5506F2C7004B</string>
+	<string>5B4D9710-1335-4FB7-97D4-5BA68796ADFD</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>statusBar：隐藏、颜色</string>
+	<string>My Code Snippet</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

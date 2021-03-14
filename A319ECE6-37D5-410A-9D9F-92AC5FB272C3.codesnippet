@@ -9,13 +9,23 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (UIStackView *)&lt;#stack#&gt; {
+	<string>//https://www.jianshu.com/p/253aeb9dd02a?utm_campaign
+[self.stackView setCustomSpacing:UIStackViewSpacingUseDefault afterView:afterView];
+- (UIStackView *)&lt;#stack#&gt; {
     if (_&lt;#stack#&gt; == nil) {
         _&lt;#stack#&gt; = [[UIStackView alloc]init];
+        
+        //布局方向（轴）：水平、垂直
         _&lt;#stack#&gt;.axis = UILayoutConstraintAxisHorizontal;
-        _&lt;#stack#&gt;.distribution = UIStackViewDistributionFillEqually;
+        
+        //非轴方向：对齐方式
         _&lt;#stack#&gt;.alignment = UIStackViewAlignmentFill;
-        _&lt;#stack#&gt;.spacing = 1; //两个view之间的间距
+        
+        //设置轴方向上子视图的分布比例（如果axis是水平方向，也即设置子视图的宽度，如果axis是垂直方向，则是设置子视图的高度）。
+        _&lt;#stack#&gt;.distribution = UIStackViewDistributionFillEqually;
+        
+        //spacing 该属性控制子视图之间的间隔大小
+        _&lt;#stack#&gt;.spacing = 1;
         [self addSubview:_&lt;#stack#&gt;];
     }
     return _&lt;#stack#&gt;;
