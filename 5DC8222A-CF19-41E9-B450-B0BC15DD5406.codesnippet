@@ -14,6 +14,8 @@
     make.top.equalTo(&lt;#view#&gt;);
     make.width.equalTo(@(&lt;#width#&gt;));
     make.height.equalTo(@(&lt;#height#&gt;));
+    int padding = 5;
+    make.edges.mas_equalTo(UIEdgeInsetsMake(padding, padding, padding, padding));
     }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>5DC8222A-CF19-41E9-B450-B0BC15DD5406</string>

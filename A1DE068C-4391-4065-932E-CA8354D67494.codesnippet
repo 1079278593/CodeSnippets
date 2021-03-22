@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocvideowatermark</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/** https://blog.csdn.net/liyunxiangrxm/article/details/106687545
+ 设置水印及其对应视频的位置。如果AVMutableVideoCompositionLayerInstruction要旋转，下面的设置会影响前面的设置。
+ 
+ @param composition 视频的结构
+ @param size 视频的尺寸
+ */
+- (void)applyVideoEffectsToComposition:(AVMutableVideoComposition *)composition size:(CGSize)size
+{
+    return;
+    // 文字
+//    CATextLayer *subtitle1Text = [[CATextLayer alloc] init];
+//    //    [subtitle1Text setFont:@"Helvetica-Bold"];
+//    [subtitle1Text setFontSize:36];
+//    [subtitle1Text setFrame:CGRectMake(10, size.height-10-230, size.width, 100)];
+//    [subtitle1Text setString:@"央视体育5 水印"];
+//    //    [subtitle1Text setAlignmentMode:kCAAlignmentCenter];
+//    [subtitle1Text setForegroundColor:[[UIColor whiteColor] CGColor]];
+    
+    //图片
+    CALayer*picLayer = [CALayer layer];
+    picLayer.contents = (id)[UIImage imageNamed:@"showmeMore_msg"].CGImage; //本地图片
+//    picLayer.contents = (id)self.videoWaterMarkImage.CGImage; //本地图片2
+    //NSString *imageUrl = @"http://p1.img.cctvpic.com/photoAlbum/templet/special/PAGEQ1KSin2j2U5FERGWHp1h160415/ELMTnGlKHUJZi7lz19PEnqhM160415_1460715755.png";
+    //picLayer.contents = (id)[self getImageFromURL:imageUrl].CGImage; //远程图片
+    CGFloat width = 63;
+    CGFloat leftMargin = 116;
+    CGFloat topMargin = 120;
+    picLayer.frame = CGRectMake(leftMargin, size.height-topMargin, width, width);//设置位置
+    picLayer.affineTransform = CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(-90));
+    
+    
+    // 2 - The usual overlay
+    CALayer *overlayLayer = [CALayer layer];
+    [overlayLayer addSublayer:picLayer];
+//    [overlayLayer addSublayer:subtitle1Text];
+    overlayLayer.frame = CGRectMake(0, 0, size.width, size.height);
+    [overlayLayer setMasksToBounds:YES];
+    
+    
+    CALayer *parentLayer = [CALayer layer];
+    CALayer *videoLayer = [CALayer layer];
+    parentLayer.frame = CGRectMake(0, 0, size.width, size.height);
+    videoLayer.frame = CGRectMake(0, 0, size.width, size.height);
+    [parentLayer addSublayer:videoLayer];
+    [parentLayer addSublayer:overlayLayer];
+    
+    composition.animationTool = [AVVideoCompositionCoreAnimationTool
+                                 videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:videoLayer inLayer:parentLayer];
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A1DE068C-4391-4065-932E-CA8354D67494</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>视频水印、旋转等</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
