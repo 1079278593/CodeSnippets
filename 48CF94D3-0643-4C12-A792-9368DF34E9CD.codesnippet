@@ -21,7 +21,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initView];
+        [self setupSubview];
     }
     return self;
 }
@@ -49,7 +49,7 @@
  */
 
 #pragma mark - &lt; init view &gt;
-- (void)initView {
+- (void)setupSubview {
     
 }
 

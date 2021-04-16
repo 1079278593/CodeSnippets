@@ -9,7 +9,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>&lt;#view#&gt;.backgroundColor = [UIColor whiteColor];
+	<string>//backgroundColor非必须，去掉可以根据图片内容或者视图来显示阴影
+&lt;#view#&gt;.backgroundColor = [UIColor whiteColor];
 &lt;#view#&gt;.layer.shadowOffset = CGSizeMake(0, 1);
 &lt;#view#&gt;.layer.shadowRadius = 4;
 &lt;#view#&gt;.layer.shadowOpacity = 0.1;

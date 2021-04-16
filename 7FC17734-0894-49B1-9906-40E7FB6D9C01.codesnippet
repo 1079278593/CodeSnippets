@@ -17,6 +17,10 @@
     [self.timer invalidate];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFire) userInfo:nil repeats:YES];
     [self.timer fire];
+    
+    //可以同时加入多个Mode，或者NSRunLoopCommonModes
+//    [self.timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+//    [self.timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:UITrackingRunLoopMode];
 }
 
 - (void)timerFire {

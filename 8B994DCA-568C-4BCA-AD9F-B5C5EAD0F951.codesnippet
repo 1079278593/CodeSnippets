@@ -9,7 +9,7 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>-(void)initTableView{
+	<string>-(void)setupTableView{
     _tableView = [[UITableView alloc]initWithFrame:CGRectZero];
     _tableView.delegate = self;
     _tableView.dataSource = self;

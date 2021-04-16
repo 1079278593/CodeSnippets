@@ -9,7 +9,18 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>typedef &lt;#returnType#&gt;(^&lt;#name#&gt;)(&lt;#arguments#&gt;);
+	<string>/**
+ block语法的BN范式(巴科斯-诺尔范式 BNF)
+ Block_literal_expression :: ^block_decl compound_statement_body
+ ...
+ 即下面的意思：
+ 范式：^ 返回值类型 参数列表 表达式
+ block变量：返回值 (^变量名) 参数
+ 普通函数：  返回值 函数名 参数
+ 指针函数：  返回值 (*函数名) 参数
+ */
+
+typedef &lt;#returnType#&gt;(^&lt;#name#&gt;)(&lt;#arguments#&gt;);
 
 @property (nonatomic, copy) &lt;#returnType#&gt;(^&lt;#blockName#&gt;)(&lt;#arguments#&gt;);
 -(void)&lt;#method#&gt;:(&lt;#returnType#&gt; (^)(&lt;#arguments#&gt;))&lt;#name#&gt; {

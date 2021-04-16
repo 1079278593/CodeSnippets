@@ -9,7 +9,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>let startTime = CACurrentMediaTime()
+	<string>//注意当设备休眠的时候马赫时间会暂停
+let startTime = CACurrentMediaTime()
 let inferenceTime = (CACurrentMediaTime() - startTime) * 1000
 print("duration: \(inferenceTime)");
 
