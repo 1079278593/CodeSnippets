@@ -28,6 +28,10 @@
     NSDictionary *userInfo = ((NSNotification *)x).userInfo;
     CGFloat duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
 //        CGRect keyboardFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    //移除之前的动画,如果有
+//    [self.view.layer removeAllAnimations];
+    
     [UIView animateWithDuration:duration animations:^{
     }];
 }];

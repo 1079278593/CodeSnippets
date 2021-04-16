@@ -14,6 +14,8 @@
         _slider = [[UISlider alloc]init];
         _slider.maximumValue = 1;
         _slider.minimumValue = 0;
+        [_slider setThumbImage:[[UIColor colorWithHexString:@"#F6F0FE"] imageWithRadius:6] forState:UIControlStateNormal];
+        _slider.minimumTrackTintColor = [UIColor colorWithHexString:@"#F6F0FE"];
         [_slider addTarget:self action:@selector(sliderValueChange:) forControlEvents:UIControlEventValueChanged];
         [self.view addSubview:_slider];
     }

@@ -3,31 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocmasonry</string>
+	<string></string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.left.equalTo(&lt;#view#&gt;);
-    make.top.equalTo(&lt;#view#&gt;);
-    make.width.equalTo(@(&lt;#width#&gt;));
-    make.height.equalTo(@(&lt;#height#&gt;));
-    int padding = 5;
-    make.edges.mas_equalTo(UIEdgeInsetsMake(padding, padding, padding, padding));
-    }</string>
+	<string>终端常用命令
+https://www.jianshu.com/p/b93c28fd45b8</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>5DC8222A-CF19-41E9-B450-B0BC15DD5406</string>
+	<string>A33B0076-5728-4799-85A9-CA02F89FC153</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.GLSL</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>快速Masonry布局</string>
+	<string>AAA-Terminal终端</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
