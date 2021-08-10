@@ -3,23 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocfixme</string>
+	<string>ocproperty1</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//FIXME: &lt;#Describe#&gt;
-
-//TODO:</string>
+	<string>@property (nonatomic, strong) &lt;#class#&gt;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>F6917334-0E9D-4F13-B970-1C98CC30B3B9</string>
+	<string>C438982C-2361-425A-9ABF-A35AC62910F2</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>待完善提示</string>
+	<string>My Code Snippet</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

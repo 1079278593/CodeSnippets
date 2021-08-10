@@ -3,26 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocfixme</string>
+	<string>ocrandom</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//FIXME: &lt;#Describe#&gt;
-
-//TODO:</string>
+	<string>int index = arc4random() % 7 + 1;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>F6917334-0E9D-4F13-B970-1C98CC30B3B9</string>
+	<string>6A378BD1-2A51-477C-8879-1BCDCCBA89CB</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>待完善提示</string>
+	<string>随机数</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
