@@ -3,21 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocrandom</string>
+	<string>ocinitXIB</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>int index = arc4random() % 7 + 1;</string>
+	<string>- (void)awakeFromNib {
+    [super awakeFromNib];
+}
+&lt;#view#&gt; = [[[NSBundle mainBundle] loadNibNamed:@"&lt;#name#&gt;" owner:self options:nil] lastObject];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>6A378BD1-2A51-477C-8879-1BCDCCBA89CB</string>
+	<string>7B5D47C9-290C-415C-8B9F-8D315355751B</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>随机数</string>
+	<string>xib初始化</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

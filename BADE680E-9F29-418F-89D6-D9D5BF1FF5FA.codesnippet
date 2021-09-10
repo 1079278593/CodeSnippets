@@ -3,21 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocrandom</string>
+	<string>ocButtonEventXIB</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>int index = arc4random() % 7 + 1;</string>
+	<string>- (IBAction)&lt;#buttonEvent#&gt;:(UIButton *)button {
+    
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>6A378BD1-2A51-477C-8879-1BCDCCBA89CB</string>
+	<string>BADE680E-9F29-418F-89D6-D9D5BF1FF5FA</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>随机数</string>
+	<string>XIB的按钮关联事件</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

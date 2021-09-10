@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocrandom</string>
+	<string>ocPropertyXIB</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>int index = arc4random() % 7 + 1;</string>
+	<string>@property(nonatomic, weak)IBOutlet &lt;#class#&gt; *&lt;#name#&gt;;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>6A378BD1-2A51-477C-8879-1BCDCCBA89CB</string>
+	<string>B0C1564A-14E7-4B7B-BFD0-5951B39A0D77</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>随机数</string>
+	<string>属性：XIB布局</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

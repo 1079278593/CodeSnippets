@@ -3,21 +3,26 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocproperty1</string>
+	<string>ocMasonaryAnimation</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, strong) &lt;#class#&gt;</string>
+	<string>[UIView animateWithDuration:0.2 animations:^{
+    [&lt;#view#&gt; mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.view).offset(bottomOffset);
+        }];
+        [self.view layoutIfNeeded];
+    }];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>C438982C-2361-425A-9ABF-A35AC62910F2</string>
+	<string>B9C38B23-66CB-4738-9BB6-5C9C4A2AD218</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>My Code Snippet</string>
+	<string>masonary布局的动画</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
