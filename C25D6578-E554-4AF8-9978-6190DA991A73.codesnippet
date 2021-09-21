@@ -3,23 +3,35 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocfixme</string>
+	<string>ocCategoryProperty</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//FIXME: &lt;#Describe#&gt;
+	<string>#import &lt;objc/runtime.h&gt;
 
-//TODO:</string>
+@implementation &lt;#Clas#&gt; (&lt;#Property#&gt;)
+
+@dynamic &lt;#name#&gt;;
+
+- (void)set&lt;#name#&gt;:&lt;#modifyme#&gt; {
+    objc_setAssociatedObject(self, @selector(alertActionTag), object, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSNumber *)&lt;#modifyme#&gt; {
+    return objc_getAssociatedObject(self, @selector(&lt;#modifyme#&gt;));
+}
+
+@end</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>F6917334-0E9D-4F13-B970-1C98CC30B3B9</string>
+	<string>C25D6578-E554-4AF8-9978-6190DA991A73</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>待完善提示</string>
+	<string>category+属性</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

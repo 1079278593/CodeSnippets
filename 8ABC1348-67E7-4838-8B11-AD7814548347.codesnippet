@@ -25,7 +25,13 @@ NSString *&lt;#newPath#&gt; = [&lt;#path#&gt; stringByAddingPercentEncodingWithA
     #pragma clang diagnostic pop
     return targetString;
 }
-</string>
+
+//本质：(含代码)
+//https://www.cnblogs.com/cthon/p/9297232.html
+//推荐：https://blog.csdn.net/tge7618291/article/details/7599902
+
+//查询：https://www.ip138.com/utf8/
+//UTF-8编码是一种针对Unicode的可变长度字符编码，又称万国码。UTF-8是Unicode的一种实现方式，也就是它的字节结构有特殊要求，所以我们说一个汉字的范围是0X4E00到0x9FA5，是指unicode值，至于放在utf-8的编码里去就是由三个字节来组织</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>8ABC1348-67E7-4838-8B11-AD7814548347</string>
 	<key>IDECodeSnippetLanguage</key>

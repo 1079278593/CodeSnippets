@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocfixme</string>
+	<string>ocButtonEventXIB</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//FIXME: &lt;#Describe#&gt;
-
-//TODO:</string>
+	<string>- (IBAction)&lt;#buttonEvent#&gt;:(UIButton *)button {
+    
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>F6917334-0E9D-4F13-B970-1C98CC30B3B9</string>
+	<string>BADE680E-9F29-418F-89D6-D9D5BF1FF5FA</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>待完善提示</string>
+	<string>XIB的按钮关联事件</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

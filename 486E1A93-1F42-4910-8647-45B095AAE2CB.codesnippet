@@ -14,6 +14,25 @@
  
  其中：UIAlertController *alertController = [[UIAlertController alloc]init];是快速表单初始化方法。
  以及按钮样式3种：UIAlertActionStyleDestructive、
+ 
+ kvc自定义某些样式、值。注意：一定要用attributed
+ // 自定义标题
+ [alertControl setValue:attributeTitle forKey:@"attributedTitle"];   
+ // 自定义副标题NSMutableAttributedString
+ [alertControl setValue:subAttributeTitle forKey:@"attributedMessage"];
+ // 设置按钮背景图片
+ [cancelAction setValue:image forKey:@"image"];
+  // 设置按钮的title颜色
+ [cancelAction setValue:[UIColor orangeColor] forKey:@"titleTextColor"]; 
+ // 设置按钮的title的对齐方式
+ [cancelAction setValue:[NSNumber numberWithInteger:NSTextAlignmentLeft] forKey:@"titleTextAlignment”];
+ 
+ if (IS_IPAD) {
+     UIPopoverPresentationController *pop = [alertController popoverPresentationController];
+     pop.sourceView = self.view;//悬挂的视图
+     pop.permittedArrowDirections = UIPopoverArrowDirectionUp;//箭头方向
+     pop.sourceRect = self.view.bounds;//悬挂的地方
+ }
  */
 
 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"&lt;#title#&gt;" message:nil preferredStyle:UIAlertControllerStyleActionSheet];

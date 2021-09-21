@@ -19,8 +19,7 @@ static &lt;#class#&gt; *manager = nil;
     return manager;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)zone
-{
++ (id)allocWithZone:(struct _NSZone *)zone {
     static dispatch_once_t onceToken;
     dispatch_once(&amp;onceToken, ^{
         manager = [super allocWithZone:zone];
@@ -28,14 +27,14 @@ static &lt;#class#&gt; *manager = nil;
     return manager;
 }
 
-- (id)copyWithZone:(NSZone *)zone
-{
+- (id)copyWithZone:(NSZone *)zone {
     return manager;
 }
 
 - (instancetype)init {
-    if(self = [super init]){
-        
+    self = [super init];
+    if (self) {
+
     }
     return self;
 }</string>
