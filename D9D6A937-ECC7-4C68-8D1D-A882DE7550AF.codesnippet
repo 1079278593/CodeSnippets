@@ -11,15 +11,23 @@
 	<key>IDECodeSnippetContents</key>
 	<string>#import &lt;Photos/Photos.h&gt;
 
-- (void)saveToAlbumWithPath:(NSString *)path {
-    if (path.length == 0) {
-        [EasyProgress showSuccess:@"路径为空"];
-        return;
-    }
-    if ([path isKindOfClass:[NSString class]]) {
+- (void)saveToAlbumWithPath:(id)asset {
+    if ([asset isKindOfClass:[NSString class]]) {
         PHPhotoLibrary *photoLibrary = [PHPhotoLibrary sharedPhotoLibrary];
         [photoLibrary performChanges:^{
-            [PHAssetChangeRequest creationRequestForAssetFromVideoAtFileURL:[NSURL URLWithString:path]];
+            [PHAssetChangeRequest creationRequestForAssetFromVideoAtFileURL:[NSURL URLWithString:(NSString *)asset]];
+        } completionHandler:^(BOOL success, NSError * _Nullable error) {
+            NSString *msg = success ? @"已经保存到相册" : @"未能保存到相册";
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [EasyProgress showSuccess:msg];
+            });
+        }];
+    }else if ([asset isKindOfClass:[UIImage class]]){
+        PHPhotoLibrary *photoLibrary = [PHPhotoLibrary sharedPhotoLibrary];
+        [photoLibrary performChanges:^{
+            //            dispatch_async(dispatch_get_main_queue(), ^{
+            [PHAssetChangeRequest creationRequestForAssetFromImage:asset];
+            //            });
         } completionHandler:^(BOOL success, NSError * _Nullable error) {
             NSString *msg = success ? @"已经保存到相册" : @"未能保存到相册";
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -27,17 +35,7 @@
             });
         }];
     }else {
-        PHPhotoLibrary *photoLibrary = [PHPhotoLibrary sharedPhotoLibrary];
-        [photoLibrary performChanges:^{
-//            dispatch_async(dispatch_get_main_queue(), ^{
-                [PHAssetChangeRequest creationRequestForAssetFromImage:path];
-//            });
-        } completionHandler:^(BOOL success, NSError * _Nullable error) {
-            NSString *msg = success ? @"已经保存到相册" : @"未能保存到相册";
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [EasyProgress showSuccess:msg];
-            });
-        }];
+        [EasyProgress showFail:@"未知格式，无法存储！"];
     }
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
