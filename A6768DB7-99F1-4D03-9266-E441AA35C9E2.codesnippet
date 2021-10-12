@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>提交类型指定为下面其中一个：
+     1    build：对构建系统或者外部依赖项进行了修改
+     2    ci：对CI配置文件或脚本进行了修改
+     3    docs：对文档进行了修改
+    4    feat：增加新的特征
+     5    fix：修复bug
+     6    pref：提高性能的代码更改
+     7    refactor：既不是修复bug也不是添加特征的代码重构
+     8    style：不影响代码含义的修改，比如空格、格式化、缺失的分号等
+     9    test：增加确实的测试或者矫正已存在的测试
+比如：
+build(全局）：项目的组织结构改成pod方式
+
+主要用：build、docs、feat、fix、</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A6768DB7-99F1-4D03-9266-E441AA35C9E2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AAAA版本提交类型</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -31,7 +31,10 @@ git push
 git log
 
 //查看文件冲突
-git diff</string>
+git diff
+
+//撤回一个版本的提交
+git reset --soft HEAD^</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>D0EE789C-9C49-4E35-999A-612F6AA5B42A</string>
 	<key>IDECodeSnippetLanguage</key>

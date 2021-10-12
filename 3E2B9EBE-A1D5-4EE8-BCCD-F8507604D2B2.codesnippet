@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>昆仑：http://kunlun/r/#/admin/projects/
+相关介绍：介绍1，源码管理gerrit官网，gerrit文档，kunlun自带文档，
+操作：
+git gerrit-clone ssh://mhhuang@kunlun:29418/Eagle_iOS
+应该是这样
+具体的可以ggh看下一help
+git add .
+git commit -m xxxxx
+git upload
+
+跟一般git的差异就晃
+git gerrit-clone
+git upload
+
+你看到那台电脑上的branch大概是这样搞来了的
+git start dev1 master
+开的本地br，关联到服务器上的master上
+
+实操：http://kunlun/r/Documentation/intro-quick.html#_reworking_the_change
+第一步：
+git clone ssh://mhhuang@kunlun:29418/Eagle_iOS.git Eagle_iOS （不带钩子）
+git gerrit-clone ssh://mhhuang@kunlun:29418/Eagle_iOS  (推荐这种：自带钩子和change ID)(会让你输入：name和email，邮箱一定要注意！！！)
+
+第二步：
+git add .
+git commit -m 'test kunlun gerrit’
+git upload
+
+钩子步骤：http://kunlun/r/Documentation/user-changeid.html
+
+第三：如果要用分支，用此命令创建：git start dev1 master。然后就可以和master一样使用了。
+（如果克隆后，直接来第三步，会报错，先要走第二步。）
+
+技巧：
+1.暂存改动，pull新代码，然后pop改动的代码
+git stash
+git pull
+git stash pop
+
+2.撤销commit
+https://www.cnblogs.com/lfxiao/p/9378763.html
+比如： git reset --soft HEAD^</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3E2B9EBE-A1D5-4EE8-BCCD-F8507604D2B2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AAA昆仑</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
