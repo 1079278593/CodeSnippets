@@ -40,7 +40,7 @@ UIAlertController *alertController = [UIAlertController alertControllerWithTitle
 UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
 UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
     //UITextField *textField = alertController.textFields.firstObject;
-    
+    //[[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];
 }];
 
 
@@ -48,6 +48,7 @@ UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlert
 //定义第一个输入框；
 [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
     textField.placeholder = @"&lt;#string#&gt;";
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveURLAlertChangeNotification:) name:UITextFieldTextDidChangeNotification object:textField];
 }];
 
 [alertController addAction:okAction];

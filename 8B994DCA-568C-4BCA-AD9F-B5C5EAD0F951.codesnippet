@@ -9,7 +9,7 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>-(void)setupTableView{
+	<string>- (void)setupTableView {
     _tableView = [[UITableView alloc]initWithFrame:CGRectZero];
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -23,11 +23,11 @@
     [self addSubview:_tableView];
 }
 
-//-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 //    return &lt;#data#&gt;.count;
 //}
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return &lt;#data#&gt;.count;
 }
 
@@ -36,7 +36,7 @@
     return view;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     /**
      UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
      if (cell == nil) {

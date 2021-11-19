@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>ClassImplementation</string>
@@ -10,9 +12,9 @@
 	<string>#pragma mark - gesture
 -(void)addGesture{
     
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGestureAct:)];
-    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGestureAct:)];
-    UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(pinchGestureAct:)];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGesture:)];
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGesture:)];
+    UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(pinchGesture:)];
     UIRotationGestureRecognizer *rotationGesture = [[UIRotationGestureRecognizer alloc]initWithTarget:self action:@selector(rotationGestureAct:)];
     
     [self addGestureRecognizer:tapGesture];
@@ -21,21 +23,21 @@
     [self addGestureRecognizer:rotationGesture];
     
 }
--(void)panGestureAct:(UIPanGestureRecognizer *)panGesture{
+-(void)panGesture:(UIPanGestureRecognizer *)panGesture{
     
     }
 
--(void)pinchGestureAct:(UIPinchGestureRecognizer *)pinchGesture{
+-(void)pinchGesture:(UIPinchGestureRecognizer *)pinchGesture{
     
     
 }
 
--(void)rotationGestureAct:(UIRotationGestureRecognizer *)rotationGesture{
+-(void)rotationGesture:(UIRotationGestureRecognizer *)rotationGesture{
     
         
 }
 
--(void)tapGestureAct:(UITapGestureRecognizer *)tapGesture{
+-(void)tapGesture:(UITapGestureRecognizer *)tapGesture{
     
     
 }</string>
@@ -43,6 +45,8 @@
 	<string>7D4FCFE1-F830-4CC4-9997-785EC8821B9A</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
 	<string>Get_Gesture</string>
 	<key>IDECodeSnippetUserSnippet</key>
