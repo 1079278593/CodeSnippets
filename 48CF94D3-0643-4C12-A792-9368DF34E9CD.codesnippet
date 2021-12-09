@@ -20,7 +20,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setupSubview];
+        [self setupSubviews];
     }
     return self;
 }
@@ -48,7 +48,7 @@
  */
 
 #pragma mark - &lt; init view &gt;
-- (void)setupSubview {
+- (void)setupSubviews {
     
 }
 
