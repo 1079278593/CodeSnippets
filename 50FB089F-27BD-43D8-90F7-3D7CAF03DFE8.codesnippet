@@ -9,10 +9,45 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (NSArray *)getCatalogue {
+	<string>//    NSFileManager *fileManager = [NSFileManager defaultManager];
+    ///检测plistPath路径是否存在
+//    BOOL isFile = [fileManager fileExistsAtPath:plistPath];
+
+- (NSArray *)getCatalogue {
     NSString *path = [[NSBundle mainBundle]pathForResource:@"Lexicon" ofType:@"plist"];
     NSArray *arr = [LexiconFileModel mj_objectArrayWithFile:path];
+    //如果不是数组
+//    [LexiconFileModel mj_objectWithFile:path];
     return arr;
+}
+
+- (void)readTxt {
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"plk" ofType:@"txt"];
+    NSString *string = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    NSLog(@"%@",string);
+}
+
+- (void)createPlistAndWriteData:(NSString *)string {
+    ///获取本地沙盒Document路径
+    NSArray *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *path = [documentPath objectAtIndex:0];
+    
+    ///在Document路径下拼接文件名字
+    NSString *plistPath = [path stringByAppendingPathComponent:@"target.plist"];
+
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    ///检测plistPath路径是否存在
+    BOOL isFile = [fileManager fileExistsAtPath:plistPath];
+
+    NSMutableArray *plkDatas;
+    if (isFile) {
+        plkDatas = [NSMutableArray arrayWithArray:[self getCatalogue:plistPath]];
+    }
+    
+    //NSDictionary *dict = [modelInstance mj_keyValues];
+    ///plist文件写入
+//    BOOL isSuccess = [userDictionary writeToFile:plistPath atomically:YES];
+//    NSLog(@"写入成功 %@",@(isSuccess));
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>50FB089F-27BD-43D8-90F7-3D7CAF03DFE8</string>

@@ -3,27 +3,27 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocgetter</string>
+	<string>ocBytes</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- &lt;#returnType#&gt; {
-    if (_&lt;#name#&gt; == nil) {
-        _&lt;#code#&gt; = [[&lt;#class#&gt; alloc]init];
-        [self addSubview:_&lt;#code#&gt;];
-    }
-    return _&lt;#name#&gt;;
-}</string>
+	<string>Byte header[] = {frameCtrl, sequence, dataLength};
+[result appendBytes:header length:PACKAGE_HEADER_LENGTH];
+
+dimmer = (int)(0.5 * 0xffff);
+
+Byte tmp = dimmer &lt;&lt; 8 &amp; 0xff;  //高8位
+Byte tmp1 = dimmer &amp; 0xff;      //低8位</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>1CA41D2A-8CC4-460F-9A77-48E26FD4EC1A</string>
+	<string>EFA39ED9-D733-4ED3-B446-365304A14BAB</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>oc快速创建getter</string>
+	<string>Bytes相关</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

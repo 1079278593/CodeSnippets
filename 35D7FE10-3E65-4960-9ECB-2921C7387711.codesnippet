@@ -3,27 +3,26 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocgetter</string>
+	<string>ocdataLog</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- &lt;#returnType#&gt; {
-    if (_&lt;#name#&gt; == nil) {
-        _&lt;#code#&gt; = [[&lt;#class#&gt; alloc]init];
-        [self addSubview:_&lt;#code#&gt;];
-    }
-    return _&lt;#name#&gt;;
+	<string>- (void)testForShowWriteData:(NSData *)data {
+    NSError *error;
+    NSURL *url = [NSURL fileURLWithPath:@"/Users/imvt/Desktop/蓝牙post的data.txt"];
+    BOOL flag = [data writeToURL:url options:NSDataWritingWithoutOverwriting error:&amp;error];
+    NSLog(@"write status:%d ,data:%@",flag,data);
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>1CA41D2A-8CC4-460F-9A77-48E26FD4EC1A</string>
+	<string>35D7FE10-3E65-4960-9ECB-2921C7387711</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>oc快速创建getter</string>
+	<string>保存、打印Data</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

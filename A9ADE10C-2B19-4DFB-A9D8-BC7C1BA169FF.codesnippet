@@ -3,27 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocgetter</string>
+	<string>ocGestureComplict</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- &lt;#returnType#&gt; {
-    if (_&lt;#name#&gt; == nil) {
-        _&lt;#code#&gt; = [[&lt;#class#&gt; alloc]init];
-        [self addSubview:_&lt;#code#&gt;];
-    }
-    return _&lt;#name#&gt;;
-}</string>
+	<string>-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+此方法在window对象有触碰事件发生时，touchesBegan:withEvent:方法之前调用。如果返回NO，则GestureRecognizer忽略此触碰事件。默认返回YES。可以用于禁止某个区域的手势。</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>1CA41D2A-8CC4-460F-9A77-48E26FD4EC1A</string>
+	<string>A9ADE10C-2B19-4DFB-A9D8-BC7C1BA169FF</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>oc快速创建getter</string>
+	<string>手势冲突</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

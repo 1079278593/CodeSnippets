@@ -9,7 +9,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+	<string>//hitTest会遍历子view,hidden也会触发。如果有hidden情况要注意
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     if (CGRectContainsPoint(self.optButtonView.frame, point)) {
         return self.optButtonView;
     }
