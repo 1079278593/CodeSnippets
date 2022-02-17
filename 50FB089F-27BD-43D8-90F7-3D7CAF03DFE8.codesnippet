@@ -43,7 +43,11 @@
     if (isFile) {
         plkDatas = [NSMutableArray arrayWithArray:[self getCatalogue:plistPath]];
     }
-    
+    /** 如果是数组再包一层
+     GelTmpModel *tmp = [[GelTmpModel alloc]init];
+     tmp.datas = result;
+     NSDictionary *dict = [tmp mj_keyValues];
+     */
     //NSDictionary *dict = [modelInstance mj_keyValues];
     ///plist文件写入
 //    BOOL isSuccess = [userDictionary writeToFile:plistPath atomically:YES];

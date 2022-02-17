@@ -128,6 +128,11 @@
      newFrame.size.height = _textLabel.height; //如果设置width超过cell,会异常。(实际是在代理那设置了宽高。不好用，结构简单的话还是用代理回调设置)
      layoutAttributes.frame = newFrame;
      return layoutAttributes;
+ 
+ 刷新单个cell
+ [UIView performWithoutAnimation:^{
+     [self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+ }];
  }
  */</string>
 	<key>IDECodeSnippetIdentifier</key>

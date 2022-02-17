@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocnavi</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)refreshNavi {
+    NSDictionary *titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:KFontTitle], NSForegroundColorAttributeName:[UIColor redColor]};
+    ///控制导航栏的背景颜色和底部线的隐藏
+    if (@available(iOS 13.0, *)) {
+        UINavigationBarAppearance *appearance = [UINavigationBarAppearance new];
+        [appearance configureWithOpaqueBackground];//重置导航栏背景颜色和阴影
+        appearance.backgroundColor = KColorPrimary;
+        appearance.shadowImage = [UIImage new];
+        appearance.shadowColor = nil;
+        appearance.titleTextAttributes = titleTextAttributes;
+        self.navigationController.navigationBar.standardAppearance = appearance;
+        self.navigationController.navigationBar.scrollEdgeAppearance = appearance;
+    } else {
+        // Fallback on earlier versions
+        self.navigationController.navigationBar.tintColor = KColorWhite;
+        self.navigationController.navigationBar.barTintColor = KColorPrimary;
+        [self.navigationController.navigationBar setTitleTextAttributes:titleTextAttributes];
+        [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    }
+}
+
+-(NSArray*)customLeftBackButton{
+    UIButton *backButton = [self backButton];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+
+    UIBarButtonItem *negativeSeperator = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    negativeSeperator.width = -20;
+    
+    return [NSArray arrayWithObjects:negativeSeperator,backItem,nil];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>ED58D2CC-5EC1-4200-B5B9-9DB098BE2756</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>导航栏定制</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

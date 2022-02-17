@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocStringMap</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>typedef enum : NSUInteger {
+    &lt;#type#&gt;Value = 0,       //!&lt; 
+    &lt;#type#&gt;Value = 1,       //!&lt; 
+} &lt;#type#&gt;;
+
+//.h声明一样的对外名称
+extern NSString * _Nonnull &lt;#type#&gt;StringMap[];
+
+NSString *&lt;#type#&gt;StringMap[] = {
+    [&lt;#type#&gt;] = @"string1",
+    [&lt;#type#&gt;] = @"string2",
+};</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>FCA5F5B8-320A-456D-8D56-CAD82D5E13E7</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>StringMap</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

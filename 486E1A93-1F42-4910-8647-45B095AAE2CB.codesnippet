@@ -35,10 +35,10 @@
  }
  */
 
-UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"&lt;#title#&gt;" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+UIAlertController *alertController = [UIAlertController alertControllerWithTitle:GlobalLocalizedString(@"&lt;#title#&gt;") message:nil preferredStyle:UIAlertControllerStyleActionSheet];
 
-UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:GlobalLocalizedString(@"cancel") style:UIAlertActionStyleCancel handler:nil];
+UIAlertAction *okAction = [UIAlertAction actionWithTitle:GlobalLocalizedString(@"confirm") style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
     //UITextField *textField = alertController.textFields.firstObject;
     //[[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];
 }];
@@ -47,7 +47,7 @@ UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlert
 
 //定义第一个输入框；
 [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-    textField.placeholder = @"&lt;#string#&gt;";
+    textField.placeholder = GlobalLocalizedString(@"&lt;#placehold#&gt;");
     //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveURLAlertChangeNotification:) name:UITextFieldTextDidChangeNotification object:textField];
 }];
 

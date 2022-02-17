@@ -3,48 +3,39 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>octimer</string>
+	<string>ocWeakTimer</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property(nonatomic, strong)NSTimer *timer;
+	<string>@property(nonatomic, strong)MSWeakTimer *timer;
 @property(nonatomic, assign)NSInteger countDown;
 #pragma mark - &lt; timer &gt;
 - (void)startTimer {
-    self.countDown = 60;
+    self.countDown = 3;
     [self.timer invalidate];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFire) userInfo:nil repeats:YES];
+    self.timer = [MSWeakTimer scheduledTimerWithTimeInterval:1/60.0 target:self selector:@selector(timerFire) userInfo:nil repeats:YES dispatchQueue:dispatch_get_main_queue()];
     [self.timer fire];
-    
-    //可以同时加入多个Mode，或者NSRunLoopCommonModes
-//    [self.timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
-//    [self.timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:UITrackingRunLoopMode];
 }
 
 - (void)timerFire {
-//    self.hidden = self.countDown &lt;= 0;
+    //    self.hidden = self.countDown &lt;= 0;
     if (self.countDown &lt;= 0) {
         [self.timer invalidate];
         self.timer = nil;
         return;
     }
     self.countDown--;
-}
-
-//默认加入到当前runloop default mode
-[NSTimer scheduledTimerWithTimeInterval:2 repeats:NO block:^(NSTimer * _Nonnull timer) {
-    
-}];</string>
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>7FC17734-0894-49B1-9906-40E7FB6D9C01</string>
+	<string>AD00C286-32C8-4227-8D2D-4A7AC7646EBE</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>创建timer</string>
+	<string>Weak Timer</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
