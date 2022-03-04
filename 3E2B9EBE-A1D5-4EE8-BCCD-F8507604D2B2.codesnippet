@@ -39,7 +39,8 @@ git upload
 
 钩子步骤：http://kunlun/r/Documentation/user-changeid.html
 
-第三：如果要用分支，用此命令创建：git start dev1 master。然后就可以和master一样使用了。
+第三：如果要用分支，用此命令创建：git start dev1 master。
+     然后就可以和master一样使用了。
 （如果克隆后，直接来第三步，会报错，先要走第二步。）
 
 技巧：

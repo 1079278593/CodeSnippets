@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>cCharBreak</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>char* breakChar(char *str, char *delims) {
+    int col = 4, row = 3;
+    char **result;
+    result = (char **)malloc(sizeof(char*)*col);
+    for(int i=0;i&lt;col;i++) {
+        result[i]=(char*)malloc(sizeof(char)*row);
+    }
+    
+    char *target = NULL;
+    int i = 0;
+    
+    target = strtok( str, delims );
+    while( target != NULL ) {
+        printf( "result is \"%s\"\n", target );
+        strcpy(result[i], target);
+        i++;
+        target = strtok( NULL, delims );
+    }
+    return result;
+}
+/** 相似
+ char str[] = "I welcome any ideas from readers， of course.";
+ char *rc=strpbrk(str,"come");
+ printf("%s\n",rc);
+ */</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>179FE0E7-87DF-4978-87F7-153B05FD77BE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>c字符串分割</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

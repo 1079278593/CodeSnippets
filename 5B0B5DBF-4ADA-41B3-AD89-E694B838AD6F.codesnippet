@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocFile</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSString *uploadDirPath = KUploadOTAFilePath;
+    
+BOOL isDir = YES;
+if (![[NSFileManager defaultManager]fileExistsAtPath:uploadDirPath isDirectory:&amp;isDir ]) {
+    [[NSFileManager defaultManager]createDirectoryAtPath:uploadDirPath withIntermediateDirectories:YES attributes:nil error:nil];
+}
+
+NSString* filePath = [uploadDirPath stringByAppendingPathComponent: filename];
+if( [[NSFileManager defaultManager] fileExistsAtPath:filePath] ) {
+    storeFile = nil;
+}
+else {
+    if(![[NSFileManager defaultManager] createDirectoryAtPath:uploadDirPath withIntermediateDirectories:true attributes:nil error:nil]) {
+    }
+    if(![[NSFileManager defaultManager] createFileAtPath:filePath contents:nil attributes:nil]) {
+    }
+    storeFile = [NSFileHandle fileHandleForWritingAtPath:filePath];
+    [uploadedFiles addObject: [NSString stringWithFormat:@"/upload/%@", filename]];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5B0B5DBF-4ADA-41B3-AD89-E694B838AD6F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>文件相关</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
