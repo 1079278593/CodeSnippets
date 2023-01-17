@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>swPlistToJson</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>self.plistDataDict = getPlistData()
+do {
+    var data = try? JSONSerialization.data(withJSONObject: self.plistDataDict!, options: .prettyPrinted)
+    try data?.write(to: URL(fileURLWithPath: "/Users/ming/Desktop/tmp.json"))
+} catch {
+    print(" fail")
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7A3FF8BC-AEF3-4423-BB13-82F21764A81B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>plist转json</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

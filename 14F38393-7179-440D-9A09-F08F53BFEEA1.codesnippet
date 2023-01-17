@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>swSemaphore</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/**
+ // 创建一个信号，value：信号量
+ let semaphore = DispatchSemaphore.init(value: &lt;#T##Int#&gt;)
+ //创建信号量  值为1  意思是最大并发数为1，任务只能一个接一个执行
+ let semaphore = DispatchSemaphore.init(value: 1)
+ // 某个信号进行等待或等待降低信号量,只有当信号量大于0时才会停止等待，继续向下执行
+ semaphore.wait()
+ // 使某个信号的信号量+1
+ semaphore.signal()
+ */
+let queue = DispatchQueue.global()
+//创建信号量  值为1  意思是最大并发数为1，任务只能一个接一个执行
+let semaphore = DispatchSemaphore.init(value: 1)
+
+//此时信号量为1，无需等待，向下执行 信号量 1-&gt;0
+semaphore.wait()
+queue.asyncAfter(deadline: .now() + 4) {
+    print("1111")
+    //延迟4秒后输出1111，释放信号量，信号量 从0-&gt;1
+    semaphore.signal()
+}
+
+//延迟4秒输出1111后，此时信号量为1，继续向下执行  同上操作。。。
+semaphore.wait()
+queue.async {
+    print("2222")
+    semaphore.signal()
+}
+
+semaphore.wait()
+print("任务全部完成")
+semaphore.signal()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>14F38393-7179-440D-9A09-F08F53BFEEA1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift信号量</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

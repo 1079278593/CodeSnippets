@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>swAsyn</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//https://www.jianshu.com/p/dccd920d5c27
+let group = DispatchGroup()
+let queue = DispatchQueue.global()
+queue.async(group: group, execute: {
+    print("111")
+})
+queue.async(group: group, execute: {
+    print("222")
+})
+///只要任务全部完成了,就会在最后调用
+group.notify(queue: queue) {
+    print("完结咯，刷新UI")
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C7DF7245-EED7-4448-9E8A-6BEA9B4F406F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>swift异步执行</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
