@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>参考：http://t.zoukankan.com/francisblogs-p-6094541.html
+3.1、向上 Ctrl + P (previous)
+3.2、向下 Ctrl + N (next)
+3.3、向前 Ctrl + F (forward)
+3.4、向后 Ctrl + B (back)
+3.5、跳到一行的最前面 Ctrl + A (ahead)
+3.6、跳到一行的最后面 Ctrl + E (end)
+3.7、删除后面的字符 Ctrl + D (delete)
+3.8、删除当前光标一行中所有后面文字 Ctrl + K
+3.9、删除当前光标一行中所有后面文字 CMD + Delete
+3.10、Control + Y: 将刚刚用Control+ K或CMD+ Delete删除的内容粘贴至光标所在之处
+3.11、删除当前光标前面的一个单词 Ctrl + Delete
+3.12、调换当前光标两边的字符Ctrl + T
+3.13、将光标插入点置于窗口正中Ctrl + L</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D4576CC7-8A88-4EC8-8A50-E263BBC9DCCF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>快捷2</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

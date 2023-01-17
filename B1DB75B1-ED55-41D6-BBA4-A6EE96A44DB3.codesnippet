@@ -3,23 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocmasonryupdate</string>
+	<string>oclog</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>[&lt;#view#&gt; mas_updateConstraints:^(MASConstraintMaker *make) {
-    make.&lt;#left#&gt;.equalTo(&lt;#view#&gt;);
-}];</string>
+	<string>NSLog(@"&lt;#desc#&gt;%&lt;#type#&gt;",&lt;#para#&gt;);</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>AB30205F-CBB4-4B27-8265-195F520B2CF4</string>
+	<string>B1DB75B1-ED55-41D6-BBA4-A6EE96A44DB3</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>更新：masonry布局</string>
+	<string>便捷输出</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -58,6 +58,40 @@ UIView *endView = [[UIView alloc]init];
 
 [_containerView mas_updateConstraints:^(MASConstraintMaker *make) {
     make.bottom.equalTo(endView);//没有offset(10)可能有问题
+}];
+
+///------------非scrollview
+///
+//自适应高度
+UIView *scrollView = [[UIView alloc]init];
+scrollView.backgroundColor = KRandomColor(0.4);
+[self addSubview:scrollView];
+[scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.centerX.equalTo(self);
+    make.centerY.equalTo(self).offset(-40);
+    make.width.equalTo(@(300));
+    make.height.equalTo(@(200));//决定整体的高度
+}];
+    
+CGFloat width = 300;
+self.containerView.layer.cornerRadius = 5;
+self.containerView.backgroundColor = [UIColor whiteColor];
+//作为唯一子view
+[scrollView addSubview:self.containerView];
+[self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.width.equalTo(scrollView);
+    make.edges.equalTo(scrollView);
+}];
+
+....之间的views，布局用height。
+
+[self.cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    ...
+    make.height.equalTo(@(34));
+}];
+
+[self.containerView mas_updateConstraints:^(MASConstraintMaker *make) {
+    make.bottom.equalTo(self.cancelButton);//没有offset(10)可能有问题
 }];</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>AB797A30-75DA-4D39-AE17-DE8C548CFC36</string>

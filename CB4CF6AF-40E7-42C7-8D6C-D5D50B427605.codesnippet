@@ -11,24 +11,6 @@
 	<key>IDECodeSnippetContents</key>
 	<string>@interface &lt;#class#&gt; ()
 
-@end
-
-@implementation &lt;#class#&gt;
-
-- (instancetype)init {
-    if (self = [super init]) {
-
-    }
-    return self;
-}
-
-
-- (void)refreshWithModel:(&lt;#model#&gt; *)model;
-#pragma mark - &lt; public &gt;
-- (void)refreshWithModel:(&lt;#model#&gt; *)model {
-    
-}
-
 @end</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>CB4CF6AF-40E7-42C7-8D6C-D5D50B427605</string>
@@ -41,6 +23,6 @@
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>

@@ -3,23 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocmasonryupdate</string>
+	<string>ocCopy</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>[&lt;#view#&gt; mas_updateConstraints:^(MASConstraintMaker *make) {
-    make.&lt;#left#&gt;.equalTo(&lt;#view#&gt;);
-}];</string>
+	<string>Class NameClass = NSClassFromString(&lt;#className#&gt;);
+NSDictionary *dict = [self mj_JSONObject];
+&lt;#Class#&gt; *model = [NameClass mj_objectWithKeyValues:dict];
+
+
+- (NSObject *)objecDeepCopy {
+//    Class NameClass = NSClassFromString([self class]);
+    Class NameClass = [self class];
+    NSDictionary *dict = [self mj_JSONObject];
+    NSObject *model = [NameClass mj_objectWithKeyValues:dict];
+    return model;
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>AB30205F-CBB4-4B27-8265-195F520B2CF4</string>
+	<string>81972E8E-3B03-4DBD-AAD2-AD8EE22F822F</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>更新：masonry布局</string>
+	<string>用mj赋值Class</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

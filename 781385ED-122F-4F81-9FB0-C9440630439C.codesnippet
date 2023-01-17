@@ -3,23 +3,29 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocmasonryupdate</string>
+	<string></string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>[&lt;#view#&gt; mas_updateConstraints:^(MASConstraintMaker *make) {
-    make.&lt;#left#&gt;.equalTo(&lt;#view#&gt;);
-}];</string>
+	<string>//四舍五入      //向上        //向下
+round()        ceil()       floor()
+
+//截断       //取余(一般用%） 
+trunc()        mod()
+
+//取余
+// remainder = 16.80 - (5 * 3.5) 
+answer = remainder(a, b); answer = -0.7;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>AB30205F-CBB4-4B27-8265-195F520B2CF4</string>
+	<string>781385ED-122F-4F81-9FB0-C9440630439C</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>更新：masonry布局</string>
+	<string>取整</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

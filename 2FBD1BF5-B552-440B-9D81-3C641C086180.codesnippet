@@ -10,7 +10,7 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>UIButton *&lt;#button#&gt; = [UIButton buttonWithType:UIButtonTypeCustom];
-[&lt;#button#&gt; setTitle:@"按钮" forState:UIControlStateNormal];
+[&lt;#button#&gt; setTitle:GlobalLocalizedString(@"按钮") forState:UIControlStateNormal];
 [&lt;#button#&gt; setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 [&lt;#button#&gt; addTarget:self action:@selector(&lt;#button#&gt;Event:) forControlEvents:UIControlEventTouchUpInside];
 [self.view addSubview:&lt;#button#&gt;];

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocHttpHeader</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSString *requestStr = [NSString stringWithFormat:
+                  @"%@ %@ HTTP/1.1\r\n"
+                  @"Host: %@:%@\r\n"
+                  @"Content-Type: application/json\r\n"
+                  @"User-Agent: %@\r\n"
+                  @"Content-Length: %lu\r\n"
+                  @"Accept-Encoding: gzip, deflate\r\n"
+                  @"Connection: keep-alive\r\n"
+                  @"Cookie: 12432432\n"
+                  @"\r\n"
+                  @"%@\r\n"
+                  @"\r\n",
+                  SocketRequestTypeStringMap[type],path,
+                  self.host,@(self.port),
+                  self.userAgent,(unsigned long)body.length,
+                  body
+                  ];
+//get 最短(如果用post的host之类的，会disconnet等各种断开)
+httpRequestHeader = [NSString stringWithFormat:
+                     @"GET %@ HTTP/1.1\r\n"
+                     "Connection: keep-alive\r\n"
+                     "\r\n",
+                     suffixPath];//get不用host和port
+
+//post最短(body上面的@"\r\n"去掉也会出错)
+httpRequestHeader = [NSString stringWithFormat:
+                     @"%@ %@ HTTP/1.1\r\n"
+                     @"Host: %@:%@\r\n"
+                     @"Content-Length: %lu\r\n"
+                     @"Connection: keep-alive\r\n"
+                     @"\r\n"
+                     @"%@\r\n"
+                     @"\r\n"
+                     ,requestType,suffixPath,
+                     self.host,@(self.port),
+                     (unsigned long)body.length,
+                     body];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>68C8D067-560B-489B-9DE2-98D47917BC62</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>http的header</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

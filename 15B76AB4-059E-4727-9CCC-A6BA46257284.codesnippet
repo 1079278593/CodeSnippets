@@ -3,23 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocmasonryupdate</string>
+	<string>ocborder</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>[&lt;#view#&gt; mas_updateConstraints:^(MASConstraintMaker *make) {
-    make.&lt;#left#&gt;.equalTo(&lt;#view#&gt;);
-}];</string>
+	<string>&lt;#view#&gt;.layer.borderWidth = 1;
+&lt;#view#&gt;.layer.borderColor = KRandomColor(0.8).CGColor;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>AB30205F-CBB4-4B27-8265-195F520B2CF4</string>
+	<string>15B76AB4-059E-4727-9CCC-A6BA46257284</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>更新：masonry布局</string>
+	<string>Border：调试view</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

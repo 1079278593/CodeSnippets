@@ -3,23 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ocmasonryupdate</string>
+	<string></string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>[&lt;#view#&gt; mas_updateConstraints:^(MASConstraintMaker *make) {
-    make.&lt;#left#&gt;.equalTo(&lt;#view#&gt;);
-}];</string>
+	<string>- (void)requestForAuth {
+    NSURL * URL = [NSURL URLWithString:@"https://www.baidu.com"];
+    NSURLSession * session = [NSURLSession sharedSession];
+    NSURLSessionDataTask * task = [session dataTaskWithURL:URL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (data) {
+            NSLog(@"success");
+        }else{
+            NSLog(@"fail");
+        }
+    }];
+    [task resume];
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>AB30205F-CBB4-4B27-8265-195F520B2CF4</string>
+	<string>381F9440-A143-455D-9C7D-C09A4F7305A1</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>更新：masonry布局</string>
+	<string>网路授权</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

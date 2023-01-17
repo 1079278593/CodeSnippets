@@ -20,7 +20,14 @@ typedef enum : NSUInteger {
     &lt;#name#&gt; = 0,       //!&lt; 
     &lt;#name#&gt; = 1,       //!&lt; 
     &lt;#name#&gt; = 2,       //!&lt; 
-} &lt;#name#&gt;;</string>
+} &lt;#name#&gt;;
+
+static NSString * NSStringFromZYNetworkAccessibleState(ZYNetworkAccessibleState state) {
+    return state == ZYNetworkChecking   ? @"ZYNetworkChecking"   :
+           state == ZYNetworkUnknown    ? @"ZYNetworkUnknown"    :
+           state == ZYNetworkAccessible ? @"ZYNetworkAccessible" :
+           state == ZYNetworkRestricted ? @"ZYNetworkRestricted" : nil;
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>67E1ACAA-C78D-48C9-9118-6797B1662FB3</string>
 	<key>IDECodeSnippetLanguage</key>

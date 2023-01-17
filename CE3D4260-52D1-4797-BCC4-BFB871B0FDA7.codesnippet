@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocbuttons</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>self.blackOutButton = [UIButton buttonWithType:UIButtonTypeCustom];
+self.identifyButton = [UIButton buttonWithType:UIButtonTypeCustom];
+self.actionButtons = [NSMutableArray arrayWithObjects:self.blackOutButton,self.identifyButton, nil];
+NSArray *imageNames = @[@"lightOpen",@"identify"];
+NSArray *imageNameHs = @[@"lightClose",@"identify_h"];
+NSArray *titles = @[@"blackout",@"identify"];
+for (int i = 0; i&lt;imageNames.count; i++) {
+    UIButton *button = self.actionButtons[i];
+    button.titleLabel.font = [UIFont systemFontOfSize:KFontSubTitle2];
+    [button setImage:[UIImage imageNamed:imageNames[i]] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:imageNameHs[i]] forState:UIControlStateSelected];
+    [button setTitleColor:KColorWhite forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+    [button setTitle:GlobalLocalizedString(titles[i]) forState:UIControlStateNormal];
+    button.size = CGSizeMake(60, height);
+    [button imageLayout:ImageLayoutTop centerPadding:3];
+    [self.contentView addSubview:button];
+    [button addTarget:self action:@selector(buttonEvent:) forControlEvents:UIControlEventTouchUpInside];
+    button.layer.borderWidth = 1;
+}
+    
+[_actionButtons mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:height leadSpacing:4 tailSpacing:4];
+//    [_actionButtons mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:3 leadSpacing:3 tailSpacing:3];
+[_actionButtons mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.height.equalTo(@(height));//只要y和height就可以，铺满父容器，需要至少3个subView才行
+    make.centerY.equalTo(self.contentView).offset(10);
+}];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CE3D4260-52D1-4797-BCC4-BFB871B0FDA7</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>多个按钮的布局~masonry</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

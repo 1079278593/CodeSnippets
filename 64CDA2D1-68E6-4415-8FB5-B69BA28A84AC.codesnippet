@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocAudio</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#import &lt;AudioToolbox/AudioToolbox.h&gt;
+//1521连续三次的短震动、1520重
+//一般的震动 AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+//普通的震动,类似3DTouch(Peek) AudioServicesPlaySystemSound(1519);
+//普通的震动,类似3DTouch(Pop)  AudioServicesPlaySystemSound(1520);
+AudioServicesPlaySystemSound(1521);
+
+/** ios10以后
+ UIImpactFeedbackGenerator *generator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleHeavy];
+ [generator impactOccurred];
+  
+ 枚举定义震动强度
+ typedef NS_ENUM(NSInteger, UIImpactFeedbackStyle) {
+     UIImpactFeedbackStyleLight,
+     UIImpactFeedbackStyleMedium,
+     UIImpactFeedbackStyleHeavy,
+     UIImpactFeedbackStyleSoft     API_AVAILABLE(ios(13.0)),
+     UIImpactFeedbackStyleRigid    API_AVAILABLE(ios(13.0))
+ };
+ */</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>64CDA2D1-68E6-4415-8FB5-B69BA28A84AC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>声音、震动</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

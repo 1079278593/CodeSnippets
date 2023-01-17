@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>self.tmpWriteCharacteristic = [[CBMutableCharacteristic alloc] initWithType:c.UUID properties:CBCharacteristicPropertyWrite | CBCharacteristicPropertyNotify | CBCharacteristicPropertyWriteWithoutResponse value :nil permissions:CBAttributePermissionsWriteable];
+
+
+if (self.tmpFlag) {
+////        [self.blePeripheral.peripheral writeValue:data forCharacteristic:_tmpWriteCharacteristic type:CBCharacteristicWriteWithoutResponse];
+//        [self.blePeripheral.peripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
+//    }else {
+        [self.blePeripheral.peripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithResponse];
+//    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5CFF7C8E-50DE-4A5C-ACDB-C69A36B707CD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>蓝牙特征</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

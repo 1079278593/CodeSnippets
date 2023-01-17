@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>octimerWeak</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@property(nonatomic, strong)MSWeakTimer *timer;
+@property(nonatomic, assign)NSInteger countDown; //注意变量类型   //注意是否小于1秒
+#pragma mark - &lt; timer &gt;
+- (void)startTimer {
+    self.countDown = 60;
+    [self.timer invalidate];
+    self.timer = [MSWeakTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(timerFire) userInfo:nil repeats:YES dispatchQueue:dispatch_get_main_queue()];
+    [self.timer fire];
+    
+    //可以同时加入多个Mode，或者NSRunLoopCommonModes
+    //    [self.timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    //    [self.timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:UITrackingRunLoopMode];
+}
+
+- (void)timerFire {
+    //    self.hidden = self.countDown &lt;= 0;
+    if (self.countDown &lt;= 0) {
+        [self.timer invalidate];
+        self.timer = nil;
+        return;
+    }
+    self.countDown--;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2CBA8822-59C9-43E2-8500-0534B741DB1D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Timer：弱引用</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocStringClass</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//
+NSString *className = &lt;#...Map#&gt;[mode];
+Class NameClass = NSClassFromString(className);
+UIViewController *controller = [[NameClass alloc]init];
+
+//
+EffectsFadeInOutValueModel *model = [EffectsFadeInOutValueModel mj_objectWithKeyValues:dict];
+
+//
+- (ColorRGBModel *)deepCopy {
+    FixturesColorMode mode = [self getMode];
+    NSString *className = FixturesModelStringMap[mode];
+    Class NameClass = NSClassFromString(className);
+    NSDictionary *dict = [self mj_JSONObject];
+    ColorRGBModel *model = [NameClass mj_objectWithKeyValues:dict];
+    model._id = [TimeUtil getCurrentTimeStamp];//时间戳在复制时要重新获取
+    return model;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BBC6B8CB-F596-48B8-8CC3-3996BB33E69D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>映射：string转Class，dict转模型，模型转dict</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

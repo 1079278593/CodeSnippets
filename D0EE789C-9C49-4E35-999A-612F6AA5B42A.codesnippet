@@ -34,7 +34,12 @@ git log
 git diff
 
 //撤回一个版本的提交
-git reset --soft HEAD^</string>
+git reset --soft HEAD^
+
+//暂存改动，pull新代码，然后pop改动的代码
+git stash
+git pull
+git stash pop</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>D0EE789C-9C49-4E35-999A-612F6AA5B42A</string>
 	<key>IDECodeSnippetLanguage</key>

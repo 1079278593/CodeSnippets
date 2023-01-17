@@ -13,7 +13,8 @@
 _textField.keyboardType = UIKeyboardTypeNumberPad;
 _textField.clearButtonMode = UITextFieldViewModeWhileEditing;
 _textField.font = [UIFont fontWithName:FONT_REGULAR size:STFont(16)];
-_textField.attributedPlaceholder = [[NSMutableAttributedString alloc] initWithString:@"输入关键词" attributes:@{NSForegroundColorAttributeName : c03, NSFontAttributeName : [UIFont fontWithName:FONT_REGULAR size:STFont(15)]}];
+_textField.attributedPlaceholder = [[NSMutableAttributedString alloc] initWithString:GlobalLocalizedString(@"Input name") attributes:@{NSForegroundColorAttributeName : [UIColor lightGrayColor], NSFontAttributeName : [UIFont systemFontOfSize:KFontSubTitle]}];
+//_textField.attributedPlaceholder = [[NSMutableAttributedString alloc] initWithString:@" 添加标签" attributes:@{NSForegroundColorAttributeName : [UIColor lightGrayColor], NSFontAttributeName : [UIFont systemFontOfSize:14]}];
 [_textField leftViewWithIcon:@"search" width:20];
 _textField.leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 12, 1)];
 _textField.leftViewMode = UITextFieldViewModeAlways;
@@ -47,6 +48,17 @@ textView.returnKeyType = UIReturnKeyDone;
         return NO; //这里返回NO，就代表return键值失效，即页面上按下return，不会出现换行，如果为yes，则输入页面会换行
     }
 
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    //过滤掉连续空格和换行，如果在两个符号间的空格是无法过滤的。
+    NSString *text = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if (text.length == 0) {
+        textField.text = @"";//重置
+        return NO;//
+    }
+    [textField endEditing:YES];
     return YES;
 }</string>
 	<key>IDECodeSnippetIdentifier</key>

@@ -3,22 +3,30 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string></string>
+	<string>ocMasonryAnimation</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>
+	<string>// 告诉self.view约束需要更新
+[self.view setNeedsUpdateConstraints];
+//调用此方法告诉self.view检测是否需要更新约束，若需要则更新，下面添加动画效果才起作用
+[self.view updateConstraintsIfNeeded];
+ 
+[UIView animateWithDuration:0.3 animations:^{
+  [self.view layoutIfNeeded];
+}];
+
 </string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>C86972CE-AB63-4D69-8A29-796623902248</string>
+	<string>9A6AA31F-95E0-4EFF-9193-C913C5660AD6</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>My Code Snippet</string>
+	<string>masonry布局动画</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocAlertInput</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)cctValueChangeAlert {
+    NSString *message = [NSString stringWithFormat:@"%d~%d",self.cctMinValue,self.cctMaxValue];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:GlobalLocalizedString(@"Input Temp") preferredStyle:UIAlertControllerStyleAlert];
+    
+    WS(weakSelf)
+    UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:GlobalLocalizedString(@"cancel") style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:GlobalLocalizedString(@"confirm") style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        UITextField *textField = alertController.textFields.firstObject;
+        [weakSelf refreshWithCCTValue:textField.text.intValue];
+        [weakSelf postData];
+    }];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = message;
+        textField.keyboardType = UIKeyboardTypeDecimalPad;
+    }];
+    
+    alertController.maxValue = [NSString stringWithFormat:@"%d",_cctMaxValue];
+    alertController.minValue = [NSString stringWithFormat:@"%d",_cctMinValue];
+    [alertController startObserver];
+    
+    [alertController addAction:okAction];
+    [alertController addAction:cancleAction];
+    [self.viewController presentViewController:alertController animated:true completion:nil];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B628699E-24D7-4A98-9413-FE1937CBCFF6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>带输入框的alert</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocSubViewEqualSpacing</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>&lt;#view#&gt; = [UIButton buttonWithType:UIButtonTypeCustom];
+[&lt;#view#&gt; addTarget:self action:@selector(&lt;#view#&gt;BtnEvent:) forControlEvents:UIControlEventTouchUpInside];
+[&lt;#containerView#&gt; addSubview:&lt;#view#&gt;];
+    
+NSArray *views = @[self.sceneSetBtn,self.sceneSet1Btn,self.sceneSet2Btn];
+//    [views mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:40 leadSpacing:2 tailSpacing:2];
+[views mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:3 leadSpacing:2 tailSpacing:2];
+[views mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.height.equalTo(@30);//只要y和height就可以，铺满父容器，需要至少3个subView才行
+    make.top.equalTo(self.cancelOneGroup.mas_bottom).offset(20);
+}];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6296DF11-1A72-4677-BAD0-9D5B4799B8A5</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Masonry等间距布局</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
