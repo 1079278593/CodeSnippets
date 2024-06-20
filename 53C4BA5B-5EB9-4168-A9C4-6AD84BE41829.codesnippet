@@ -9,12 +9,23 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>UIView *view = self.magnifierAssistVC.view;
-    [view setTranslatesAutoresizingMaskIntoConstraints:NO];
-    NSArray *constaraints1 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[view]-0-|" options:NSLayoutFormatAlignAllCenterX metrics:nil views:NSDictionaryOfVariableBindings(view)];
-    NSArray *constaraints2 = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[view]-0-|" options:NSLayoutFormatAlignAllCenterY metrics:nil views:NSDictionaryOfVariableBindings(view)];
-    [self.magnifyCtrView addConstraints:constaraints1];
-    [self.magnifyCtrView addConstraints:constaraints2];</string>
+	<string>//https://www.jianshu.com/p/fe6d3d2b4f2a
+/**
+ VFL语言的规则
+
+ "H" 表示水平方向，"V"表示垂直方向；
+ "|" 表示superview的边界；
+ "[]" 表示view，"()"表示尺寸，它们可以多个条件组合，中间使用逗号分隔，举例：[view(&gt;=70, &lt;=100)];
+ "-" 表示间隙；
+ "@"表示优先级。举例：V:|-50@750-[view(55)]
+ */
+
+UIView *view = self.magnifierAssistVC.view;
+[view setTranslatesAutoresizingMaskIntoConstraints:NO];
+NSArray *constaraints1 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[view]-0-|" options:NSLayoutFormatAlignAllCenterX metrics:nil views:NSDictionaryOfVariableBindings(view)];
+NSArray *constaraints2 = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[view]-0-|" options:NSLayoutFormatAlignAllCenterY metrics:nil views:NSDictionaryOfVariableBindings(view)];
+[self.magnifyCtrView addConstraints:constaraints1];
+[self.magnifyCtrView addConstraints:constaraints2];</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>53C4BA5B-5EB9-4168-A9C4-6AD84BE41829</string>
 	<key>IDECodeSnippetLanguage</key>

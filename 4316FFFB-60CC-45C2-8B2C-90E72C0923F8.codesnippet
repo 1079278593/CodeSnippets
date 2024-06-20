@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//SideMenu库-侧栏
+#import &lt;Lighting-Swift.h&gt;//调用swift
+- (void)setupSideMenu {
+    UINavigationController *navi =  self.navigationController;
+    UIViewController *controller = navi.topViewController;
+    
+    //left
+    CGFloat offsetY = KTopBarSafeHeight+20;
+    CGFloat menuWidth = 310;
+    CGFloat menuHeight = KScreenHeight - offsetY;
+    _leftController = [IpadSettingController new];
+    [_leftController reLoadTableView:CGRectMake(0, offsetY, menuWidth, menuHeight)];
+    _leftNavi = [[SideMenuNavigationController alloc]initWithRootViewController:_leftController];
+    [SideMenuManager defaultManager].leftMenuNavigationController = _leftNavi;
+
+    [[SideMenuManager defaultManager] addPanGestureToPresentToView:navi.navigationBar];
+    [[SideMenuManager defaultManager] addScreenEdgePanGesturesToPresentToView:navi.view];
+    
+    _leftNavi.menuWidth = menuWidth;
+    _leftNavi.statusBarEndAlpha = 0;
+    
+    //    // Copy all settings to the other menu
+    //    rightMenuNavigationController.settings = leftMenuNavigationController.settings
+}
+
+- (void)menuBtnEvent:(UIButton *)button {
+    [self presentViewController:_leftNavi animated:YES completion:nil];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4316FFFB-60CC-45C2-8B2C-90E72C0923F8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>iPad侧栏-SideMenu库</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

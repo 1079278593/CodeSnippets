@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>iosBlockWeak</string>
+	<string>ocWeak</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -11,6 +11,7 @@
 	<key>IDECodeSnippetContents</key>
 	<string>oc：
 #define WS(weakSelf)  __weak __typeof(&amp;*self)weakSelf = self;
+//类似写法 //__weak typeof(self) weakSelf = self;
 用法如下：
 WS(weakself)
 

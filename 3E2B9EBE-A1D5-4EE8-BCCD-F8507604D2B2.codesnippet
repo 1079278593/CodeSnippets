@@ -51,7 +51,12 @@ git stash pop
 
 2.撤销commit
 https://www.cnblogs.com/lfxiao/p/9378763.html
-比如： git reset --soft HEAD^</string>
+比如： git reset --soft HEAD^
+
+3.上面reset多了，或者想恢复
+git reflog
+（终端看：黄色部分是ID，后面是描述，将ID放到下面命令中）(或者看github的commit也是一样的)
+git reset --soft [id]</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>3E2B9EBE-A1D5-4EE8-BCCD-F8507604D2B2</string>
 	<key>IDECodeSnippetLanguage</key>
@@ -59,7 +64,7 @@ https://www.cnblogs.com/lfxiao/p/9378763.html
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>AAA昆仑</string>
+	<string>AAAA  ‘昆仑/git’ 相关</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

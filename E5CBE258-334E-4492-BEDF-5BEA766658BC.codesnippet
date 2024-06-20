@@ -10,7 +10,7 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>&lt;#label#&gt; = [[UILabel alloc]init];
-&lt;#label#&gt;.textAlignment = NSTextAlignmentLeft;
+&lt;#label#&gt;.textAlignment = NSTextAlignmen&lt;#direction#&gt;;
 &lt;#label#&gt;.font = [UIFont systemFontOfSize:&lt;#(CGFloat)#&gt;];
 &lt;#label#&gt;.textColor = [UIColor &lt;#color#&gt;];
 [self addSubview:&lt;#label#&gt;];

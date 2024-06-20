@@ -9,9 +9,31 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>代码调用：选中
+	<string>//代码调用：选中
 NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-[self.collectionView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];</string>
+[self.collectionView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+
+//其它让cell选中方式
+- (void)makeSelectFirstCell {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    &lt;#cell#&gt; *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    [cell refreshSelect:YES];
+    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];//标记选中，如果没有调用会导致多选一个出来的情况。
+}
+// 1.这两个属性都是默认配置的,如果你没有修改的话,就不用写
+allowsSelection = YES;
+allowsMultipleSelection = NO;
+// 2.在cellForItemAtIndexPath内
+// 调用下面的方法，将cell再次标记
+//(如果有调用reload导致didDeselectItemAtIndexPath无法调用）
+[collectionView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+// 3.在cell内会加入下面的代码
+- (void)refreshSelect:(BOOL)isSelected {
+    self.backgroundColor = isSelected ? KColorGray : [UIColor clearColor];
+//    self.contentView.backgroundColor = isSelected ? KColorGray : [UIColor clearColor];
+    self.textLabel.textColor = isSelected ? [UIColor blackColor] : [UIColor whiteColor];
+    self.rightLabel.textColor = isSelected ? [UIColor blackColor] : [UIColor whiteColor];
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>CE8308D2-2160-4394-A9BA-120C894F764F</string>
 	<key>IDECodeSnippetLanguage</key>

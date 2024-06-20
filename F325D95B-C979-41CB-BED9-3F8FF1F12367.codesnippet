@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocAbstract</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//方式1
+@implementation AbstractObject
+- (instancetype)init {
+    // 注意这里不能使用 isKindOfClass
+    if ([self isMemberOfClass:[AbstractObject class]]) {
+        [self doesNotRecognizeSelector:_cmd];
+        return nil;
+    } else {
+        // 只有实例化子类，调用 [super init] 才会走这边
+        self = [super init];
+        if (self) {
+            /// 初始化操作
+            return self;
+        }
+    }
+    return nil;
+}
+- (double)calculateArea {
+    [self doesNotRecognizeSelector:_cmd];
+    return 0;
+}
+@end
+
+//方式2
+#define MethodNotImplemented() \
+@throw [NSException exceptionWithName:NSInternalInconsistencyException \
+                               reason:[NSString stringWithFormat:@"You must override %@ in a subclass.", NSStringFromSelector(_cmd)] \
+                             userInfo:nil]
+
+@implementation AbstractClass
+
+- (id)init {
+    NSAssert(![self isMemberOfClass:[AbstractClass class]], @"AbstractClass is an abstract class, you should not instantiate it directly.");
+    return [super init];
+}
+
+// 抽象方法
+- (double)calculateArea {
+    MethodNotImplemented();
+    return 0;
+}
+@end</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F325D95B-C979-41CB-BED9-3F8FF1F12367</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>抽象类</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

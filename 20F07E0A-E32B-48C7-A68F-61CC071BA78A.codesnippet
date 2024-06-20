@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocPhoto</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - &lt; photo &gt;
+- (void)getAlbumWithName:(NSString *)albumName type:(PHAssetMediaType)type completion:(void (^)(NSArray&lt;PHFetchResult *&gt; *))completion {
+    // 我的照片流
+//    PHFetchResult *myPhotoStreamAlbum = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumMyPhotoStream options:nil];
+    PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    PHFetchResult *topLevelUserCollections = [PHCollectionList fetchTopLevelUserCollectionsWithOptions:nil];//用户创建相册
+    NSArray *allAlbums = @[smartAlbums,topLevelUserCollections];
+    
+    NSMutableArray *albumArr = [NSMutableArray array];
+    for (PHFetchResult *fetchResult in allAlbums) {
+        for (PHAssetCollection *collection in fetchResult) {
+            //遍历获取相册
+            if (collection.assetCollectionSubtype == PHAssetCollectionSubtypeSmartAlbumAllHidden) continue;
+            if (collection.assetCollectionSubtype == 1000000201) continue; //『最近删除』相册
+            if ([collection estimatedAssetCount] &lt; 1) {
+                NSLog(@"sub album , filter when asset count &lt; 1"); continue;
+            }
+            NSString *collectionName = collection.localizedTitle;
+            NSLog(@"sub album title is %@", collectionName);
+            if (![collectionName isEqualToString:albumName]) {
+                continue;
+            }
+            
+            //获取当前相册里所有的PHAsset，也就是图片或者视频
+            PHFetchOptions *option = [[PHFetchOptions alloc] init];
+            option.predicate = [NSPredicate predicateWithFormat:@"mediaType == %ld", type];
+            option.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]];//降序
+            if (type == PHAssetMediaTypeUnknown) {
+                option = nil;
+            }
+            
+            PHFetchResult *assetsFetchResult = [PHAsset fetchAssetsInAssetCollection:collection options:option];
+            if (assetsFetchResult.count &gt; 0) {
+                NSLog(@"sub album '%@' type~%lu count is %ld", collectionName, type, assetsFetchResult.count);
+                [albumArr addObject:assetsFetchResult];
+            }
+        }
+    }
+    if (completion) {
+        completion(albumArr);
+    }
+}
+
+- (void)getAllAlbumsWithType:(PHAssetMediaType)type completion:(void (^)(NSArray&lt;TZAlbumModel *&gt; *))completion {
+    // 我的照片流
+    PHFetchResult *myPhotoStreamAlbum = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumMyPhotoStream options:nil];
+    PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    PHFetchResult *topLevelUserCollections = [PHCollectionList fetchTopLevelUserCollectionsWithOptions:nil];
+    PHFetchResult *syncedAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumSyncedAlbum options:nil];
+    PHFetchResult *sharedAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumCloudShared options:nil];
+    NSArray *allAlbums = @[myPhotoStreamAlbum,smartAlbums,topLevelUserCollections,syncedAlbums,sharedAlbums];
+    
+    NSMutableArray *albumArr = [NSMutableArray array];
+    for (PHFetchResult *fetchResult in allAlbums) {
+        for (PHAssetCollection *collection in fetchResult) {
+            if (collection.assetCollectionSubtype == PHAssetCollectionSubtypeSmartAlbumAllHidden) continue;
+            if (collection.assetCollectionSubtype == 1000000201) continue; //『最近删除』相册
+            if ([collection estimatedAssetCount] &lt; 1) {
+                NSLog(@"sub album , filter when asset count &lt; 1"); continue;
+            }
+            
+            NSString *collectionName = collection.localizedTitle;
+            
+            //获取当前相册里所有的PHAsset，也就是图片或者视频
+            PHFetchOptions *option = [[PHFetchOptions alloc] init];
+            option.predicate = [NSPredicate predicateWithFormat:@"mediaType == %ld", type];
+            option.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]];//降序
+            if (type == PHAssetMediaTypeUnknown) {
+                option = nil;//如果要视频和图片都有，nil才会是正确的顺序。
+            }
+            
+            PHFetchResult *assetsFetchResult = [PHAsset fetchAssetsInAssetCollection:collection options:option];
+            if (assetsFetchResult.count &gt; 0) {
+                NSLog(@"sub album '%@' count is %ld", collectionName, assetsFetchResult.count);
+                [albumArr addObject:assetsFetchResult];
+            }
+        }
+    }
+    if (completion) {
+        completion(albumArr);
+    }
+}
+
+//获取image
+- (void)requestImageWithAsset:(PHAsset *)asset {
+    __weak Download1ViewController *weakSelf = self;
+//    PHFetchResult * fetchResult = [PHAsset fetchAssetsWithALAssetURLs:array options:nil];//urls
+    if (asset != nil) {
+        PHImageRequestOptions *options = [[PHImageRequestOptions alloc]init];
+        options.synchronous = NO;
+        options.version = PHImageRequestOptionsVersionCurrent;
+        options.resizeMode = PHImageRequestOptionsResizeModeNone;
+
+//        [[PHImageManager defaultManager] requestImageDataForAsset:photoAsset options: options resultHandler:^(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info) {
+//            UIImage * image = [[UIImage alloc] initWithData:imageData];
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                //
+//            });
+//        }];
+        [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:CGSizeMake(300, 300) contentMode:PHImageContentModeAspectFit options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+            
+        }];
+    }
+}
+
+- (void)deletPHAsset:(PHAsset *)asset {
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        [PHAssetChangeRequest deleteAssets:@[asset]];
+    } completionHandler:^(BOOL success, NSError *error) {
+        if (success) {
+            NSLog(@"删除系统照片：成功");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if ([self.delegate respondsToSelector:@selector(deleteSuccess:)]) {
+                    [self.delegate deleteSuccess:self.model];
+                }
+            });
+        }else {
+            NSLog(@"删除系统照片：失败");
+        }
+    }];
+}
+
+- (void)requestImageWithAssetIdetifier:(NSString *)assetIdentifier {
+    __weak AlbumsItemCell *weakSelf = self;
+    PHFetchResult * fetchResult = [PHAsset fetchAssetsWithLocalIdentifiers:@[assetIdentifier] options:nil];
+    PHAsset * asset = [fetchResult firstObject];
+    if (asset != nil) {
+        PHImageRequestOptions *options = [[PHImageRequestOptions alloc]init];
+        options.synchronous = NO;
+        options.version = PHImageRequestOptionsVersionCurrent;
+        options.resizeMode = PHImageRequestOptionsResizeModeNone;
+        
+        [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:CGSizeMake(300, 300) contentMode:PHImageContentModeAspectFit options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                weakSelf.imageView.image = result;
+            });
+        }];
+    }
+}
+
+/**从FetchResult中提取PHAsset
+ for (PHFetchResult *result in assetFetchResults) {
+     //这里assetFetchResults数组长度是1，因为指定了albumName
+     for (PHAsset *asset in result) {
+         DownloadModel *item = [[DownloadModel alloc]init];
+         item.asset = asset;
+         [self.datas addObject:item];
+     }
+     [self.collectionView reloadData];
+ }
+ 
+ */
+
+//创建自定义相册
+- (PHAssetCollection *)createdCollection {
+    // 查询是否创建过相册
+    PHFetchResult&lt;PHAssetCollection *&gt; *result = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+
+    NSString *appName = KAlbumName;// 获取APP名称
+
+    // 遍历相册查看是否有和当前APP同名的相册
+    for (PHAssetCollection *collection in result) {
+        if ([collection.localizedTitle isEqualToString:appName]) {
+            return collection;
+        }
+    }
+    
+    // 创建自定义相册
+    __block NSString *identifier = nil;
+    NSError *error = nil;
+
+    [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+        PHAssetCollectionChangeRequest *request = [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:appName];
+        identifier = request.placeholderForCreatedAssetCollection.localIdentifier;
+    } error:&amp;error];
+
+    if (error) return nil;
+
+    PHAssetCollection *collection = [PHAssetCollection fetchAssetCollectionsWithLocalIdentifiers:@[identifier] options:nil].firstObject;
+    return collection;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>20F07E0A-E32B-48C7-A68F-61CC071BA78A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Photo各种操作</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

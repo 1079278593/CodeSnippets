@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocgcdTimer</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@property(nonatomic, strong)dispatch_source_t gcdTimer;
+#pragma mark - &lt; timer &gt;
+- (void)startTimer {
+    NSLog(@"start timer");
+    [self.timer invalidate];
+    if (self.gcdTimer) {
+        dispatch_source_cancel(self.gcdTimer);
+    }
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+    self.gcdTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);    
+    if (self.gcdTimer) {
+        // 误差范围为0.1秒
+        dispatch_source_set_timer(self.gcdTimer, dispatch_time(DISPATCH_TIME_NOW, 0), KTimerInterval * NSEC_PER_SEC, (1ull * NSEC_PER_SEC) / 10);
+        dispatch_source_set_event_handler(self.gcdTimer, ^{
+            [self timerFire];
+        });
+        dispatch_resume(self.gcdTimer);
+    }
+}
+
+- (void)timerFire {
+    double uiInterval = self.currentTime - self.lastUIPointTime;
+    self.currentTime += KTimerInterval;
+}
+
+- (void)stopTimer {
+    if (self.gcdTimer) {
+        dispatch_source_cancel(self.gcdTimer);
+        self.gcdTimer = nil;
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>056233A4-A4C3-48E4-9D15-4DD5615D7822</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>GCDTimer</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

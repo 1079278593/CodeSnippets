@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocAssertExample</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//通用断言
+    XCTAssert(expression, format...)
+    //常用断言：
+    XCTAssertTrue(expression, format...)
+    XCTAssertFalse(expression, format...)
+    XCTAssertEqual(expression1, expression2, format...)
+    XCTAssertNotEqual(expression1, expression2, format...)
+    XCTAssertEqualWithAccuracy(expression1, expression2, accuracy, format...)
+    XCTAssertNotEqualWithAccuracy(expression1, expression2, accuracy, format...)
+    XCTAssertNil(expression, format...)
+    XCTAssertNotNil(expression, format...)
+
+    XCTFail(format...) //直接Fail的断言</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>FC151ACA-C8B2-4130-AA91-660F49EA4AD9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UnitTest,XCTAssert通用断言</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

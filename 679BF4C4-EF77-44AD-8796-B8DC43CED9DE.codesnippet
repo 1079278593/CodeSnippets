@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>octapgesture</string>
+	<string>ocgesture</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -39,7 +39,23 @@
  //这个方法返回YES，第一个和第二个互斥时，第二个会失效。顺序为添加的顺序
  - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
      return YES;
- }</string>
+ }
+
+- (BOOL) gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    CGPoint point = [touch locationInView:self.scrollView];
+    BOOL flag = [self.scrollView.layer containsPoint:point];
+    if (flag) {
+        return FALSE;
+    }
+    return TRUE;
+}
+//判断包含的其它两种方法：
+//1.
+UITouch *touch = [touches.allObjects lastObject];
+BOOL result = [touch.view isDescendantOfView:&lt;#targetView#&gt;];
+//2.
+CGPoint point = [touch locationInView:&lt;#targetView#&gt;];
+BOOL result = CGRectContainsPoint(&lt;#targetView#&gt;.bounds, point);</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>679BF4C4-EF77-44AD-8796-B8DC43CED9DE</string>
 	<key>IDECodeSnippetLanguage</key>

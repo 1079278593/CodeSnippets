@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocRefreshLayout</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)&lt;#refreshLayout#&gt; {
+    CGFloat width = self.view.width;
+    int count = 4;
+    CGFloat edgeSpacing = 30;       //!&lt; 边缘
+    CGFloat interitemSpacing = 30;  //!&lt; item间距，不需要时改成0，因为有默认值
+    CGFloat lineSpacing = 30;        //!&lt; 行间距
+    CGFloat itemWidth = (width - interitemSpacing * (count - 1) - edgeSpacing * 2)/count;
+    CGFloat itemHeight = itemWidth/(1);
+
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+    layout.minimumLineSpacing = lineSpacing;
+    layout.minimumInteritemSpacing = interitemSpacing;
+    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
+    
+    [self.collectionView setCollectionViewLayout:layout animated:NO];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C882185F-0E1D-4611-B483-4B7490FF20DC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>更新collectionView的layout</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

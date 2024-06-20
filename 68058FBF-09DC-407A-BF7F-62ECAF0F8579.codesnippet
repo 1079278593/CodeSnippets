@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>dispatch_semaphore_t semaphore = dispatch_semaphore_create(3); // 允许同时进行3个下载
+
+for (NSInteger i = 0; i &lt; 10; i++) {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // 等待信号量
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        
+        // 执行下载任务...
+        NSLog(@"开始下载 #%ld", (long)i);
+        sleep(2); // 模拟下载所需时间
+        NSLog(@"完成下载 #%ld", (long)i);
+        
+        // 发送信号量
+        dispatch_semaphore_signal(semaphore);
+    });
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>68058FBF-09DC-407A-BF7F-62ECAF0F8579</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>oc信号量-下载</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

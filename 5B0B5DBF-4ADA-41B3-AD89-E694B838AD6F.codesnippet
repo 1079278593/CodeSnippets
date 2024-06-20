@@ -10,12 +10,14 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>NSString *uploadDirPath = KUploadOTAFilePath;
-    
+
+//是否是文件夹
 BOOL isDir = YES;
 if (![[NSFileManager defaultManager]fileExistsAtPath:uploadDirPath isDirectory:&amp;isDir ]) {
-    [[NSFileManager defaultManager]createDirectoryAtPath:uploadDirPath withIntermediateDirectories:YES attributes:nil error:nil];
+    [[NSFileManager defaultManager]createDirectoryAtPath:uploadDirPath withIntermediateDirectories:YES attributes:nil error:nil];///创建
 }
 
+//是否存在
 NSString* filePath = [uploadDirPath stringByAppendingPathComponent: filename];
 if( [[NSFileManager defaultManager] fileExistsAtPath:filePath] ) {
     storeFile = nil;
@@ -27,6 +29,53 @@ else {
     }
     storeFile = [NSFileHandle fileHandleForWritingAtPath:filePath];
     [uploadedFiles addObject: [NSString stringWithFormat:@"/upload/%@", filename]];
+}
+
+//项目文件复制到沙盒
+NSString *tmpVideoName = @"IMG_8692";
+NSString *path = [[NSBundle mainBundle]pathForResource:tmpVideoName ofType:@"MOV"];
+flag = [[NSFileManager defaultManager] fileExistsAtPath:filePath.absoluteString];
+if (flag) {
+    NSString *targetPath = [NSString stringWithFormat:@"%@/%@.MOV",KCachesSandBoxPath,tmpVideoName];
+    [[NSFileManager defaultManager]createDirectoryAtPath:KCachesSandBoxPath withIntermediateDirectories:YES attributes:nil error:nil];
+    BOOL flag = [[NSFileManager defaultManager] fileExistsAtPath:targetPath];
+    if (flag) {
+        [[NSFileManager defaultManager] removeItemAtPath:targetPath error:nil];
+    }
+    NSError *error;
+    [[NSFileManager defaultManager] copyItemAtPath:path toPath:targetPath error:&amp;error];
+    if (error) {
+        
+    }else {
+        filePath = [NSURL URLWithString:targetPath];
+        BOOL flag = [[NSFileManager defaultManager] fileExistsAtPath:filePath.absoluteString];
+        if (flag) {
+            
+        }
+    }
+}
+
+//删除
+[[NSFileManager defaultManager] removeItemAtPath:targetPath error:nil];
+
+///获取文件内的所有文件
+- (NSString *)localFirmwarePath {
+    // fold name
+    NSString *folderPath = [[NSBundle mainBundle] pathForResource:@"IAMFirmware" ofType:nil];
+
+    // get firmware (be sure fold only contain one firmware)
+    NSError *error = nil;
+    NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:folderPath error:&amp;error];
+
+    if (error) {
+        NSLog(@"Get files fail: %@", error.localizedDescription);
+    } else {
+        if (files.count &gt; 0) {
+            return [NSString stringWithFormat:@"%@/%@",folderPath,files.firstObject];
+        }
+        NSLog(@"Get firmware error");
+    }
+    return @"";
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>5B0B5DBF-4ADA-41B3-AD89-E694B838AD6F</string>

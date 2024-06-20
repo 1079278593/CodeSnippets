@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocDataWrite</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//每次启动删除上次的文件
+NSString *path = [NSString stringWithFormat:@"%@/%@",[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],@"TMP"];
+[[NSFileManager defaultManager]createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+NSString *targetPath = [NSString stringWithFormat:@"%@/%@",path,@"pcm.txt"];
+[[NSFileManager defaultManager] removeItemAtPath:targetPath error:nil];
+
+- (void)writeAppendData:(NSData *)data {
+    NSError *error;
+    NSString *path = [NSString stringWithFormat:@"%@/%@",[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],@"TMP"];
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@",path,@"pcm.txt"];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    // 确保文件存在
+    if (![fileManager fileExistsAtPath:filePath]) {
+        [fileManager createFileAtPath:filePath contents:nil attributes:nil];
+    }else {
+        NSLog(@"文件存在");
+    }
+    
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:filePath];
+    
+    if (fileHandle == nil) {
+        NSLog(@"Failed to open file: %@", filePath);
+    }
+    
+    [fileHandle seekToEndOfFile]; // 移动到文件末尾
+    [fileHandle writeData:data]; // 写入数据
+    [fileHandle closeFile]; // 关闭文件句柄
+    
+    NSLog(@"Data written to file: %@", filePath);
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D6CB3443-E5A6-4DA9-B49E-F7E4FD7544B6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>持续写入data</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocUrlComponet</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>+ (NSMutableString *)urlComponentWith:(NSString *)cmd paras:(NSArray *)paras {
+    NSMutableString *targetCmd = [NSMutableString string];
+    NSUInteger startIndex = 0;
+
+    for (NSString *value in paras) {
+        NSRange range = [cmd rangeOfString:@"%@" options:NSLiteralSearch range:NSMakeRange(startIndex, cmd.length - startIndex)];
+
+        if (range.location != NSNotFound) {
+            [targetCmd appendString:[cmd substringWithRange:NSMakeRange(startIndex, range.location - startIndex)]];
+            [targetCmd appendString:value];
+            startIndex = range.location + range.length;
+        }
+    }
+
+    [targetCmd appendString:[cmd substringFromIndex:startIndex]];
+    return targetCmd;
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>784A74E2-832C-4982-AD07-3078881CE0F2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>组装url，根据cmd和paras</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

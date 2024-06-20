@@ -12,14 +12,7 @@
 	<string>//克隆git库中的代码，后面的https地址换成自己的git库地址就好，注意：不要使用ssh
 git clone https://gitee.com/yulongcode/TestGit.git
 
-//查看本地git库的文件修改状态
-git status
-
-//将本地修改的代码提交到暂存区   ./  也可以换成具体的文件名
-git add ./
-
-//给将要提交的代码写注释
-git commit -m '代码提交注释'
+git init 把这个文件夹变成Git管理的仓库
 
 //拉取远端代码
 git pull
@@ -39,7 +32,21 @@ git reset --soft HEAD^
 //暂存改动，pull新代码，然后pop改动的代码
 git stash
 git pull
-git stash pop</string>
+git stash pop
+
+git指令
+1. git status 查看本地git库的文件修改状态
+
+2. git add 文件名 表示将某个文件添加至暂存区（可以是目录）。
+3. git add . 表示将所有(进行修改的)文件添加至暂存区。
+4. git add ./，   其中./ 也可以换成具体的文件名
+    
+4. git commit -m “xxx” 表示提交add的文件并且对本次提交所进行的备注或者标注(xxx)。
+    git commit -m '代码提交注释'
+
+5. git push origin master/ git push 表示实现由本地库向远程仓库的推送。
+
+6. git remote add origin SSH链接 表示建立本地库与想要操作的远程仓库的联系。</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>D0EE789C-9C49-4E35-999A-612F6AA5B42A</string>
 	<key>IDECodeSnippetLanguage</key>

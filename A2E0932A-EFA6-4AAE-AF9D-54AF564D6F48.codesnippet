@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocplist_to_sandbox</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#import "CameraMenuItem.h"
+#import &lt;MJExtension/MJExtension.h&gt;
+
+///将项目plist拷贝到沙盒（排序之后，拷贝到沙盒，
+///!!!确保plist的root下直接是数据，而不是Root(array)-&gt;Items(array)-&gt;所有数据，应该是
+///Root(array)-&gt;所有数据。
+- (void)writePlistToSandbox {
+    ///获取本地沙盒Document路径
+    NSArray *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *path = [documentPath objectAtIndex:0];
+    NSLog(@"目标路径：%@",path);
+    
+    ///在Document路径下拼接文件名字
+    NSString *plistPath = [path stringByAppendingPathComponent:@"NewCameraItem.plist"];
+
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    ///检测plistPath路径是否存在
+    BOOL isFile = [fileManager fileExistsAtPath:plistPath];
+
+    
+    if (isFile) {
+        [fileManager removeItemAtPath:plistPath error:nil];
+    }
+    NSString *bundlePath = [[NSBundle mainBundle]pathForResource:@"CameraItem" ofType:@"plist"];//项目文件
+    NSMutableArray &lt;CameraMenuItem *&gt;*plkDatas = [CameraMenuItem mj_objectArrayWithFile:bundlePath];
+    [plkDatas sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        CameraMenuItem *item1 = obj1;
+        CameraMenuItem *item2 = obj2;
+        if (item1.subType &lt; item2.subType) {
+            return NSOrderedAscending;
+        }
+        return NSOrderedDescending;
+    }];
+    
+    CameraMenu *menu = [CameraMenu new];
+    menu.items = plkDatas;
+    NSDictionary *dict = [menu mj_keyValues];
+    
+    BOOL isSuccess = [dict writeToFile:plistPath atomically:YES];
+    NSLog(@"写入成功 %@",@(isSuccess));
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A2E0932A-EFA6-4AAE-AF9D-54AF564D6F48</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>plist项目到沙盒</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>///E2等批量删除是立马完成的，无需动画
+- (void)deleteSelectedMediaItem {
+    dispatch_queue_t q1 = dispatch_queue_create("label", DISPATCH_QUEUE_SERIAL);
+    for (int i=0; i&lt;self.datas.count; i++) {
+        CameraMediaItem *item = [self.datas objectAtIndex:i];
+        if (!item.isSelect) {
+            continue;
+        }
+        WS(weakSelf)
+        dispatch_async(q1, ^{
+            NSLog(@"delete：task %d. %@",i,[NSThread currentThread]);
+            [weakSelf.cameraCenter removeMediaItem:item completion:^(BOOL ok) {
+                NSLog(@"delete 删除i=%d：%d",i,ok);
+                if (ok) {
+                    [weakSelf removeWithItem:item];
+                }
+                if (i == self.maxSelectedIndex) {
+                    NSLog(@"delete 全部执行完毕,最大index：%d",i);
+                    [weakSelf requestFolds];//重新请求一遍即可
+                    self.rac_isFinishDelete = YES;//rac
+                }
+            }];
+        });
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0C97E9EB-61B5-46CC-BC16-F90CE8CA4921</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>串行队列</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

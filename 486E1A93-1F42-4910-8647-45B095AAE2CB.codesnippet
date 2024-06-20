@@ -27,15 +27,24 @@
  // 设置按钮的title的对齐方式
  [cancelAction setValue:[NSNumber numberWithInteger:NSTextAlignmentLeft] forKey:@"titleTextAlignment”];
  
- if (IS_IPAD) {
+ if (IsIpad) {
      UIPopoverPresentationController *pop = [alertController popoverPresentationController];
-     pop.sourceView = self.view;//悬挂的视图
+     pop.sourceView = button;////不能用UIcollectionView内的view,会随着刷新复用而导致pop位置变化
      pop.permittedArrowDirections = UIPopoverArrowDirectionUp;//箭头方向
-     pop.sourceRect = self.view.bounds;//悬挂的地方
+     pop.sourceRect = CGRectMake(button.width, button.height/2.0, 0, 0)
+     
+     //CGRect rect = [button.superview convertRect:button.frame toView:self.collectionView];
+     //alertController.popoverPresentationController.sourceView = self.collectionView;//不能用UIcollectionView内的view,会随着刷新复用而导致pop位置变化
+     //alertController.popoverPresentationController.sourceRect = CGRectMake(CGRectGetMaxX(rect), CGRectGetMidY(rect), 0, 0);
  }
  */
 
 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:GlobalLocalizedString(@"&lt;#title#&gt;") message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+if (alertController.popoverPresentationController) {
+    [alertController.popoverPresentationController setPermittedArrowDirections:0];//去掉arrow箭头
+    alertController.popoverPresentationController.sourceView = self.view;
+    alertController.popoverPresentationController.sourceRect = CGRectMake(&lt;#x#&gt;, &lt;#y#&gt;, 1, 1);
+}
 
 UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:GlobalLocalizedString(@"cancel") style:UIAlertActionStyleCancel handler:nil];
 UIAlertAction *okAction = [UIAlertAction actionWithTitle:GlobalLocalizedString(@"confirm") style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {

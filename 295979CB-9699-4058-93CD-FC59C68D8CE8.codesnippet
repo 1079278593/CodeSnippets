@@ -35,7 +35,22 @@ self.datas = [NSMutableArray arrayWithCapacity:0];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat width = collectionView.width;
     return CGSizeMake(70, 30);//注意这里的宽度，不要超屏
+    /**layout方式
+     CGFloat width = collectionView.width;
+     BOOL isPortrait = self.width &lt; self.height;
+     int count = isPortrait ? 4 : 6;
+     if (IsIpad) {
+         count = isPortrait ? 5 : 7;
+     }
+     
+     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+     CGFloat itemWidth = (width - layout.sectionInset.left*2 - layout.minimumInteritemSpacing * (count - 1)) / count;
+     CGFloat itemHeight = itemWidth;
+     return CGSizeMake(itemWidth, itemHeight);
+     */
+    
 }
 
 //- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
@@ -56,7 +71,7 @@ self.datas = [NSMutableArray arrayWithCapacity:0];
     UILabel *label = header.subviews.firstObject;
     if (label == nil) {
         label = [[UILabel alloc] initWithFrame:CGRectMake(5.0, 5.0, 100, 15)];
-        label.text = KColorWhite;
+        label.textColor = [UIColor whiteColor];
         label.font = [UIFont systemFontOfSize:KFontTitle];
         [header addSubview:label];
     }
@@ -94,6 +109,7 @@ self.datas = [NSMutableArray arrayWithCapacity:0];
         _collectionView.showsVerticalScrollIndicator = false;
         _collectionView.alwaysBounceVertical = true;//数据少时也能滚动
 //        _collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
+        _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;//导航偏移调整
         [_collectionView registerClass:[&lt;#name#&gt; class] forCellWithReuseIdentifier:NSStringFromClass([&lt;#name#&gt; class])];
         [_collectionView registerClass:[&lt;#UICollectionReusableView#&gt; class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([&lt;#name#&gt; class])];
         
@@ -137,9 +153,15 @@ self.datas = [NSMutableArray arrayWithCapacity:0];
      layoutAttributes.frame = newFrame;
      return layoutAttributes;
  
+ NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
  刷新单个cell
  [UIView performWithoutAnimation:^{
      [self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+ }];
+ //增加末尾时刷新
+ [UIView performWithoutAnimation:^{
+     NSIndexPath *path = [NSIndexPath indexPathForRow:self.datas.count-1 inSection:0];
+     [self.collectionView insertItemsAtIndexPaths:[NSArray arrayWithObject:path]];
  }];
  }
  */</string>

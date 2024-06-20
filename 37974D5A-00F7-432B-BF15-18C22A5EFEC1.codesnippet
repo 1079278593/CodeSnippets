@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocCollectionEasy</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>&lt;UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout&gt;
+
+@property(nonatomic, strong)NSMutableArray &lt;NSString *&gt; *datas;
+@property(nonatomic, strong)UICollectionView *collectionView;
+self.datas = [NSMutableArray arrayWithCapacity:0];
+
+#pragma mark &lt; delegate &gt;
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.datas.count;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat width = collectionView.width;
+    return CGSizeMake(width, 40);
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    &lt;#name#&gt; *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([&lt;#name#&gt; class]) forIndexPath:indexPath];
+    [cell refreshCellWithModel:self.datas[indexPath.row] isSelected:NO];
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+#pragma mark - &lt; init &gt;
+- (void)setupSubViews {
+    
+}
+
+
+- (UICollectionView *)collectionView {
+    if (_collectionView == nil) {
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+        layout.minimumLineSpacing = 0;
+        layout.minimumInteritemSpacing = 0;//有默认值，需要显示赋值为0
+        
+        _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, 0, 0) collectionViewLayout:layout];
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+        _collectionView.backgroundColor = [UIColor clearColor];
+        _collectionView.showsVerticalScrollIndicator = false;
+        _collectionView.alwaysBounceVertical = true;//数据少时也能滚动
+        [_collectionView registerClass:[&lt;#name#&gt; class] forCellWithReuseIdentifier:NSStringFromClass([&lt;#name#&gt; class])];
+        
+        MJRefreshStateHeader *header = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRequest)];
+        header.lastUpdatedTimeLabel.hidden = YES;
+        _collectionView.mj_header = header;
+    }
+    return _collectionView;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>37974D5A-00F7-432B-BF15-18C22A5EFEC1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>简化版的collectionView初始化</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

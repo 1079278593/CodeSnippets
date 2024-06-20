@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocCompare</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (NSComparisonResult)compare:(GatewayGroupModel *)bGroup {
+    //Descending(降序）:valueA &gt; valueB;
+    //Ascending(升序）:valueA &lt; valueB;
+    if (self.groupId &gt; bGroup.groupId) {
+        return NSOrderedAscending;
+    }
+    return NSOrderedDescending;
+}
+
+NSArray *sortArray = [results sortedArrayUsingSelector:@selector(compare:)];//排序</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>35218BC4-2B49-46B7-9334-2360936FDACF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>对象排序</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

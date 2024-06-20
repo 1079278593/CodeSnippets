@@ -11,6 +11,7 @@
 	<key>IDECodeSnippetContents</key>
 	<string>//https://www.jianshu.com/p/889cff2b3a52
 
+//横竖屏的时候会自动触发，很多情况都会触发，（也可用这个[self setNeedsStatusBarAppearanceUpdate];触发
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }

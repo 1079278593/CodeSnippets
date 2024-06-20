@@ -11,6 +11,8 @@
 	<key>IDECodeSnippetContents</key>
 	<string>@protocol &lt;#delegateName#&gt;Delegate &lt;NSObject&gt;
 
+@property(nonatomic, weak)id&lt;&lt;#delegateName#&gt;Delegate&gt; delegate;
+
 - (void)&lt;#method#&gt;:(&lt;#data#&gt; *)&lt;#data#&gt;;
 
 @end
@@ -19,7 +21,9 @@
 if ([self.delegate respondsToSelector:@selector(&lt;#method#&gt;)]) {
     [self.delegate &lt;#method#&gt;];
     }
-</string>
+
+//@implementation 实现类，添加下面这行
+@synthesize delegate;</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>E9295EBC-E0C0-4BBD-9BF1-1A3F593CB20C</string>
 	<key>IDECodeSnippetLanguage</key>

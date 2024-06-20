@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocMethodSwizzling</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>static char kContentInsetsKey;
+static char kshowContentInsetsKey;
+
+@implementation UILabel (Insets)
+
++ (void)load {
+    [super load];
+
+    // class_getInstanceMethod()
+    Method fromMethod = class_getInstanceMethod([self class], @selector(drawTextInRect:));
+    Method toMethod = class_getInstanceMethod([self class], @selector(tt_drawTextInRect:));
+
+    // class_addMethod()
+    if (!class_addMethod([self class], @selector(drawTextInRect:), method_getImplementation(toMethod), method_getTypeEncoding(toMethod))) {
+        method_exchangeImplementations(fromMethod, toMethod);
+    }
+}
+
+- (void)setContentInsets:(UIEdgeInsets)contentInsets {
+    objc_setAssociatedObject(self, &amp;kContentInsetsKey, NSStringFromUIEdgeInsets(contentInsets), OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &amp;kshowContentInsetsKey, @YES, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (UIEdgeInsets)contentInsets {
+    return UIEdgeInsetsFromString(objc_getAssociatedObject(self, &amp;kContentInsetsKey));
+}
+
+- (void)tt_drawTextInRect:(CGRect)rect {
+    BOOL show = objc_getAssociatedObject(self, &amp;kshowContentInsetsKey);
+    if (show) {
+        rect = UIEdgeInsetsInsetRect(rect, self.contentInsets);
+    }
+    [self tt_drawTextInRect:rect];
+}
+
+
+@end</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4FA22C6E-9665-4CFF-8D62-7CBBB9F3DDF2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>方法交换method-swizzling</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

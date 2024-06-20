@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocNaviBarItem</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSString *title = [NSString stringWithFormat:@"%@",NSLocalizedString(@"Cancel", nil)];
+UIImage *image = [UIImage imageNamed:@"ic_back"];
+//    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(closeLutBarBtnEvent)];
+//    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(closeLutBarBtnEvent)];
+
+UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+[button setTitle:title forState:UIControlStateNormal];
+[button setImage:image forState:UIControlStateNormal];
+[button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+[button addTarget:self action:@selector(closeLutBarBtnEvent) forControlEvents:UIControlEventTouchUpInside];
+UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
+[self.navigationItem setLeftBarButtonItem:item];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A040F5B4-3B15-460C-8AD7-A00571BFC17C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>系统导航栏的barButton</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

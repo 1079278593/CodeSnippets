@@ -28,7 +28,152 @@ AudioServicesPlaySystemSound(1521);
      UIImpactFeedbackStyleSoft     API_AVAILABLE(ios(13.0)),
      UIImpactFeedbackStyleRigid    API_AVAILABLE(ios(13.0))
  };
- */</string>
+ */
+
+//试听
+if (IAMDebug) {
+    UITextField *voice = [[UITextField alloc]init];
+    voice.layer.borderWidth = 1;
+    voice.textColor = [UIColor redColor];
+    voice.font = [UIFont systemFontOfSize:15];
+    [self.view addSubview:voice];
+    [voice mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.width.equalTo(_pixelBufferView);
+        make.height.equalTo(@(40));
+    }];
+    [voice addTarget:self action:@selector(textDidChange:) forControlEvents:UIControlEventEditingChanged];
+}
+- (void)textDidChange:(UITextField *)textField {
+    if (textField.text.length == 4) {
+        AudioServicesPlaySystemSound([textField.text intValue]);
+    }
+}
+
+Sound ID 1000: 新邮件收到
+Sound ID 1001: 邮件已发送
+Sound ID 1002: 语音邮件收到
+Sound ID 1003: 收到短信
+Sound ID 1004: 短信已发送
+Sound ID 1005: 闹钟
+Sound ID 1006: 低电量提示
+Sound ID 1007: 短信接收提示1
+Sound ID 1008: 短信接收提示2
+Sound ID 1009: 短信接收提示3
+Sound ID 1010: 短信接收提示4
+Sound ID 1011: 短信接收震动
+Sound ID 1012: 短信接收提示1
+Sound ID 1013: 短信接收提示5
+Sound ID 1014: 短信接收提示6
+Sound ID 1015: 语音邮件收到 (自2.1起可用)
+Sound ID 1016: 推特消息发送 (自5.0起可用)
+Sound ID 1020: 短信接收提示 - 预期 (自4.2起可用)
+Sound ID 1021: 短信接收提示 - 蓓蕾 (自4.2起可用)
+Sound ID 1022: 短信接收提示 - 海洋 (自4.2起可用)
+Sound ID 1023: 短信接收提示 - 嘟嘟 (自4.2起可用)
+Sound ID 1024: 短信接收提示 - 下行 (自4.2起可用)
+Sound ID 1025: 短信接收提示 - 鼓掌 (自4.2起可用)
+Sound ID 1026: 短信接收提示 - 阶梯 (自4.2起可用)
+Sound ID 1027: 短信接收提示 - 小步舞曲 (自4.2起可用)
+Sound ID 1028: 短信接收提示 - 新闻快讯 (自4.2起可用)
+Sound ID 1029: 短信接收提示 - 无色 (自4.2起可用)
+Sound ID 1030: 短信接收提示 - 罗宾汉的森林 (自4.2起可用)
+Sound ID 1031: 短信接收提示 - 法术 (自4.2起可用)
+Sound ID 1032: 短信接收提示 - 悬念 (自4.2起可用)
+Sound ID 1033: 短信接收提示 - 电报 (自4.2起可用)
+Sound ID 1034: 短信接收提示 - 脚尖 (自4.2起可用)
+Sound ID 1035: 短信接收提示 - 打字机 (自4.2起可用)
+Sound ID 1036: 短信接收提示 - 更新 (自4.2起可用)
+Sound ID 1050: USSD提示
+Sound ID 1051: SIM工具箱 - 通话已中断
+Sound ID 1052: SIM工具箱 - 一般提示音
+Sound ID 1053: SIM工具箱 - 否定确认提示音
+Sound ID 1054: SIM工具箱 - 肯定确认提示音
+Sound ID 1055: SIM工具箱 - 短信提示音
+Sound ID 1057: 按键提示
+Sound ID 1070: 电话占线提示音
+Sound ID 1071: 电话拥挤提示音
+Sound ID 1072: 路径确认提示音
+Sound ID 1073: 错误提示音
+Sound ID 1074: 电话等待提示音
+Sound ID 1075: 按键2提示音
+Sound ID 1100: 锁屏提示音
+Sound ID 1101: 解锁屏幕提示音
+Sound ID 1102: 解锁屏幕失败提示音
+Sound ID 1103: 按键提示音
+Sound ID 1104: 按键提示音
+Sound ID 1105: 按键提示音
+Sound ID 1106: 连接电源提示音
+Sound ID 1107: 铃声变更提示音
+Sound ID 1108: 拍照快门声音
+Sound ID 1109: 摇晃设备提示音 (自3.0起可用)
+Sound ID 1110: JBL开始提示音 (自3.0起可用)
+Sound ID 1111: JBL确认提示音 (自3.0起可用)
+Sound ID 1112: JBL取消提示音 (自3.0起可用)
+Sound ID 1113: 录音开始提示音 (自3.0起可用)
+Sound ID 1114: 录音结束提示音 (自3.0起可用)
+Sound ID 1115: JBL不匹配提示音 (自3.0起可用)
+Sound ID 1116: JBL无匹配提示音 (自3.0起可用)
+Sound ID 1117: 视频录制开始提示音 (自3.0起可用)
+Sound ID 1118: 视频录制结束提示音 (自3.0起可用)
+Sound ID 1150: 视频通话 - 邀请接受提示音 (自4.0起可用)
+Sound ID 1151: 视频通话 - 响铃提示音 (自4.0起可用)
+Sound ID 1152: 视频通话 - 结束提示音 (自4.0起可用)
+Sound ID 1153: 视频通话 - 等待中提示音 (自4.1起可用)
+Sound ID 1154: 视频通话 - 响铃提示音 (自4.1起可用)
+Sound ID 1200: 触摸音效 - 0
+Sound ID 1201: 触摸音效 - 1
+Sound ID 1202: 触摸音效 - 2
+Sound ID 1203: 触摸音效 - 3
+Sound ID 1204: 触摸音效 - 4
+Sound ID 1205: 触摸音效 - 5
+Sound ID 1206: 触摸音效 - 6
+Sound ID 1207: 触摸音效 - 7
+Sound ID 1208: 触摸音效 - 8
+Sound ID 1209: 触摸音效 - 9
+Sound ID 1210: 触摸音效 - 星号
+Sound ID 1211: 触摸音效 - 井号
+Sound ID 1254: 耳机接入 - 开始通话
+Sound ID 1255: 耳机接入 - 重新拨号
+Sound ID 1256: 耳机接入 - 接听电话
+Sound ID 1257: 耳机接入 - 结束通话
+Sound ID 1258: 耳机接入 - 电话等待操作
+Sound ID 1259: 耳机接入 - 转换结束
+Sound ID 1300: 语音邮件收到 (系统声音预览)
+Sound ID 1301: 收到短信 (系统声音预览)
+Sound ID 1302: 新邮件收到 (系统声音预览)
+Sound ID 1303: 邮件已发送 (系统声音预览)
+Sound ID 1304: 闹钟 (系统声音预览)
+Sound ID 1305: 锁屏 (系统声音预览)
+Sound ID 1306: 按键点击 (系统声音预览)
+Sound ID 1307: 短信接收提示1 (系统声音预览)
+Sound ID 1308: 短信接收提示2 (系统声音预览)
+Sound ID 1309: 短信接收提示3 (系统声音预览)
+Sound ID 1310: 短信接收提示4 (系统声音预览)
+Sound ID 1311: 短信接收震动 (系统声音预览)
+Sound ID 1312: 短信接收提示1 (系统声音预览)
+Sound ID 1313: 短信接收提示5 (系统声音预览)
+Sound ID 1314: 短信接收提示6 (系统声音预览)
+Sound ID 1315: 语音邮件收到 (系统声音预览) (自2.1起可用)
+Sound ID 1320: 短信接收提示 - 预期 (系统声音预览) (自4.2起可用)
+Sound ID 1321: 短信接收提示 - 蓓蕾 (系统声音预览) (自4.2起可用)
+Sound ID 1322: 短信接收提示 - 海洋 (系统声音预览) (自4.2起可用)
+Sound ID 1323: 短信接收提示 - 嘟嘟 (系统声音预览) (自4.2起可用)
+Sound ID 1324: 短信接收提示 - 下行 (系统声音预览) (自4.2起可用)
+Sound ID 1325: 短信接收提示 - 鼓掌 (系统声音预览) (自4.2起可用)
+Sound ID 1326: 短信接收提示 - 阶梯 (系统声音预览) (自4.2起可用)
+Sound ID 1327: 短信接收提示 - 小步舞曲 (系统声音预览) (自4.2起可用)
+Sound ID 1328: 短信接收提示 - 新闻快讯 (系统声音预览) (自4.2起可用)
+Sound ID 1329: 短信接收提示 - 无色 (系统声音预览) (自4.2起可用)
+Sound ID 1330: 短信接收提示 - 罗宾汉的森林 (系统声音预览) (自4.2起可用)
+Sound ID 1331: 短信接收提示 - 法术 (系统声音预览) (自4.2起可用)
+Sound ID 1332: 短信接收提示 - 悬念 (系统声音预览) (自4.2起可用)
+Sound ID 1333: 短信接收提示 - 电报 (系统声音预览) (自4.2起可用)
+Sound ID 1334: 短信接收提示 - 脚尖 (系统声音预览) (自4.2起可用)
+Sound ID 1335: 短信接收提示 - 打字机 (系统声音预览) (自4.2起可用)
+Sound ID 1336: 短信接收提示 - 更新 (系统声音预览) (自4.2起可用)
+Sound ID 1350: 静音模式切换 - 铃声震动变更
+Sound ID 1351: 静音模式切换 - 静音震动变更
+Sound ID 4095: 震动 (2.2前没有此类声音)</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>64CDA2D1-68E6-4415-8FB5-B69BA28A84AC</string>
 	<key>IDECodeSnippetLanguage</key>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocCollectionWidth</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>CGFloat width = collectionView.width;
+int count = 3;
+CGFloat edgeSpacing = 0;       //!&lt; 边缘
+CGFloat interitemSpacing = KSpacingLong;  //!&lt; item间距，不需要时改成0，因为有默认值
+CGFloat lineSpacing = KSpacingLong;        //!&lt; 行间距
+CGFloat itemWidth = (width - interitemSpacing * (count - 1) - edgeSpacing * 2)/count;
+CGFloat itemHeight = itemWidth/(104/140.0);
+
+UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)collectionViewLayout;
+layout.minimumLineSpacing = lineSpacing;
+layout.minimumInteritemSpacing = interitemSpacing;
+layout.sectionInset = UIEdgeInsetsMake(lineSpacing, edgeSpacing, lineSpacing, edgeSpacing);//左右两侧，以及section间的间距
+
+return CGSizeMake(itemWidth, itemHeight);</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>98BD7CDF-8B0D-4E17-AAB8-DF2460779CC5</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>collectionView cell的宽度</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

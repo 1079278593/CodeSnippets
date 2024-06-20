@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>octestDelay</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)setUp {
+    // Put setup code here. This method is called before the invocation of each test method in the class.
+    _commandQueue = [[HttpRequestQueue alloc] initWithIP:@"localhost" andPort:8080];
+    [self setupICamController];
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2.0 * NSEC_PER_SEC), dispatch_get_main_queue(), ^(void){
+        [self test];
+    });
+    
+    
+    NSLog(@"wait......... start");
+    XCTestExpectation *expectation = [self expectationWithDescription:@"start testSpeed"];
+    [self waitForExpectationsWithTimeout:1000 handler:^(NSError * _Nullable error) {
+        NSLog(@"wait.........");
+        [expectation fulfill];
+    }];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F389FBC7-0137-4A2C-A729-D9494D9A58EA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>XCTest启动后,界面保持(延迟退出）</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

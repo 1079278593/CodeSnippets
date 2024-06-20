@@ -9,7 +9,7 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//150ull * NSEC_PER_SEC，150毫秒或执行
+	<string>//150ull * NSEC_PER_SEC，150毫秒或执行 WS(weakSelf)
 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC), dispatch_get_main_queue(), ^(void){
     
 });</string>

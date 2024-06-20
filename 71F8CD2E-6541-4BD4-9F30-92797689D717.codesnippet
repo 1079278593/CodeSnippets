@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocdispatchBarrier</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//barrier方式
+dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_CONCURRENT);
+dispatch_async(queue, ^{
+    sleep(1);
+    NSLog(@"休眠1s，执行栅栏前的任务");
+});
+    
+dispatch_async(queue, ^{
+    sleep(2);
+    NSLog(@"休眠2s，执行栅栏前的任务");
+});
+    
+//栅栏前所有任务执行完毕，才开始执行这个方法
+dispatch_barrier_async(queue, ^{
+    sleep(2);
+    NSLog(@"执行栅栏的任务");
+});
+NSLog(@"执行栅栏后不在一个队列方法");
+//执行完栅栏的方法，
+dispatch_async(queue, ^{
+    sleep(1);
+    NSLog(@"休眠1s，执行栅栏后的任务");
+});
+  
+dispatch_async(queue, ^{
+    sleep(2);
+    NSLog(@"休眠2s，执行栅栏后的任务");
+});
+
+//group方式
+dispatch_queue_t globalQuene = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+dispatch_group_t group = dispatch_group_create();
+ 
+//任务1
+dispatch_group_enter(group);
+dispatch_async(globalQuene, ^{
+     NSLog(@"run task 1");
+    sleep(1);
+    dispatch_group_leave(group);
+});
+ 
+//任务2
+dispatch_group_enter(group);
+dispatch_async(globalQuene, ^{
+    NSLog(@"run task 2");
+    sleep(2);
+    dispatch_group_leave(group);
+});
+ 
+//任务3
+dispatch_group_enter(group);
+dispatch_async(globalQuene, ^{
+    NSLog(@"run task 3");
+    sleep(3);
+    dispatch_group_leave(group);
+});
+ 
+//一直等待完成
+dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+
+//任务3
+dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+    NSLog(@"run task 4");
+    });</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>71F8CD2E-6541-4BD4-9F30-92797689D717</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>dispatch barrier栅栏</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

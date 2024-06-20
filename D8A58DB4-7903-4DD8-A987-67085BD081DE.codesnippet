@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocSemaphore</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/**
+ 使用信号量可能会造成线程优先级反转，且无法避免
+ 1-记录了持有者的api都可以自动避免优先级反转，系统会通过提高相关线程的优先级来解决优先级反转问题，如 dispatch_sync, 如果系统不知道持有者所在的线程，则无法知道应该提高谁的优先级，也就无法解决反转问题。
+ 2-慎用dispatch_semaphore 做线程同步。dispatch_semaphore 容易造成优先级反转，因为api没有记录是哪个线程持有了信号量，所以有高优先级的线程在等待锁的时候，内核无法知道该提高那个线程的优先级（QoS）；
+ 3-dispatch_semaphore 不能避免优先级反转的原因：在调用dispatch_semaphore_wait() 的时候，系统不知道哪个线程会调用 dispatch_semaphore_signal()方法，系统无法知道owner信息，无法调整优先级。dispatch_group 和semaphore类似，在调用enter()方法的时候，无法预知谁会leave()，所以系统也不知道owner信息。
+ */
+
+//dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+long timeoutStatus = (dispatch_semaphore_wait(self.semaphore, dispatch_time(DISPATCH_TIME_NOW, 16 * NSEC_PER_MSEC)) == 0);
+if (timeoutStatus == 0) {
+}else {//超时情况
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D8A58DB4-7903-4DD8-A987-67085BD081DE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>信号量：semaphore</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

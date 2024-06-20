@@ -12,7 +12,7 @@
 	<string>//    NSFileManager *fileManager = [NSFileManager defaultManager];
     ///检测plistPath路径是否存在
 //    BOOL isFile = [fileManager fileExistsAtPath:plistPath];
-
+#import "MJExtension.h"
 - (NSArray *)getCatalogue {
     NSString *path = [[NSBundle mainBundle]pathForResource:@"Lexicon" ofType:@"plist"];
     NSArray *arr = [LexiconFileModel mj_objectArrayWithFile:path];

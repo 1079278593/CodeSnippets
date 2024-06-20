@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)startSSL {
+    // 一旦连接成功，启动 SSL/TLS
+    NSMutableDictionary *sslSettings = [[NSMutableDictionary alloc] init];
+
+    // 在这里配置您的 SSL 设置
+    // 例如，'允许自签名证书YES'或'忽略证书链验证~NO'（注意：不安全，仅用于测试）
+    [sslSettings setObject:[NSNumber numberWithBool:NO] forKey:GCDAsyncSocketManuallyEvaluateTrust];
+
+    [self.socket startTLS:sslSettings];
+}
+
+- (void)doTLSConnect:(GCDAsyncSocket *)sock {//HTTPS
+
+    NSMutableDictionary *sslSettings = [[NSMutableDictionary alloc] init];
+
+    NSData*pkcs12data = [[NSData alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"xxx.xxxxxxx.com"ofType:@"p12"]];//已经支持https的网站会有CA证书，给服务器要一个导出的p12格式证书
+
+    CFDataRef inPKCS12Data = (CFDataRef)CFBridgingRetain(pkcs12data);
+
+    CFStringRef password =CFSTR("xxxxxx");//这里填写上面p12文件的密码
+
+    const void *keys[] = { kSecImportExportPassphrase };
+
+    const void *values[] = { password };
+
+    CFDictionaryRef options =CFDictionaryCreate(NULL, keys, values,1,NULL,NULL);
+
+    CFArrayRef items =CFArrayCreate(NULL,0,0,NULL);
+    
+    OSStatus securityError = SecPKCS12Import(inPKCS12Data, options, &amp;items);
+
+    CFRelease(options);
+    CFRelease(password);
+
+    if(securityError == errSecSuccess) {
+        NSLog(@"Success opening p12 certificate.");
+    }
+
+    CFDictionaryRef identityDict =CFArrayGetValueAtIndex(items,0);
+    SecIdentityRef myIdent = (SecIdentityRef)CFDictionaryGetValue(identityDict, kSecImportItemIdentity);
+    SecIdentityRef certArray[1] = { myIdent };
+    CFArrayRef myCerts =CFArrayCreate(NULL, (void*)certArray,1,NULL);
+    [sslSettings setObject:(id)CFBridgingRelease(myCerts) forKey:(NSString*)kCFStreamSSLCertificates];
+    [sslSettings setObject:@"api.pandaworker.com"forKey:(NSString*)kCFStreamSSLPeerName];
+    [sock startTLS:sslSettings];//最后调用一下GCDAsyncSocket这个方法进行ssl设置就Ok了
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>036F3638-67F7-44B1-A8FA-7C49112EBD3A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>GCDSyncSocket,增加支持https（证书验证</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

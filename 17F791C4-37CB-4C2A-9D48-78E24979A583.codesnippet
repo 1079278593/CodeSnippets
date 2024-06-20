@@ -13,6 +13,9 @@
 NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:string];
 
 [attrString addAttributes:@{} range:NSMakeRange(&lt;#NSUInteger loc#&gt;, &lt;#NSUInteger len#&gt;)];
+
+//下划线
+NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:@"" attributes:@{NSUnderlineStyleAttributeName : [NSNumber numberWithInteger:NSUnderlineStyleSingle], NSUnderlineColorAttributeName : KColorWhite, NSBaselineOffsetAttributeName : @(1.0)}];
  
 //@"中划线"
 @{NSStrikethroughStyleAttributeName : [NSNumber numberWithInteger:NSUnderlineStyleSingle]}

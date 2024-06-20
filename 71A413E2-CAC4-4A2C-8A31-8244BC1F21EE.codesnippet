@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//https://blog.csdn.net/Margaret_MO/article/details/106410905
+
+&lt;key&gt;CFBundleDocumentTypes&lt;/key&gt;
+&lt;array&gt;
+  &lt;dict&gt;
+    &lt;key&gt;CFBundleTypeName&lt;/key&gt;
+    &lt;string&gt;Binary&lt;/string&gt;
+    &lt;key&gt;LSHandlerRank&lt;/key&gt;
+    &lt;string&gt;Alternate&lt;/string&gt;
+    &lt;key&gt;LSItemContentTypes&lt;/key&gt;
+    &lt;array&gt;
+      &lt;string&gt;public.data&lt;/string&gt;
+      &lt;string&gt;public.executable&lt;/string&gt;
+      &lt;string&gt;com.apple.mach-o-binary&lt;/string&gt;
+      &lt;string&gt;com.apple.pef-binary&lt;/string&gt;
+    &lt;/array&gt;
+  &lt;/dict&gt;
+&lt;/array&gt;
+
+还要加这个，加到上面的&lt;/array&gt;下一行，分开是为了说明。
+&lt;key&gt;UISupportsDocumentBrowser&lt;/key&gt;
+&lt;true/&gt;
+
+
+- (void)scene:(UIScene *)scene openURLContexts:(NSSet&lt;UIOpenURLContext *&gt; *)URLContexts {
+    NSLog(@"%@",URLContexts);
+    
+    // 获取当前的UINavigationController
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    if ([navigationController isKindOfClass:[UINavigationController class]]) {
+        Demo_Upgrade *controller = [[Demo_Upgrade alloc]init];
+        
+        NSString *filePath = [[URLContexts anyObject].URL path];
+        FWUpgrader *upgrader = [[FWUpgrader alloc]initWithHost:KLocalHost port:KLocalHostPort uri:@"/uploadfirmware" firmwarePath:filePath];
+        upgrader.delegate = controller;
+        [controller prepareWithUpgrader:upgrader];
+
+        [navigationController pushViewController:controller animated:YES];
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>71A413E2-CAC4-4A2C-8A31-8244BC1F21EE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>第三方分享</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

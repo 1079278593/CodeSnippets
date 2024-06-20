@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//---------------查看：debug👇🏻
+        //debug 通用方式
+//        NSDictionary *extensions = [self debugDict];
+//        status = CMVideoFormatDescriptionCreate(kCFAllocatorDefault, kCMVideoCodecType_H264, 1920, 1080, (__bridge CFDictionaryRef _Nullable)(extensions), &amp;_formatDesc);//
+        
+//    if (status == noErr &amp;&amp; _formatDesc != NULL) {
+//        CFDictionaryRef extensions = CMFormatDescriptionGetExtensions(_formatDesc);// 获取格式描述的扩展信息
+//        // 获取 SampleDescriptionExtensionAtoms
+//        CFDictionaryRef atoms = CFDictionaryGetValue(extensions, CFSTR("SampleDescriptionExtensionAtoms"));
+//        if (atoms) {
+//            /** h264，45bytes,(最初看是39bytes)
+//             &lt;0142002a ffe10018 6742002a 963540f0 044fcb35 01010140 0000fa40 003a9821 01000468 ce31b2&gt;
+//             */
+//            CFDataRef avcC = CFDictionaryGetValue(atoms, CFSTR("avcC"));
+//            if (avcC) {
+//                [Data2File debugWithData:avcC];
+//            }
+//        }
+//    }
+        //---------------查看：debug👆🏻</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1B92DEDC-4136-4DD8-9233-2DA885AAE9E7</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>视频编解码：获取’格式描述的扩展信息‘</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

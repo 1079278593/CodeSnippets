@@ -9,18 +9,24 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#import &lt;objc/runtime.h&gt;
+	<string>@interface &lt;#Clas#&gt; (&lt;#extentName#&gt;)
 
-@implementation &lt;#Clas#&gt; (&lt;#Property#&gt;)
+@property(nonatomic, strong)&lt;#Clas#&gt; *&lt;#name#&gt;;
+
+@end
+
+#import &lt;objc/runtime.h&gt;
+
+@implementation &lt;#Clas#&gt; (&lt;#extentName#&gt;)
 
 @dynamic &lt;#name#&gt;;
 
-- (void)set&lt;#name#&gt;:&lt;#modifyme#&gt; {
-    objc_setAssociatedObject(self, @selector(alertActionTag), object, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)set&lt;#name#&gt;:(&lt;#class#&gt; *)&lt;#modifyme#&gt; {
+    objc_setAssociatedObject(self, @selector(&lt;#name#&gt;), &lt;#modifyme#&gt;, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (NSNumber *)&lt;#modifyme#&gt; {
-    return objc_getAssociatedObject(self, @selector(&lt;#modifyme#&gt;));
+- (NSNumber *)&lt;#name#&gt; {
+    return objc_getAssociatedObject(self, @selector(&lt;#name#&gt;));
 }
 
 @end</string>

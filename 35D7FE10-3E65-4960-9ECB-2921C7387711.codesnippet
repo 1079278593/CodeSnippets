@@ -9,11 +9,39 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (void)testForShowWriteData:(NSData *)data {
+	<string>///生成路径，启动删除上次，写入。
+- (void)testForShowWriteData:(NSData *)data {
     NSError *error;
-    NSURL *url = [NSURL fileURLWithPath:@"/Users/imvt/Desktop/蓝牙post的data.txt"];
+    NSString *path = [NSString stringWithFormat:@"%@/%@",[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],@"TMP"];
+    [[NSFileManager defaultManager]createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+    NSString *targetPath = [NSString stringWithFormat:@"%@/%@",path,@"pcm.txt"];
+    [[NSFileManager defaultManager] removeItemAtPath:targetPath error:nil];
+    NSURL *url = [NSURL fileURLWithPath:targetPath];
     BOOL flag = [data writeToURL:url options:NSDataWritingWithoutOverwriting error:&amp;error];
     NSLog(@"write status:%d ,data:%@",flag,data);
+}
+
+- (void)writeAppendData:(NSData *)data {
+    NSError *error;
+    NSString *path = [NSString stringWithFormat:@"%@/%@",[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],@"TMP"];
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@",path,@"pcm.txt"];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    // 确保文件存在
+    if (![fileManager fileExistsAtPath:filePath]) {
+        [fileManager createFileAtPath:filePath contents:nil attributes:nil];
+    }
+    
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:filePath];
+    
+    if (fileHandle == nil) {
+        NSLog(@"Failed to open file: %@", filePath);
+    }
+    
+    [fileHandle seekToEndOfFile]; // 移动到文件末尾
+    [fileHandle writeData:data]; // 写入数据
+    [fileHandle closeFile]; // 关闭文件句柄
+    
+    NSLog(@"Data written to file: %@", filePath);
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>35D7FE10-3E65-4960-9ECB-2921C7387711</string>

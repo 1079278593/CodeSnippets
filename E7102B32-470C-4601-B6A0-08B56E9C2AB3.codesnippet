@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ocComment</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/*!
+    @typedef    VTDecompressionOutputHandler
+    @abstract    Prototype for block invoked when frame decompression is complete.
+    @discussion
+        When you decode a frame, you pass in a callback block to be called
+        for that decompressed frame.  This block will not necessarily be called in display order.
+        If the VTDecompressionSessionDecodeFrameWithOutputHandler call returns an error, the block
+        will not be called.
+    @param    status
+        noErr if decompression was successful; an error code if decompression was not successful.
+    @param    infoFlags
+        Contains information about the decode operation.
+        The kVTDecodeInfo_Asynchronous bit may be set if the decode ran asynchronously.
+        The kVTDecodeInfo_FrameDropped bit may be set if the frame was dropped.
+        If the kVTDecodeInfo_ImageBufferModifiable bit is set, it is safe for the client to modify the imageBuffer.
+    @param    imageBuffer
+        Contains the decompressed frame, if decompression was successful; otherwise, NULL.
+        IMPORTANT: The video decompressor may still be referencing the imageBuffer returned in this
+        callback if the kVTDecodeInfo_ImageBufferModifiable flag is not set.  Unless this flag
+        is set, it is not safe to modify the returned imageBuffer.
+    @param    presentationTimeStamp
+        The frame's presentation timestamp; kCMTimeInvalid if not available.
+    @param    presentationDuration
+        The frame's presentation duration; kCMTimeInvalid if not available.
+ */</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E7102B32-470C-4601-B6A0-08B56E9C2AB3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>标准注释</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

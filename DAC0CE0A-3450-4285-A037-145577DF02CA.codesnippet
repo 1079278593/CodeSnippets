@@ -21,12 +21,14 @@
  */
 
 typedef &lt;#returnType#&gt;(^&lt;#name#&gt;)(&lt;#arguments#&gt;);
-
-@property(nonatomic, copy)ConnectHandler connectHandler;
 @property (nonatomic, copy) &lt;#returnType#&gt;(^&lt;#blockName#&gt;)(&lt;#arguments#&gt;);
--(void)&lt;#method#&gt;:(&lt;#returnType#&gt; (^)(&lt;#class#&gt; *&lt;#arguments#&gt;))&lt;#name#&gt; {
+-(void)&lt;#method#&gt;:(&lt;#returnType#&gt; (^)(&lt;#arguments#&gt;))&lt;#name#&gt; {
     
-}</string>
+}
+
+//例子
+typedef void(^CloseHandlerBlock)(void);
+@property(nonatomic, copy)CloseHandlerBlock &lt;#name#&gt;Handler;</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>DAC0CE0A-3450-4285-A037-145577DF02CA</string>
 	<key>IDECodeSnippetLanguage</key>
